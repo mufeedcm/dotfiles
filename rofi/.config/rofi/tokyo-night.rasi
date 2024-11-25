@@ -1,19 +1,20 @@
+
 * {
-    bg-col:  #1e1e2e;
-    bg-col-light: #1e1e2e;
-    border-col: #1e1e2e;
-    selected-col: #1e1e2e;
-    blue: #89b4fa;
-    fg-col: #cdd6f4;
-    fg-col2: #f38ba8;
-    grey: #6c7086;
+    bg-col: #1a1b26;
+    bg-col-light: #24283b;
+    border-col: #414868;
+    selected-col: #7aa2f7;
+    blue: #7aa2f7;
+    fg-col: #c0caf5;
+    fg-col2: #f7768e;
+    grey: #565f89;
     width: 600;
-    font: "JetBrainsMono Nerd Font 18";
+    font: "Meslo LGM Nerd Font 10";
 }
 
-element-text, element-icon , mode-switcher {
+element-text, element-icon, mode-switcher {
     background-color: inherit;
-    text-color:       inherit;
+    text-color: inherit;
 }
 
 window {
@@ -28,8 +29,8 @@ mainbox {
 }
 
 inputbar {
-    children: [prompt,entry];
-    background-color: @bg-col;
+    children: [prompt, entry];
+    background-color: @bg-col-light;
     border-radius: 5px;
     padding: 2px;
 }
@@ -51,11 +52,11 @@ entry {
     padding: 6px;
     margin: 20px 0px 0px 10px;
     text-color: @fg-col;
-    background-color: @bg-col;
+    background-color: @bg-col-light;
 }
 
 listview {
-    border: 0px 0px 0px;
+    border: 0px;
     padding: 6px 0px 0px;
     margin: 10px 0px 0px 20px;
     columns: 2;
@@ -66,7 +67,7 @@ listview {
 element {
     padding: 5px;
     background-color: @bg-col;
-    text-color: @fg-col  ;
+    text-color: @fg-col;
 }
 
 element-icon {
@@ -74,25 +75,25 @@ element-icon {
 }
 
 element selected {
-    background-color:  @selected-col ;
-    text-color: @fg-col2  ;
+    background-color: @selected-col;
+    text-color: #000000;
 }
 
 mode-switcher {
     spacing: 0;
-  }
+}
 
 button {
     padding: 10px;
     background-color: @bg-col-light;
     text-color: @grey;
-    vertical-align: 0.5; 
+    vertical-align: 0.5;
     horizontal-align: 0.5;
 }
 
 button selected {
-  background-color: @bg-col;
-  text-color: @blue;
+    background-color: @bg-col;
+    text-color: @blue;
 }
 
 message {
@@ -108,3 +109,4 @@ textbox {
     text-color: @blue;
     background-color: @bg-col-light;
 }
+
