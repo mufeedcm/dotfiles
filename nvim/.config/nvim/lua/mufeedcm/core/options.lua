@@ -27,42 +27,47 @@ opt.mouse = "a"
 opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
-vim.schedule(function()
-	opt.clipboard = "unnamedplus"
-end)
+-- vim.schedule(function()
+opt.clipboard = "unnamedplus"
+-- end)
 
 -- Open PDF files with Zathura
-vim.api.nvim_create_autocmd("BufRead", {
-	pattern = "*.pdf",
-	callback = function()
-		local file_path = vim.fn.shellescape(vim.fn.expand("%:p"))
-		vim.fn.jobstart("zathura " .. file_path, { detach = true })
-		vim.cmd("bdelete") -- Optional: Close the buffer after opening externally
-	end,
-})
-
--- Open image files with the default image viewer
-vim.api.nvim_create_autocmd("BufRead", {
-	pattern = {
-		"*.jpg",
-		"*.jpeg",
-		"*.png",
-		"*.svg",
-		"*.bmp",
-		"*.gif",
-		"*.ico",
-		"*.tiff",
-		"*.tif",
-		"*.webp",
-		"*.heif",
-		"*.heic",
-	},
-	callback = function()
-		local file_path = vim.fn.expand("%:p")
-		vim.fn.jobstart("xdg-open " .. file_path, { detach = true })
-		vim.cmd("bdelete") -- Optional: Close the buffer after opening externally
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufRead", {
+-- 	pattern = "*.pdf",
+-- 	callback = function()
+-- 		local file_path = vim.fn.shellescape(vim.fn.expand("%:p"))
+-- 		vim.fn.jobstart("zathura " .. file_path, { detach = true })
+-- 		vim.cmd("bdelete") -- Optional: Close the buffer after opening externally
+-- 	end,
+-- })
+--
+-- -- Open image files with the default image viewer
+-- vim.api.nvim_create_autocmd("BufRead", {
+-- 	pattern = {
+-- 		"*.jpg",
+-- 		"*.jpeg",
+-- 		"*.png",
+-- 		"*.svg",
+-- 		"*.bmp",
+-- 		"*.gif",
+-- 		"*.ico",
+-- 		"*.tiff",
+-- 		"*.tif",
+-- 		"*.webp",
+-- 		"*.heif",
+-- 		"*.heic",
+-- 	},
+-- 	callback = function()
+-- 		local file_path = vim.fn.expand("%:p")
+-- 		vim.fn.jobstart("xdg-open " .. file_path, { detach = true })
+-- 		vim.cmd("bdelete") -- Optional: Close the buffer after opening externally
+-- 	end,
+-- })
+--
+--
+--
+--
+--
 -- -- Open PDF files with SumatraPDF
 -- vim.api.nvim_create_autocmd("BufRead", {
 -- 	pattern = "*.pdf",
@@ -134,10 +139,10 @@ opt.cursorline = true
 opt.scrolloff = 10
 
 -- use powershell instead of cmd.exe
-vim.o.shell = "pwsh.exe"
-vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command $PSStyle.OutputRendering = 'PlainText';"
-vim.o.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-vim.o.shellquote = ""
-vim.o.shellxquote = ""
+-- vim.o.shell = "pwsh.exe"
+-- vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command $PSStyle.OutputRendering = 'PlainText';"
+-- vim.o.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+-- vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+-- vim.o.shellquote = ""
+-- vim.o.shellxquote = ""
 -- vim: ts=2 sts=2 sw=2 et
