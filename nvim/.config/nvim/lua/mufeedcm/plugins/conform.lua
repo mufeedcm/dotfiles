@@ -44,8 +44,8 @@ return {
 			markdown = { "prettier" },
 			graphql = { "prettier" },
 			liquid = { "prettier" },
-			-- c = { "clang-format" },
-			-- cpp = { "clang-format" },
+			c = { "clang-format" },
+			cpp = { "clang-format" },
 		},
 	},
 }

@@ -34,12 +34,43 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 # Window management keybindings
 
 
-bindsym $mod+Shift+z exec --no-startup-id i3lock && systemctl suspend
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+q kill
+# Take a screenshot of the entire screen and save it to ~/Pictures with a timestamp
+bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
+
+# Take a screenshot of the active window and save it to ~/Pictures with a timestamp
+bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
+
+# Select a region to screenshot and save it to ~/Pictures with a timestamp
+bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
+
+# Copy a screenshot of the entire screen to the clipboard
+bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
+
+# Copy a screenshot of the active window to the clipboard
+bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+# Copy a user-selected region of the screen to the clipboard
+bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
+
+
+
+# bindsym $mod+Shift+z exec i3lock --nofork && systemctl suspend
+bindsym $mod+Shift+s exec i3lock --nofork & systemctl suspend
+
+# Reboot the system
+bindsym $mod+Shift+t exec systemctl reboot
+
+# Shutdown the system
+bindsym $mod+Shift+u exec systemctl poweroff
+
+bindsym $mod+Return exec kitty
+bindsym $mod+x kill
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -99,10 +130,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Window resize mode
 mode "resize" {
-    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
     bindsym k resize grow height 10 px or 10 ppt
-    bindsym l resize shrink height 10 px or 10 ppt
-    bindsym semicolon resize grow width 10 px or 10 ppt
+    bindsym j resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
     bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt

@@ -87,23 +87,21 @@ return {
 				cssls = {},
 				svelte = {},
 				tailwindcss = {},
-				-- gopls = {},
-				-- rust_analyzer = {},
-				-- clangd = {
-				-- 	cmd = { "clangd" },
-				-- 	filetypes = { "c", "cpp" },
-				-- },
-				-- pyright = {},
-				-- ts_ls = {},
-				-- lua_ls = {
-				-- 	settings = {
-				-- 		Lua = {
-				-- 			completion = {
-				-- 				callSnippet = "Replace",
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
+				clangd = {
+					cmd = { "clangd" },
+					filetypes = { "c", "cpp" },
+				},
+				pyright = {},
+				ts_ls = {},
+				lua_ls = {
+					settings = {
+						Lua = {
+							completion = {
+								callSnippet = "Replace",
+							},
+						},
+					},
+				},
 				-- -- Latex Setup
 				-- texlab = {
 				-- 	cmd = { "texlab" },
@@ -145,30 +143,6 @@ return {
 				-- 		},
 				-- 	},
 				--
-				--For seoyek
-
-				-- forwardSearch = {
-				-- 	executable = "sioyek",
-				-- 	args = {
-				-- 		"--reuse-window",
-				-- 		"--execute-command",
-				-- 		"toggle_synctex",
-				-- 		"--inverse-search",
-				-- 		'texlab inverse-search -i "%%1" -l %%2',
-				-- 		"--forward-search-file",
-				-- 		"%f",
-				-- 		"--forward-search-line",
-				-- 		"%l",
-				-- 		"%p",
-				-- 	},
-				-- },
-				-- 		},
-				-- 		latexFormatter = "latexindent",
-				-- 		latexindent = {
-				-- 			modifyLineBreaks = false,
-				-- 		},
-				-- 	},
-				-- },
 			}
 
 			require("mason").setup()
@@ -177,7 +151,7 @@ return {
 				"stylua",
 				"eslint_d",
 				"pylint",
-				-- "clang-format",
+				"clang-format",
 				-- "latexindent",
 				"prettierd",
 				"prettier",
