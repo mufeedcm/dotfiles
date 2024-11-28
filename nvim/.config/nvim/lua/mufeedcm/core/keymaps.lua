@@ -18,10 +18,10 @@ keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
 keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 
 -- Easy split navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-h>", ":wincmd h<CR>", opts)
+keymap("n", "<C-l>", ":wincmd l<CR>", opts)
+keymap("n", "<C-j>", ":wincmd j<CR>", opts)
+keymap("n", "<C-k>", ":wincmd k<CR>", opts)
 
 -- Resize Vertical Split (Height)
 vim.api.nvim_set_keymap("n", "<A-k>", ":resize +2<CR>", { noremap = true, silent = true }) -- Move down the height

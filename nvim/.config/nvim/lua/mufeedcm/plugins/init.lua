@@ -9,11 +9,12 @@
 -- [] nvim-tree
 -- [] fugitive
 -- [] oil.nvim
--- [] noice.nvim
--- [] whic-hkey
+-- [x] noice.nvim
+-- [] which-key
 -- [] nvim-colorizer
 -- [] tailwindcss-colorizer-cmp
 -- [] alpha-nvim
+-- [] supermaven
 -- [x] codeium.nvim
 -- [x] flash.nvim
 
@@ -364,6 +365,18 @@ return {
 	-- 		]])
 	-- 	end,
 	-- },
+	--
+	--
+	-- ----------------------------------------
+	-- Supermaven
+
+	{
+		"supermaven-inc/supermaven-nvim",
+		config = function()
+			require("supermaven-nvim").setup({})
+		end,
+	},
+
 	-- ----------------------------------------
 	-- Codeium
 	{
