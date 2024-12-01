@@ -1,4 +1,5 @@
 -- LSP Plugins
+--
 return {
 	{
 		"folke/lazydev.nvim",
@@ -87,6 +88,7 @@ return {
 				cssls = {},
 				svelte = {},
 				tailwindcss = {},
+
 				clangd = {
 					cmd = { "clangd" },
 					filetypes = { "c", "cpp" },
@@ -103,6 +105,7 @@ return {
 					},
 				},
 				-- -- Latex Setup
+
 				-- texlab = {
 				-- 	cmd = { "texlab" },
 				-- 	filetypes = { "tex", "plaintex", "bib" },
@@ -120,7 +123,7 @@ return {
 				-- 				"--keep-intermediates",
 				-- 			},
 				-- 			forwardSearchAfter = true,
-				-- 			onSave = false,
+				-- 			onSave = true,
 				-- 		},
 				-- 		chktex = {
 				-- 			onEdit = false,
@@ -128,31 +131,28 @@ return {
 				-- 		},
 				-- 		diagnosticsDelay = 300,
 				-- 		formatterLineLength = 80,
-				--
-				-- texlab = {
-				-- 	--For sumathra
-				--
-				-- 	forwardSearch = {
-				-- 		executable = "C:/Users/mufeedcm/AppData/Local/SumatraPDF/SumatraPDF.exe",
-				-- 		args = {
-				-- 			"-reuse-instance",
-				-- 			"%p",
-				-- 			"-forward-search",
-				-- 			"%f",
-				-- 			"%l",
+				-- 		forwardSearch = {
+				-- 			executable = "zathura",
+				-- 			args = {
+				-- 				"--synctex-forward",
+				-- 				"%l:1:%f",
+				-- 				"%p",
+				-- 			},
 				-- 		},
 				-- 	},
-				--
+				-- },
 			}
-
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
+				"isort",
+				"black",
 				"stylua",
 				"eslint_d",
 				"pylint",
 				"clang-format",
 				-- "latexindent",
+				-- "luacheck",
 				"prettierd",
 				"prettier",
 			})

@@ -19,7 +19,7 @@ return {
 			"cpp",
 			"astro",
 			"css",
-			"latex",
+			-- "latex", -- Only include latex once
 			"diff",
 			"lua",
 			"luadoc",
@@ -32,6 +32,7 @@ return {
 		auto_install = true,
 		highlight = {
 			enable = true,
+			disable = { "latex" },
 			additional_vim_regex_highlighting = { "ruby" },
 		},
 		indent = { enable = true, disable = { "ruby" } },

@@ -1,4 +1,4 @@
--- [] mini.nvim
+-- [] mini.nvimluasnip
 -- [] mini.starter
 -- [] mini.surround
 -- [] mini.statusline
@@ -369,14 +369,14 @@ return {
 	--
 	-- ----------------------------------------
 	-- Supermaven
-
-	{
-		"supermaven-inc/supermaven-nvim",
-		config = function()
-			require("supermaven-nvim").setup({})
-		end,
-	},
-
+	--
+	-- {
+	-- 	"supermaven-inc/supermaven-nvim",
+	-- 	config = function()
+	-- 		require("supermaven-nvim").setup({})
+	-- 	end,
+	-- },
+	--
 	-- ----------------------------------------
 	-- Codeium
 	{
