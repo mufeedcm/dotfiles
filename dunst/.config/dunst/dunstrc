@@ -1,0 +1,5 @@
+[global]
+    geometry = "300x50-10+10"
+    font = "Monospace 10"
+    transparency = 0
+    follow = mouse

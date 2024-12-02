@@ -15,6 +15,8 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 exec_always --no-startup-id killall polybar; ~/.config/polybar/launch_polybar.sh --reload
 
+exec --no-startup-id dunst
+
 exec_always feh --bg-scale ~/.config/backgrounds/mistbg.jpg
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -63,6 +65,10 @@ bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -s
 bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
 
 
+
+
+
+bindsym $mod+Shift+d exec dunstctl set-paused toggle
 
 # bindsym $mod+Shift+z exec i3lock --nofork && systemctl suspend
 bindsym $mod+Shift+s exec i3lock --nofork & systemctl suspend

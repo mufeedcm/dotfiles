@@ -1,3 +1,9 @@
+
+HISTSIZE=10000           # Number of commands to remember in the current session
+SAVEHIST=10000           # Number of commands to save to history file
+HISTFILE=~/.zsh_history  # Path to the history file
+
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 
@@ -15,4 +21,6 @@ export LC_ALL=en_US.UTF-8
 alias la='ls -la'
 alias conf='cd ~/.config'
 alias confnvim='nvim ~/.config/nvim/'
-alias cbook='zathura books/C\ Programming\ -\ A\ Modern\ Approach\ -\ 2nd_Ed\(C89,\ c99\)\ -\ King\ by\ .pdf&'
+
+alias cbook='zathura books/C\ Programming\ -\ A\ Modern\ Approach\ -\ 2nd_Ed\(C89,\ c99\)\ -\ King\ by\ .pdf &'
+
