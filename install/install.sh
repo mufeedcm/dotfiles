@@ -1,6 +1,8 @@
+
 #!/usr/bin/bash
 
-SETUP_DIR=~/dotfiles/setup
+# Define the setup directory (now correctly pointing to the home directory)
+SETUP_DIR=~
 
 # Update and upgrade the system
 sudo apt update && sudo apt upgrade -y
@@ -26,6 +28,16 @@ if [ -f $SETUP_DIR/brew-packages.txt ]; then
 else
     echo "No brew-packages.txt found!"
 fi
-
+#
+# # Add more package manager installations here, e.g., Flatpak
+# if [ -f $SETUP_DIR/flatpak-packages.txt ]; then
+#     echo "Installing Flatpak packages..."
+#     while read -r package; do
+#         flatpak install -y $package
+#     done < $SETUP_DIR/flatpak-packages.txt
+# else
+#     echo "No flatpak-packages.txt found!"
+# fi
+#
 echo "Setup complete!"
 
