@@ -6,6 +6,10 @@ local keymap = vim.keymap.set
 global.mapleader = " "
 global.maplocalleader = " "
 
+vim.g.VimuxRunnerType = "pane" -- Default to using a Tmux pane
+vim.g.VimuxHeight = "15" -- Set the height of the Tmux pane
+vim.g.VimuxOrientation = "v" -- Horizontal split
+
 global.have_nerd_font = true
 
 -- keymap("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })

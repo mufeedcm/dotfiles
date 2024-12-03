@@ -22,5 +22,5 @@ alias la='ls -la'
 alias conf='cd ~/.config'
 alias confnvim='nvim ~/.config/nvim/'
 
-alias cbook='zathura books/C\ Programming\ -\ A\ Modern\ Approach\ -\ 2nd_Ed\(C89,\ c99\)\ -\ King\ by\ .pdf &'
+alias cbook='zathura books/c_programming_a_modern_approach_2e_c89_c99_king.pdf &'
 

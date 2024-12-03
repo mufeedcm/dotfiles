@@ -1,3 +1,4 @@
+
 # General settings
 set $mod Mod1
 set $term kitty
@@ -10,25 +11,18 @@ new_window normal 2
 new_float normal 2
 
 # Start essential applications
-# exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
-
 exec_always --no-startup-id killall polybar; ~/.config/polybar/launch_polybar.sh --reload
-
 exec --no-startup-id dunst
-
 exec_always feh --bg-scale ~/.config/backgrounds/mistbg.jpg
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-
-
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xcape -e 'Control_L=Escape'
 
 # Font and theme settings
 font pango:Meslo LGM Nerd Font 10
-
 
 # Launch rofi
 bindsym $mod+space exec rofi -show combi
@@ -40,46 +34,29 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-# Window management keybindings
 
-
-# Take a screenshot of the entire screen and save it to ~/Pictures with a timestamp
+# Screenshot keybindings
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
-
-# Take a screenshot of the active window and save it to ~/Pictures with a timestamp
 bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-
-# Select a region to screenshot and save it to ~/Pictures with a timestamp
 bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
-
-# Copy a screenshot of the entire screen to the clipboard
 bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
-
-# Copy a screenshot of the active window to the clipboard
 bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-
-# Copy a user-selected region of the screen to the clipboard
 bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
 
-
-
-
-
+# Dunst toggle
 bindsym $mod+Shift+d exec dunstctl set-paused toggle
 
-# bindsym $mod+Shift+z exec i3lock --nofork && systemctl suspend
+# System controls
 bindsym $mod+Shift+s exec i3lock --nofork & systemctl suspend
-
-# Reboot the system
 bindsym $mod+Shift+t exec systemctl reboot
-
-# Shutdown the system
 bindsym $mod+Shift+u exec systemctl poweroff
 
+# Launch terminal
 bindsym $mod+Return exec kitty
+
+# Window management
 bindsym $mod+x kill
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+h focus left
@@ -128,9 +105,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-
-workspace_layout default
-
 # Reload and restart i3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -152,43 +126,33 @@ mode "resize" {
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # General window settings
 for_window [class=".*"] border pixel 2
 for_window [class="Polybar"] focus off
 
-
-# Tokyo Night Colors
-set $bg_dark     #1a1b26
-set $bg          #16161e
-set $bg_highlight #292e42
-set $terminal_black #414868
-set $fg          #c0caf5
-set $fg_dark     #a9b1d6
-set $fg_gutter   #3b4261
-set $dark3       #545c7e
-set $comment     #565f89
-set $dark5       #737aa2
-set $blue        #7aa2f7
-set $cyan        #7dcfff
-set $blue1       #2ac3de
-set $blue2       #0db9d7
-set $blue5       #89ddff
-set $blue6       #b4f9f8
-set $purple      #bb9af7
-set $magenta     #ff007c
-set $orange      #ff9e64
-set $yellow      #e0af68
-set $green       #9ece6a
-set $red         #f7768e
-set $error       #db4b4b
+# Gruvbox Colors
+set $bg_dark       #282828
+set $bg            #1d2021
+set $bg_highlight  #3c3836
+set $terminal_black #504945
+set $fg            #ebdbb2
+set $fg_dark       #d5c4a1
+set $fg_gutter     #7c6f64
+set $blue          #83a598
+set $cyan          #8ec07c
+set $purple        #d3869b
+set $orange        #fe8019
+set $yellow        #fabd2f
+set $green         #b8bb26
+set $red           #fb4934
+set $error         #cc241d
 
 # Window colors
-client.focused           $bg_dark        $blue         $bg_dark     $cyan         $blue
-client.focused_inactive  $bg_highlight   $fg_dark      $bg_highlight $dark3       $dark3
-client.urgent            $red            $bg_dark      $red         $error       $red
-client.placeholder       $bg_highlight   $fg_dark      $dark3       $dark5       $dark5
-client.background        $bg_dark
+client.focused          $bg_dark    $blue       $bg_dark    $cyan       $blue
+client.focused_inactive $bg_highlight $fg_dark   $bg_highlight $fg_gutter $fg_gutter
+client.urgent           $red        $bg_dark    $red        $error      $red
+client.placeholder      $bg_highlight $fg_dark   $fg_gutter $fg_gutter  $fg_gutter
+client.background       $bg_dark
 

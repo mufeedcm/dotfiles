@@ -13,6 +13,9 @@ opt.autoindent = true -- copy indent from current line when starting new one
 opt.wrap = false
 -- Set completeopt for better completion behavior
 vim.o.completeopt = "menu,menuone,noinsert"
+
+vim.cmd("filetype plugin on")
+
 -- Enable mouse mode, can be useful for resizing splits.
 opt.mouse = "a"
 -- Don't show the mode, since it's already in the status line

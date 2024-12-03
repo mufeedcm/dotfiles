@@ -1,13 +1,13 @@
 
 * {
-    bg-col: #1a1b26;
-    bg-col-light: #24283b;
-    border-col: #414868;
-    selected-col: #7aa2f7;
-    blue: #7aa2f7;
-    fg-col: #c0caf5;
-    fg-col2: #f7768e;
-    grey: #565f89;
+    bg-col: #282828;
+    bg-col-light: #3c3836;
+    border-col: #504945;
+    selected-col: #83a598;
+    blue: #83a598;
+    fg-col: #ebdbb2;
+    fg-col2: #fb4934;
+    grey: #7c6f64;
     width: 600;
     font: "Meslo LGM Nerd Font 10";
 }
@@ -18,7 +18,7 @@ element-text, element-icon, mode-switcher {
 }
 
 window {
-    height: 360px;
+    height: 560px;
     border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
@@ -29,7 +29,7 @@ mainbox {
 }
 
 inputbar {
-    children: [prompt, entry];
+    children: [entry];
     background-color: @bg-col-light;
     border-radius: 5px;
     padding: 2px;
@@ -58,14 +58,15 @@ entry {
 listview {
     border: 0px;
     padding: 6px 0px 0px;
-    margin: 10px 0px 0px 20px;
-    columns: 2;
-    lines: 5;
+    margin: 10px 10px 0px 20px;
+    columns: 1;
+    lines: 10;
     background-color: @bg-col;
 }
 
 element {
-    padding: 5px;
+    border-radius: 6px;
+    padding: 8px;
     background-color: @bg-col;
     text-color: @fg-col;
 }
@@ -73,10 +74,13 @@ element {
 element-icon {
     size: 25px;
 }
+element-text {
+    vertical-align: 0.5;
+}
 
 element selected {
     background-color: @selected-col;
-    text-color: #000000;
+    text-color: #282828;
 }
 
 mode-switcher {
