@@ -7,8 +7,27 @@ set $term kitty
 gaps inner 10
 gaps outer 5
 gaps top 30
-new_window normal 2
-new_float normal 2
+# new_window normal 2
+# new_float normal 2
+#
+
+new_window none
+new_float none
+
+
+# General window settings
+for_window [class=".*"] border pixel 0 
+for_window [all] border pixel 5
+# for_window [class="Polybar"] focus off
+
+hide_edge_borders both
+# default_border pixel 5
+# i3-msg [class=.*] border pixel 1
+
+
+
+
+
 
 # Start essential applications
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
@@ -127,11 +146,6 @@ mode "resize" {
     bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
-
-# General window settings
-for_window [class=".*"] border pixel 2
-for_window [class="Polybar"] focus off
-
 # Gruvbox Colors
 set $bg_dark       #282828
 set $bg            #1d2021
