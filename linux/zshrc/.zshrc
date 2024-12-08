@@ -19,8 +19,16 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 alias la='ls -la'
+alias cls='clear'
 alias conf='cd ~/.config'
 alias confnvim='nvim ~/.config/nvim/'
 
 alias cbook='zathura ~/books/c_programming_a_modern_approach_2e_c89_c99_king.pdf &'
-
+quran() {
+  if [ -z "$1" ]; then
+    volume=50 # Default volume if none is provided
+  else
+    volume=$1
+  fi
+  mpv --volume=$volume ~/Music/surah_muhammed.m4a
+}

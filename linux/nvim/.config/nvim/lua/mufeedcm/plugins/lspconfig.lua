@@ -88,7 +88,7 @@ return {
 				cssls = {},
 				svelte = {},
 				tailwindcss = {},
-
+				marksman = {},
 				clangd = {
 					cmd = { "clangd" },
 					filetypes = { "c", "cpp" },

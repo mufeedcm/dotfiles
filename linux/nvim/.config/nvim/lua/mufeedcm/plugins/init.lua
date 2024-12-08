@@ -224,7 +224,7 @@ return {
 			require("oil").setup({
 				default_file_explorer = true,
 				delete_to_trash = false,
-				skip_confirm_for_simple_edits = false,
+				skip_confirm_for_simple_edits = true,
 				columns = { "icon" },
 				keymaps = {
 					["<C-h>"] = false,

@@ -1,0 +1,78 @@
+/* Root color variables */
+:root {
+  --sfwindow: #19171a;
+  --sfsecondary: #201e21;
+  --toolbar-bgcolor: var(--sfsecondary);
+}
+
+/* Hide URL bar dropdown */
+.urlbarView {
+  display: none !important;
+}
+
+/* Tab colors */
+#tabbrowser-tabs:not([movingtab])
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[selected="true"] {
+  background-color: var(--toolbar-bgcolor) !important;
+}
+
+#navigator-toolbox {
+  background-color: var(--sfwindow) !important;
+}
+
+/* Sidebar color */
+#sidebar-box,
+.sidebar-placesTree {
+  background-color: var(--sfwindow) !important;
+}
+
+/* Tab adjustments */
+:root {
+  --tab-border-radius: 0 !important;
+  --tab-block-margin: 0 !important;
+}
+
+.tabbrowser-tab {
+  margin-left: -4px !important;
+}
+
+/* URL bar styles */
+#urlbar-input-container {
+  background-color: var(--sfsecondary) !important;
+}
+
+#urlbar[focused="true"] > #urlbar-background {
+  box-shadow: none !important;
+}
+
+/* Bookmarks bar */
+.bookmark-item .toolbarbutton-icon {
+  display: none;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+  min-width: 1.6em;
+}
+
+/* Hide unused toolbar buttons */
+#tracking-protection-icon-container,
+#urlbar-zoom-button,
+#star-button-box,
+#pageActionButton,
+#PanelUI-button {
+  display: none !important;
+}
+
+/* Context menu cleanup */
+#context-savepage,
+#context-sendpagetodevice,
+#context-selectall,
+#context-inspect-a11y,
+#context-bookmarklink,
+#context-savelink {
+  display: none !important;
+}
+
