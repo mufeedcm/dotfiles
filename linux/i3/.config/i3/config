@@ -25,17 +25,20 @@ hide_edge_borders both
 # i3-msg [class=.*] border pixel 1
 
 
-
-
-
-
 # Start essential applications
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id killall polybar; ~/.config/polybar/launch_polybar.sh --reload
 exec --no-startup-id dunst
 exec_always feh --bg-scale ~/.config/backgrounds/mistbg.jpg
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+bindsym $mod+t exec --no-startup-id "pgrep autotiling && pkill autotiling || autotiling"
+# exec_always --no-startup-id xset dpms 30 60 60
+# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- systemd-inhibit --what=handle-lid-switch --mode=block bash -c "sleep 60 && systemctl suspend" &
+# exec_always --no-startup-id systemd-inhibit --what=sleep --mode=block i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg.png'
+# # exec_always --no-startup-id xss-lock --transfer-sleep-lock -- bash -c "sleep 600  && systemctl suspend &&i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg.png'"
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png'
+bindsym $mod+Shift+s exec i3lock --nofork -tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png' & systemctl suspend
 exec --no-startup-id nm-applet
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xcape -e 'Control_L=Escape'
@@ -68,12 +71,15 @@ bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t imag
 bindsym $mod+Shift+d exec dunstctl set-paused toggle
 
 # System controls
-bindsym $mod+Shift+s exec i3lock --nofork & systemctl suspend
+# bindsym $mod+Shift+s exec i3lock --nofork -tiling --image='/home/mufeedcm/.config/backgrounds/mistbg.png' & systemctl suspend
 bindsym $mod+Shift+t exec systemctl reboot
 bindsym $mod+Shift+u exec systemctl poweroff
 
 # Launch terminal
 bindsym $mod+Return exec kitty
+
+
+
 
 # Window management
 bindsym $mod+x kill
