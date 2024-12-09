@@ -4,7 +4,7 @@ SAVEHIST=10000           # Number of commands to save to history file
 HISTFILE=~/.zsh_history  # Path to the history file
 
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 
 # export NVM_DIR="$HOME/.nvm"
