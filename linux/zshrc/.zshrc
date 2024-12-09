@@ -35,14 +35,25 @@ quran() {
 
 
 pushnotes() {
+    local prev_dir=$(pwd)
     cd ~/notes || return
     git add .
     git commit -m "note add"
     git push -u origin main
+    cd "$prev_dir"
 }
+
 pushdots() {
+    local prev_dir=$(pwd)
     cd ~/dotfiles || return
     git add .
     git commit -m "add:"
     git push -u origin main
+    cd "$prev_dir"
 }
+
+pushall() {
+    pushnotes
+    pushdots
+}
+
