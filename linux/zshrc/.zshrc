@@ -32,3 +32,17 @@ quran() {
   fi
   mpv --volume=$volume ~/Music/surah_muhammed.m4a
 }
+
+
+pushnotes() {
+    cd ~/notes || return
+    git add .
+    git commit -m "note add"
+    git push -u origin main
+}
+pushdots() {
+    cd ~/dotfiles || return
+    git add .
+    git commit -m "add:"
+    git push -u origin main
+}
