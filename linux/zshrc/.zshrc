@@ -34,26 +34,39 @@ quran() {
 }
 
 
+
 pushnotes() {
     local prev_dir=$(pwd)
+    echo "Switching to ~/notes and pushing changes..."
     cd ~/notes || return
+    echo "Adding changes to staging area..."
     git add .
+    echo "Committing changes..."
     git commit -m "note add"
+    echo "Pushing to remote repository..."
     git push -u origin main
+    echo "Finished pushing notes."
     cd "$prev_dir"
 }
 
 pushdots() {
     local prev_dir=$(pwd)
+    echo "Switching to ~/dotfiles and pushing changes..."
     cd ~/dotfiles || return
+    echo "Adding changes to staging area..."
     git add .
+    echo "Committing changes..."
     git commit -m "add:"
+    echo "Pushing to remote repository..."
     git push -u origin main
+    echo "Finished pushing dotfiles."
     cd "$prev_dir"
 }
 
 pushall() {
+    echo "Starting push for both repositories..."
     pushnotes
     pushdots
+    echo "All repositories have been pushed successfully."
 }
 
