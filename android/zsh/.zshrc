@@ -46,6 +46,8 @@ pushdots() {
     echo
     cd "$prev_dir"
 }
+
+
 # === pull notes ===
 pulldots() {
     local prev_dir=$(pwd)
@@ -64,4 +66,7 @@ pulldots() {
     cd "$prev_dir"
 }
 
+sync() {
+ pulldots 
+}
 
