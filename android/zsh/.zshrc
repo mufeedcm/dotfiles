@@ -24,3 +24,44 @@ alias confnvim='nvim ~/.config/nvim/'
 
 # alias cbook='zathura ~/books/c_programming_a_modern_approach_2e_c89_c99_king.pdf &'
 
+
+# === push notes ===
+pushdots() {
+    local prev_dir=$(pwd)
+    echo
+    echo "======================================="
+    echo "         PUSHING DOTFILES REPO"
+    echo "======================================="
+    echo
+    echo ">>> Switching to ~/dotfiles"
+    cd ~/dotfiles || return
+    echo ">>> Adding changes to the staging area..."
+    git add .
+    echo ">>> Committing changes..."
+    git commit -m "add:"
+    echo ">>> Pushing changes to the remote repository..."
+    git push -u origin main
+    echo
+    echo "=== Dotfiles repository pushed successfully! ==="
+    echo
+    cd "$prev_dir"
+}
+# === pull notes ===
+pulldots() {
+    local prev_dir=$(pwd)
+    echo
+    echo "======================================="
+    echo "         PULLING DOTFILES REPO"
+    echo "======================================="
+    echo
+    echo ">>> Switching to ~/dotfiles"
+    cd ~/dotfiles || return
+    echo ">>> Pulling changes from the remote repository..."
+    git pull origin main
+    echo
+    echo "=== Dotfiles repository updated successfully! ==="
+    echo
+    cd "$prev_dir"
+}
+
+

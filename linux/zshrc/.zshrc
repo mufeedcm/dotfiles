@@ -34,22 +34,24 @@ quran() {
 }
 
 
-
+# === push notes ===
 pushnotes() {
     local prev_dir=$(pwd)
     echo
-    echo "=== Pushing Notes ==="
+    echo "======================================="
+    echo "         PUSHING NOTES REPO"
+    echo "======================================="
     echo
-    echo "Switching to ~/notes..."
+    echo ">>> Switching to ~/notes"
     cd ~/notes || return
-    echo "Adding changes to staging area..."
+    echo ">>> Adding changes to the staging area..."
     git add .
-    echo "Committing changes..."
+    echo ">>> Committing changes..."
     git commit -m "note add"
-    echo "Pushing to remote repository..."
+    echo ">>> Pushing changes to the remote repository..."
     git push -u origin main
     echo
-    echo "Finished pushing notes."
+    echo "=== Notes repository pushed successfully! ==="
     echo
     cd "$prev_dir"
 }
@@ -57,32 +59,88 @@ pushnotes() {
 pushdots() {
     local prev_dir=$(pwd)
     echo
-    echo "=== Pushing Dotfiles ==="
+    echo "======================================="
+    echo "         PUSHING DOTFILES REPO"
+    echo "======================================="
     echo
-    echo "Switching to ~/dotfiles..."
+    echo ">>> Switching to ~/dotfiles"
     cd ~/dotfiles || return
-    echo "Adding changes to staging area..."
+    echo ">>> Adding changes to the staging area..."
     git add .
-    echo "Committing changes..."
+    echo ">>> Committing changes..."
     git commit -m "add:"
-    echo "Pushing to remote repository..."
+    echo ">>> Pushing changes to the remote repository..."
     git push -u origin main
     echo
-    echo "Finished pushing dotfiles."
+    echo "=== Dotfiles repository pushed successfully! ==="
     echo
     cd "$prev_dir"
 }
 
 pushall() {
     echo
-    echo "=== Starting Push for All Repositories ==="
+    echo "======================================="
+    echo "    STARTING PUSHING NOTES & DOTFILES"
+    echo "======================================="
     echo
     pushnotes
-    echo "-----------------------------"
+    echo "---------------------------------------"
     pushdots
-    echo "-----------------------------"
+    echo "---------------------------------------"
     echo
-    echo "All repositories have been pushed successfully."
+    echo "======================================="
+    echo "  ALL REPOSITORIES PUSHED SUCCESSFULLY!"
+    echo "======================================="
     echo
 }
+# === pull notes ===
+pullnotes() {
+    local prev_dir=$(pwd)
+    echo
+    echo "======================================="
+    echo "         PULLING NOTES REPO"
+    echo "======================================="
+    echo
+    echo ">>> Switching to ~/notes"
+    cd ~/notes || return
+    echo ">>> Pulling changes from the remote repository..."
+    git pull origin main
+    echo
+    echo "=== Notes repository updated successfully! ==="
+    echo
+    cd "$prev_dir"
+}
 
+pulldots() {
+    local prev_dir=$(pwd)
+    echo
+    echo "======================================="
+    echo "         PULLING DOTFILES REPO"
+    echo "======================================="
+    echo
+    echo ">>> Switching to ~/dotfiles"
+    cd ~/dotfiles || return
+    echo ">>> Pulling changes from the remote repository..."
+    git pull origin main
+    echo
+    echo "=== Dotfiles repository updated successfully! ==="
+    echo
+    cd "$prev_dir"
+}
+
+pullall() {
+    echo
+    echo "======================================="
+    echo "    STARTING PULLING NOTES & DOTFILES"
+    echo "======================================="
+    echo
+    pullnotes
+    echo "---------------------------------------"
+    pulldots
+    echo "---------------------------------------"
+    echo
+    echo "======================================="
+    echo "  ALL REPOSITORIES UPDATED SUCCESSFULLY!"
+    echo "======================================="
+    echo
+}
