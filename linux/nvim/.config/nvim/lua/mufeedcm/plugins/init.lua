@@ -19,6 +19,10 @@
 -- [x] flash.nvim
 
 return {
+	-- {
+	-- 	"3rd/image.nvim",
+	-- 	opts = {},
+	-- },
 	-- ----------------------------------------
 	-- Mini.nvim plugins
 	{

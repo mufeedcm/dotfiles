@@ -1,89 +1,22 @@
-
 # General settings
 set $mod Mod1
 set $term kitty
+font pango:Meslo LGM Nerd Font 10
 
 # Gaps and borders
 gaps inner 10
 gaps outer 5
 gaps top 30
-# new_window normal 2
-# new_float normal 2
-#
-
 new_window none
 new_float none
-
+hide_edge_borders both
 
 # General window settings
 for_window [class=".*"] border pixel 0 
 for_window [all] border pixel 5
-# for_window [class="Polybar"] focus off
-
-hide_edge_borders both
-# default_border pixel 5
-# i3-msg [class=.*] border pixel 1
-
-
-# Start essential applications
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
-exec_always --no-startup-id killall polybar; ~/.config/polybar/launch_polybar.sh --reload
-exec --no-startup-id dunst
-exec_always feh --bg-scale ~/.config/backgrounds/mistbg.jpg
-exec --no-startup-id dex --autostart --environment i3
-bindsym $mod+t exec --no-startup-id "pgrep autotiling && pkill autotiling || autotiling"
-# exec_always --no-startup-id xset dpms 30 60 60
-# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- systemd-inhibit --what=handle-lid-switch --mode=block bash -c "sleep 60 && systemctl suspend" &
-# exec_always --no-startup-id systemd-inhibit --what=sleep --mode=block i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg.png'
-# # exec_always --no-startup-id xss-lock --transfer-sleep-lock -- bash -c "sleep 600  && systemctl suspend &&i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg.png'"
-
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png'
-bindsym $mod+Shift+s exec i3lock --nofork -tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png' & systemctl suspend
-exec --no-startup-id nm-applet
-exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec --no-startup-id xcape -e 'Control_L=Escape'
-
-# Font and theme settings
-font pango:Meslo LGM Nerd Font 10
-
-# Launch rofi
-bindsym $mod+space exec rofi -show combi
-
-# Keybindings for volume control
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# Screenshot keybindings
-bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
-bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
-bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
-
-# Dunst toggle
-bindsym $mod+Shift+d exec dunstctl set-paused toggle
-
-# System controls
-# bindsym $mod+Shift+s exec i3lock --nofork -tiling --image='/home/mufeedcm/.config/backgrounds/mistbg.png' & systemctl suspend
-bindsym $mod+Shift+t exec systemctl reboot
-bindsym $mod+Shift+u exec systemctl poweroff
-
-# Launch terminal
-bindsym $mod+Return exec kitty
-
-
-
 
 # Window management
 bindsym $mod+x kill
-bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -130,13 +63,42 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Launch programs
+bindsym $mod+Return exec $term
+bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+space exec rofi -show combi
+
+# Screenshot keybindings
+bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
+bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
+bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
+bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
+
+# Volume control
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Dunst toggle
+bindsym $mod+Shift+d exec dunstctl set-paused toggle
+
+# System controls
+bindsym $mod+Shift+s exec i3lock --nofork -tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png' & systemctl suspend
+bindsym $mod+Shift+t exec systemctl reboot
+bindsym $mod+Shift+u exec systemctl poweroff
+
 # Reload and restart i3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
-for_window [title="Markdown Preview"] move to workspace current
 # Exit i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec ~/.config/rofi/scripts/power_menu.sh
+# bindsym $mod+Shift+w exec --no-startup-id ~/.config/rofi/scripts/wifi_menu.sh
 
 # Window resize mode
 mode "resize" {
@@ -150,9 +112,21 @@ mode "resize" {
     bindsym Right resize grow width 10 px or 10 ppt
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# Start essential applications
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id killall polybar; ~/.config/polybar/launch_polybar.sh --reload
+exec --no-startup-id dunst
+exec_always feh --bg-scale ~/.config/backgrounds/mistbg.jpg
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id nm-applet
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id xcape -e 'Control_L=Escape'
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png'
+bindsym $mod+c exec --no-startup-id ~/.config/rofi/scripts/caffeine.sh
+
 # Gruvbox Colors
 set $bg_dark       #282828
 set $bg            #1d2021
@@ -176,4 +150,3 @@ client.focused_inactive $bg_highlight $fg_dark   $bg_highlight $fg_gutter $fg_gu
 client.urgent           $red        $bg_dark    $red        $error      $red
 client.placeholder      $bg_highlight $fg_dark   $fg_gutter $fg_gutter  $fg_gutter
 client.background       $bg_dark
-
