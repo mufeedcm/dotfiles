@@ -84,26 +84,26 @@ return {
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 			local servers = {
-				html = {},
-				cssls = {},
-				svelte = {},
-				tailwindcss = {},
+				-- html = {},
+				-- cssls = {},
+				-- svelte = {},
+				-- tailwindcss = {},
 
 				-- clangd = {
 				-- 	cmd = { "clangd" },
 				-- 	filetypes = { "c", "cpp" },
 				-- },
-				pyright = {},
-				ts_ls = {},
-				lua_ls = {
-					settings = {
-						Lua = {
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
-					},
-				},
+				-- pyright = {},
+				-- ts_ls = {},
+				-- lua_ls = {
+				-- 	settings = {
+				-- 		Lua = {
+				-- 			completion = {
+				-- 				callSnippet = "Replace",
+				-- 			},
+				-- 		},
+				-- 	},
+				-- },
 				-- -- Latex Setup
 
 				-- texlab = {
@@ -148,13 +148,13 @@ return {
 				-- "isort",
 				-- "black",
 				-- "stylua",
-				"eslint_d",
+				-- "eslint_d",
 				-- "pylint",
 				-- "clang-format",
 				-- "latexindent",
 				-- "luacheck",
-				"prettierd",
-				"prettier",
+				-- "prettierd",
+				-- "prettier",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
