@@ -23,6 +23,7 @@ export LC_ALL=en_US.UTF-8
     # echo "source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 # fi
 
+source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
 alias la='ls -la'
 alias conf='cd ~/.config'
 alias confnvim='nvim ~/.config/nvim/'
@@ -31,6 +32,27 @@ alias confnvim='nvim ~/.config/nvim/'
 
 
 # === push notes ===
+pushnotes() {
+    local prev_dir=$(pwd)
+    echo
+    echo "======================================="
+    echo "         PUSHING NOTES REPO"
+    echo "======================================="
+    echo
+    echo ">>> Switching to ~/notes"
+    cd ~/notes || return
+    echo ">>> Adding changes to the staging area..."
+    git add .
+    echo ">>> Committing changes..."
+    git commit -m "note add"
+    echo ">>> Pushing changes to the remote repository..."
+    git push -u origin main
+    echo
+    echo "=== Notes repository pushed successfully! ==="
+    echo
+    cd "$prev_dir"
+}
+
 pushdots() {
     local prev_dir=$(pwd)
     echo
@@ -52,8 +74,40 @@ pushdots() {
     cd "$prev_dir"
 }
 
-
+pushall() {
+    echo
+    echo "======================================="
+    echo "    STARTING PUSHING NOTES & DOTFILES"
+    echo "======================================="
+    echo
+    pushnotes
+    echo "---------------------------------------"
+    pushdots
+    echo "---------------------------------------"
+    echo
+    echo "======================================="
+    echo "  ALL REPOSITORIES PUSHED SUCCESSFULLY!"
+    echo "======================================="
+    echo
+}
 # === pull notes ===
+pullnotes() {
+    local prev_dir=$(pwd)
+    echo
+    echo "======================================="
+    echo "         PULLING NOTES REPO"
+    echo "======================================="
+    echo
+    echo ">>> Switching to ~/notes"
+    cd ~/notes || return
+    echo ">>> Pulling changes from the remote repository..."
+    git pull origin main
+    echo
+    echo "=== Notes repository updated successfully! ==="
+    echo
+    cd "$prev_dir"
+}
+
 pulldots() {
     local prev_dir=$(pwd)
     echo
@@ -71,8 +125,19 @@ pulldots() {
     cd "$prev_dir"
 }
 
-sync() {
- pulldots 
+pullall() {
+    echo
+    echo "======================================="
+    echo "    STARTING PULLING NOTES & DOTFILES"
+    echo "======================================="
+    echo
+    pullnotes
+    echo "---------------------------------------"
+    pulldots
+    echo "---------------------------------------"
+    echo
+    echo "======================================="
+    echo "  ALL REPOSITORIES UPDATED SUCCESSFULLY!"
+    echo "======================================="
+    echo
 }
-
-source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh

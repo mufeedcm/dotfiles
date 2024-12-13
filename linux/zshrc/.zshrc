@@ -127,7 +127,7 @@ pulldots() {
     cd "$prev_dir"
 }
 
-sync() {
+pullall() {
     echo
     echo "======================================="
     echo "    STARTING PULLING NOTES & DOTFILES"
