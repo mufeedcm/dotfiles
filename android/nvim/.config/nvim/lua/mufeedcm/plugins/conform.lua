@@ -30,8 +30,8 @@ return {
 		end,
 		formatters_by_ft = {
 
-			lua = { "stylua" },
-			python = { "isort", "black" },
+			-- lua = { "stylua" },
+			-- python = { "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 			typescript = { "prettier" },
 			javascriptreact = { "prettier" },
@@ -40,8 +40,8 @@ return {
 			css = { "prettier" },
 			html = { "prettier" },
 			json = { "prettier" },
-			c = { "clang-format" },
-			cpp = { "clang-format" },
+			-- c = { "clang-format" },
+			-- cpp = { "clang-format" },
 		},
 	},
 }
