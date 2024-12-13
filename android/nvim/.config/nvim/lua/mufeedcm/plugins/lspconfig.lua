@@ -88,22 +88,22 @@ return {
 				cssls = {},
 				svelte = {},
 				tailwindcss = {},
-				--
+
 				-- clangd = {
 				-- 	cmd = { "clangd" },
 				-- 	filetypes = { "c", "cpp" },
 				-- },
-				-- pyright = {},
+				pyright = {},
 				ts_ls = {},
-				-- lua_ls = {
-				-- 	settings = {
-				-- 		Lua = {
-				-- 			completion = {
-				-- 				callSnippet = "Replace",
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
+				lua_ls = {
+					settings = {
+						Lua = {
+							completion = {
+								callSnippet = "Replace",
+							},
+						},
+					},
+				},
 				-- -- Latex Setup
 
 				-- texlab = {
@@ -145,11 +145,11 @@ return {
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
-				-- "isort",
-				-- "black",
-				-- "stylua",
+				"isort",
+				"black",
+				"stylua",
 				"eslint_d",
-				-- "pylint",
+				"pylint",
 				-- "clang-format",
 				-- "latexindent",
 				-- "luacheck",
