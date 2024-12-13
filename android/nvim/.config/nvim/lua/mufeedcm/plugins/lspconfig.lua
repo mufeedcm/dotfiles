@@ -147,7 +147,7 @@ return {
 			vim.list_extend(ensure_installed, {
 				-- "isort",
 				-- "black",
-				"stylua",
+				-- "stylua",
 				"eslint_d",
 				-- "pylint",
 				-- "clang-format",
