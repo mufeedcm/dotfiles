@@ -19,10 +19,9 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 
-if ! grep -q "source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" ~/.zshrc; then
-    echo "source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-fi
-
+# if ! grep -q "source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" ~/.zshrc; then
+    # echo "source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+# fi
 
 alias la='ls -la'
 alias conf='cd ~/.config'
