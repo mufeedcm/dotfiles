@@ -145,11 +145,11 @@ return {
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
-				"isort",
-				"black",
-				"stylua",
+				-- "isort",
+				-- "black",
+				-- "stylua",
 				"eslint_d",
-				"pylint",
+				-- "pylint",
 				-- "clang-format",
 				-- "latexindent",
 				-- "luacheck",
