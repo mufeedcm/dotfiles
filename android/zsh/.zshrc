@@ -1,5 +1,4 @@
-
-export PS1="    %n@%m:%~$ "
+PROMPT="%40G%F{cyan}%n@%m%F{reset}:%~$ "
 HISTSIZE=10000           # Number of commands to remember in the current session
 SAVEHIST=10000           # Number of commands to save to history file
 HISTFILE=~/.zsh_history  # Path to the history file
