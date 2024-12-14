@@ -18,6 +18,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
+
 alias la='ls -la'
 alias cls='clear'
 alias conf='cd ~/.config'
