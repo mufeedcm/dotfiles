@@ -1,6 +1,5 @@
 
-echo "printf '\033[40C'" >> ~/.zshrc
-
+export PS1="    %n@%m:%~$ "
 HISTSIZE=10000           # Number of commands to remember in the current session
 SAVEHIST=10000           # Number of commands to save to history file
 HISTFILE=~/.zsh_history  # Path to the history file
