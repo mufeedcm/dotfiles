@@ -1,4 +1,4 @@
-PROMPT="%40G%F{cyan}%n@%m%F{reset}:%~$ "
+
 HISTSIZE=10000           # Number of commands to remember in the current session
 SAVEHIST=10000           # Number of commands to save to history file
 HISTFILE=~/.zsh_history  # Path to the history file
@@ -27,6 +27,7 @@ source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
 alias la='ls -la'
 alias conf='cd ~/.config'
 alias confnvim='nvim ~/.config/nvim/'
+alias cls='clear'
 
 # alias cbook='zathura ~/books/c_programming_a_modern_approach_2e_c89_c99_king.pdf &'
 
