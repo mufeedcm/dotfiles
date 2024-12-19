@@ -1,5 +1,6 @@
 configuration {
-    modi: "run,window,combi";
+    modi: "combi";
+    combi-modi: "drun,run,window";
     icon-theme: "Papirus-Dark";
     show-icons: true;
     terminal: "kitty";
@@ -8,7 +9,8 @@ configuration {
     disable-history: false;
     hide-scrollbar: true;
     display-combi: "  All ";
-    display-run: "   ";
+    display-drun: "";
+    display-run: " ";
     display-window: "   ";
     sidebar-mode: false;
 }
