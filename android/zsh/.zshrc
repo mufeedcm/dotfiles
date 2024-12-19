@@ -142,3 +142,25 @@ pullall() {
     echo "======================================="
     echo
 }
+
+VAULT_PATH="$HOME/storage/shared/notes"
+
+pullnotes() {
+    local prev_dir=$(pwd)
+    echo "Pulling notes from Git..."
+    cd "$VAULT_PATH" || { echo "Vault not found at $VAULT_PATH"; return 1; }
+    git pull --rebase
+    echo "Notes pulled successfully."
+    cd "$prev_dir"
+}
+
+pushnotes() {
+    local prev_dir=$(pwd)
+    echo "Pushing notes to Git..."
+    cd "$VAULT_PATH" || { echo "Vault not found at $VAULT_PATH"; return 1; }
+    git add .
+    git commit -m "Sync notes on $(date)"
+    git push
+    echo "Notes pushed successfully."
+    cd "$prev_dir"
+}
