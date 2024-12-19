@@ -7,6 +7,13 @@ template_file=~/notes/4.Templates/todo-template.md
 yesterday_date=$(date +'%Y-%m-%d' -d "yesterday")
 yesterday_todo_file="$todo_dir/$yesterday_date.md"
 
+# Check if today's to-do file already exists. If it does, do nothing.
+if [[ -f "$todo_file" ]]; then
+    echo "Today's to-do file already exists, no changes made."
+    kitty --class "todo_float" nvim "$todo_file"
+    exit 0
+fi
+
 # Extract unfinished tasks from yesterday's to-do file
 unfinished_tasks=""
 if [[ -f "$yesterday_todo_file" ]]; then
@@ -26,15 +33,12 @@ escaped_unfinished_tasks=$(echo "$unfinished_tasks" | sed 's/[&/\]/\\&/g')
 escaped_unfinished_tasks=$(echo "$escaped_unfinished_tasks" | sed ':a;N;$!ba;s/\n/%%NEWLINE%%/g')
 
 # Replace {{date}} and {{uncompleted}} in the template
-sed -e "s/{{date}}/$(date +'%Y-%m-%d')/g" \
+final_content=$(sed -e "s/{{date}}/$(date +'%Y-%m-%d')/g" \
     -e "s|{{uncompleted}}|$escaped_unfinished_tasks|g" \
-    "$template_file" > /tmp/test_output.md
+    "$template_file")
 
-# Restore newlines after the replacement and save to the todo file
-final_unfinished_tasks=$(cat /tmp/test_output.md | sed 's/%%NEWLINE%%/\n/g')
-
-# Create today's to-do file
-echo "$final_unfinished_tasks" > "$todo_file"
+# Create today's to-do file with the template and unfinished tasks
+echo "$final_content" > "$todo_file"
 
 # Open the file with Kitty and Neovim
 kitty --class "todo_float" nvim "$todo_file"
