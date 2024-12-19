@@ -87,7 +87,10 @@ return {
 				html = {},
 				cssls = {},
 				svelte = {},
-				tailwindcss = {},
+				tailwindcss = {
+					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact" },
+				},
+
 				marksman = {},
 				clangd = {
 					cmd = { "clangd" },

@@ -33,7 +33,7 @@ quran() {
   fi
   mpv --volume=$volume ~/Music/surah_muhammed.m4a
 }
-
+alias todo='nvim ~/notes/3.Main_notes/Todo.md'
 
 # === push notes ===
 pushnotes() {
