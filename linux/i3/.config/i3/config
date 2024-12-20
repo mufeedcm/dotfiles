@@ -32,21 +32,9 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
 
-#
-# # Set instance name for the TODO window
-# set $todo_instance TODO
-# set $todo_command kitty --class $todo_instance --name $todo_instance --hold nvim ~/notes/5.TODO/$(date +'%Y-%m-%d').md
-#
-# # Toggle TODO window
-# bindsym $mod+Shift+t exec --no-startup-id "if wmctrl -l | grep -q '$todo_instance'; then wmctrl -c '$todo_instance'; else $todo_command; fi"
-#
-# # Configure TODO window appearance
-# for_window [instance="$todo_instance"] floating enable, resize set 80ppt 40ppt, move position center
-#
-
-
 bindsym $mod+t exec ~/.config/i3/scripts/open_todo.sh
 for_window [class="todo_float"] floating enable, resize set 60 ppt 60 ppt, move position center
+
 # Workspace management
 set $ws1 "1"
 set $ws2 "2"
