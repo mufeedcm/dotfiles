@@ -145,3 +145,57 @@ pullall() {
     echo "======================================="
     echo
 }
+
+# === check status of notes ===
+checknotes() {
+    local prev_dir=$(pwd)
+    echo
+    echo "======================================="
+    echo "       CHECKING NOTES REPO STATUS"
+    echo "======================================="
+    echo
+    echo ">>> Switching to ~/notes"
+    cd ~/notes || return
+    echo ">>> Checking status of the repository..."
+    git status
+    echo
+    echo "=== Notes repository status checked! ==="
+    echo
+    cd "$prev_dir"
+}
+
+checkdots() {
+    local prev_dir=$(pwd)
+    echo
+    echo "======================================="
+    echo "       CHECKING DOTFILES REPO STATUS"
+    echo "======================================="
+    echo
+    echo ">>> Switching to ~/dotfiles"
+    cd ~/dotfiles || return
+    echo ">>> Checking status of the repository..."
+    git status
+    echo
+    echo "=== Dotfiles repository status checked! ==="
+    echo
+    cd "$prev_dir"
+}
+
+checkall() {
+    echo
+    echo "======================================="
+    echo " CHECKING STATUS OF NOTES & DOTFILES"
+    echo "======================================="
+    echo
+    checknotes
+    echo "---------------------------------------"
+    checkdots
+    echo "---------------------------------------"
+    echo
+    echo "======================================="
+    echo "  STATUS OF ALL REPOSITORIES CHECKED!"
+    echo "======================================="
+    echo
+}
+
+
