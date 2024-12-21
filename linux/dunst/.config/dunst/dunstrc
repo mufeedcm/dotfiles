@@ -20,5 +20,4 @@
 
 [urgency_critical]
     background = "#fb4934CC"  
-    foreground = "#282828"    
-
+    foreground = "#282828"
