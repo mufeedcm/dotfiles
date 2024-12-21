@@ -1,41 +1,45 @@
 :root {
+  --background: #0d0e0f;
+  --foreground: #ebdbb2;
+  --primary: #1f45a5;
+  --secondary: #202020;
 }
 
 body {
-  background-color: #0d0e0f;
-  color: #ebdbb2;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: "Meslo", "Arial", sans-serif;
   font-size: 12px;
 }
 
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6,
-body p,
-body bdi,
-body li,
-body span,
-body button,
-body div {
-  color: #ebdbb2 !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+bdi,
+li,
+span,
+button,
+div {
+  color: var(--foreground) !important;
 }
 
 .is-sender .message-contents {
-  background-color: #1f45a5;
-}
-.virtual-list {
-  background-color: #202020;
-}
-.account-switcher {
-  background-color: #0d0e0f;
-}
-.prefs-view .selected {
-  background-color: #1f45a5;
+  background-color: var(--primary);
 }
 
+.virtual-list {
+  background-color: var(--secondary);
+}
+
+.account-switcher {
+  background-color: var(--background);
+}
+
+.prefs-view .selected,
 .prefs-right-pane .on {
-  background-color: #1f45a5;
+  background-color: var(--primary);
 }
