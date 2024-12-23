@@ -73,12 +73,13 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+space exec rofi -show combi
 
 # Screenshot keybindings
-bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
-bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
-bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
+bindsym Print exec flameshot gui
+# bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
+# bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
+# bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
+# bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
+# bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
 
 # Volume control
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -130,6 +131,7 @@ exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xcape -e 'Control_L=Escape'
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png'
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/scripts/caffeine.sh
+exec --no-startup-id QT_QPA_PLATFORMTHEME=qt5ct
 
 # Gruvbox Colors
 set $bg_dark       #282828
