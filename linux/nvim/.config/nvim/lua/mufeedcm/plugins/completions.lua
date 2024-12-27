@@ -1,6 +1,7 @@
 -- Autocompletion plugin configuration
 return {
 	"hrsh7th/nvim-cmp", -- Core plugin for autocompletion
+	enabled = true,
 	event = "InsertEnter", -- Load this plugin when entering Insert mode
 	dependencies = {
 		{
@@ -36,6 +37,7 @@ return {
 
 		-- LuaSnip setup
 		luasnip.config.setup({
+			enabled = true,
 			enable_autosnippets = true, -- Enable auto-snippets
 			store_selection_keys = "<Tab>", -- Key to store visual selection for snippet expansion
 			update_events = "TextChanged,TextChangedI", -- Events to trigger snippet updates

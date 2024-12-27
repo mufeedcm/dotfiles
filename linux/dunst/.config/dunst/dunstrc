@@ -1,23 +1,22 @@
-
 [global]
     origin = top-right
     offset = 30x55
     font = "Meslo LGM Nerd Font 10"
     padding = 20
     frame_width = 2
-    frame_color = "#282828"  
-    separator_color = "#504945"  
+    frame_color = "#1a1b26"
+    separator_color = "#3b4261"
     follow = mouse
     transparency = 10
 
 [urgency_low]
-    background = "#282828CC"  
-    foreground = "#ebdbb2"    
+    background = "#282828CC"
+    foreground = "#c0caf5"
 
 [urgency_normal]
-    background = "#282828CC"  
-    foreground = "#83a598"    
+    background = "#282828CC"
+    foreground = "#7aa2f7"
 
 [urgency_critical]
-    background = "#fb4934CC"  
-    foreground = "#282828"
+    background = "#f7768eCC"
+    foreground = "#1a1b26"

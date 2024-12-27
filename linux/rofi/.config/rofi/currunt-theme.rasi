@@ -1,13 +1,12 @@
-
 * {
-    bg-col: #282828;
-    bg-col-light: #3c3836;
-    border-col: #504945;
-    selected-col: #83a598;
-    blue: #83a598;
-    fg-col: #ebdbb2;
-    fg-col2: #fb4934;
-    grey: #7c6f64;
+    bg-col: #1a1b26;
+    bg-col-light: #292e42;
+    border-col: #414868;
+    selected-col: #7aa2f7;
+    blue: #7aa2f7;
+    fg-col: #c0caf5;
+    fg-col2: #f7768e;
+    grey: #565f89;
     width: 600;
     font: "Meslo LGM Nerd Font 10";
 }
@@ -80,7 +79,7 @@ element-text {
 
 element selected {
     background-color: @selected-col;
-    text-color: #282828;
+    text-color: #1a1b26;
 }
 
 mode-switcher {
@@ -113,4 +112,3 @@ textbox {
     text-color: @blue;
     background-color: @bg-col-light;
 }
-

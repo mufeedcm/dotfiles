@@ -23,6 +23,10 @@ keymap("n", "<C-k>", ":wincmd k<CR>", opts)
 keymap("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear Search Highlights" })
 keymap("t", "<Esc><Esc>", "<C-\\><C-n>", opts)
 
+keymap("n", "<space><space>x", "<cmd>source %<CR>")
+keymap("n", "<space>x", ":.lua<CR>")
+keymap("v", "<space>x", ":lua<CR>")
+
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",

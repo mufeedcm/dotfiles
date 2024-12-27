@@ -125,6 +125,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --daemon
 exec_always --no-startup-id killall polybar; ~/.config/polybar/launch_polybar.sh --reload
 exec --no-startup-id dunst
+exec_always --no-startup-id autotiling
 exec_always feh --bg-scale ~/.config/backgrounds/mistbg.jpg
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
@@ -135,21 +136,21 @@ bindsym $mod+c exec --no-startup-id ~/.config/rofi/scripts/caffeine.sh
 exec --no-startup-id QT_QPA_PLATFORMTHEME=qt5ct
 
 # Gruvbox Colors
-set $bg_dark       #282828
-set $bg            #1d2021
-set $bg_highlight  #3c3836
-set $terminal_black #504945
-set $fg            #ebdbb2
-set $fg_dark       #d5c4a1
-set $fg_gutter     #7c6f64
-set $blue          #83a598
-set $cyan          #8ec07c
-set $purple        #d3869b
-set $orange        #fe8019
-set $yellow        #fabd2f
-set $green         #b8bb26
-set $red           #fb4934
-set $error         #cc241d
+set $bg_dark       #1a1b26
+set $bg            #16161e
+set $bg_highlight  #292e42
+set $terminal_black #414868
+set $fg            #c0caf5
+set $fg_dark       #a9b1d6
+set $fg_gutter     #565f89
+set $blue          #7aa2f7
+set $cyan          #2ac3de
+set $purple        #bb9af7
+set $orange        #ff9e64
+set $yellow        #e0af68
+set $green         #9ece6a
+set $red           #f7768e
+set $error         #db4b4b
 
 # Window colors
 client.focused          $bg_dark    $blue       $bg_dark    $cyan       $blue
