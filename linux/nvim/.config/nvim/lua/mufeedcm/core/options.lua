@@ -11,6 +11,9 @@ opt.shiftwidth = 2 -- 2 spaces for indent with
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.wrap = false
+
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
 -- Set completeopt for better completion behavior
 vim.o.completeopt = "menu,menuone,noinsert"
 
