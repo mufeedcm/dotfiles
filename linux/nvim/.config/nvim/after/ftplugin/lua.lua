@@ -1,3 +1,1 @@
-print("hello ftplug check")
-
-print("hello ftplug check 2")
+print("Lua ftplugin working")
