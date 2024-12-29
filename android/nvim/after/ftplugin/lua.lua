@@ -1,0 +1,1 @@
+print("Lua ftplugin working")
