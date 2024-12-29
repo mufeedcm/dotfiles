@@ -1,2 +1,2 @@
-require("mufeedcm.core.options")
-require("mufeedcm.core.keymaps")
+require("config.core.options")
+require("config.core.keymaps")
