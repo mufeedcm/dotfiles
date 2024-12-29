@@ -10,7 +10,8 @@ opt.tabstop = 2 -- 2 spaces for tabs
 opt.shiftwidth = 2 -- 2 spaces for indent with
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
-opt.wrap = false
+vim.o.wrap = true -- Enable line wrapping
+vim.o.linebreak = true -- Wrap at word boundaries
 
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true

@@ -33,7 +33,7 @@ bindsym $mod+Shift+space floating toggle
 
 
 bindsym $mod+t exec ~/.config/i3/scripts/open_todo.sh
-for_window [class="todo_float"] floating enable, resize set 60 ppt 60 ppt, move position center
+for_window [class="todo_float"] floating enable, resize set 30 ppt 60 ppt, move position center
 
 # Workspace management
 set $ws1 "1"
