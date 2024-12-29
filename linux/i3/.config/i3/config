@@ -135,7 +135,27 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --tiling 
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/scripts/caffeine.sh
 exec --no-startup-id QT_QPA_PLATFORMTHEME=qt5ct
 
-# Gruvbox Colors
+
+
+assign [class="firefox"] $ws2
+assign [class="Beeper"] $ws9
+exec --no-startup-id kitty --name win1tmuxkitty -e zsh -ic tmux
+exec --no-startup-id firefox 
+exec --no-startup-id /home/mufeedcm/Applications/beeper-nightly.AppImage 
+exec --no-startup-id kitty --name win10kitty -e zsh -ic quran
+
+for_window [instance="win1tmuxkitty"] move container to workspace number $ws1
+for_window [instance="win10kitty"] move container to workspace number $ws10
+
+# Switch to the Default Workspace
+# workspace number $ws1
+
+
+
+
+
+
+
 set $bg_dark       #1a1b26
 set $bg            #16161e
 set $bg_highlight  #292e42

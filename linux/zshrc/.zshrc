@@ -7,6 +7,11 @@ HISTFILE=~/.zsh_history  # Path to the history file
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 
+# Ensure Starship is always initialized, even inside tmux
+if [[ -z "$TMUX" ]]; then
+    eval "$(starship init zsh)"
+fi
+
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
