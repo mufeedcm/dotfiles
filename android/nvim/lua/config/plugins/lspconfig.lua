@@ -42,7 +42,7 @@ return {
 				},
 				html = {}, -- HTML
 				cssls = {}, -- CSS
-				tsserver = {}, -- JavaScript and TypeScript
+				ts_ls = {}, -- JavaScript and TypeScript
 				tailwindcss = { -- Tailwind CSS
 					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact" },
 				},
