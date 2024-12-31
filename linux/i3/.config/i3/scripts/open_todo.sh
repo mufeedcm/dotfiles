@@ -29,13 +29,10 @@ fi
 # Escape special characters in unfinished tasks (to avoid issues in sed)
 escaped_unfinished_tasks=$(echo "$unfinished_tasks" | sed 's/[&/\]/\\&/g')
 
-# Replace newline characters with a temporary placeholder
-escaped_unfinished_tasks=$(echo "$escaped_unfinished_tasks" | sed ':a;N;$!ba;s/\n/%%NEWLINE%%/g')
-
 # Replace {{date}} and {{uncompleted}} in the template
 final_content=$(sed -e "s/{{date}}/$(date +'%Y-%m-%d')/g" \
-    -e "s|{{uncompleted}}|$escaped_unfinished_tasks|g" \
-    "$template_file")
+    -e "/{{uncompleted}}/r /dev/stdin" -e "s/{{uncompleted}}//g" \
+    "$template_file" <<< "$unfinished_tasks")
 
 # Create today's to-do file with the template and unfinished tasks
 echo "$final_content" > "$todo_file"

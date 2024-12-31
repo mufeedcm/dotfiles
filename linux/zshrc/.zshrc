@@ -204,3 +204,6 @@ checkall() {
 }
 
 
+
+# Created by `pipx` on 2024-12-31 03:55:36
+export PATH="$PATH:/home/mufeedcm/.local/bin"

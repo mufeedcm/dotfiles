@@ -32,9 +32,17 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
 
-bindsym $mod+t exec ~/.config/i3/scripts/open_todo.sh
-for_window [class="todo_float"] floating enable, resize set 30 ppt 60 ppt, move position center
-# for_window [class="todo_float"] split, focus
+
+# Bind Mod1+t (Alt+t) to execute the open_todo.sh script
+bindsym mod+t exec ~/.config/i3/scripts/open_todo.sh
+# Handle the todo_float window behavior
+for_window [class="todo_float"] floating enable, resize set 30 ppt 60 ppt, move position center, move scratchpad
+# Toggle the visibility of the todo_float window with Mod1+t
+bindsym mod+t [class="todo_float"] scratchpad show
+
+
+# bindsym $mod+t exec ~/.config/i3/scripts/open_todo.sh
+# for_window [class="todo_float"] floating enable, resize set 30 ppt 60 ppt, move position center
 
 # Workspace management
 set $ws1 "1"
