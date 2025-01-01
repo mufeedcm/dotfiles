@@ -3,6 +3,8 @@ HISTSIZE=10000           # Number of commands to remember in the current session
 SAVEHIST=10000           # Number of commands to save to history file
 HISTFILE=~/.zsh_history  # Path to the history file
 
+# Created by `pipx` on 2024-12-31 03:55:36
+export PATH="$PATH:/home/mufeedcm/.local/bin"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
@@ -58,7 +60,7 @@ pushnotes() {
     echo ">>> Adding changes to the staging area..."
     git add .
     echo ">>> Committing changes..."
-    git commit -m "note add"
+    git commit -m "auto"
     echo ">>> Pushing changes to the remote repository..."
     git push -u origin main
     echo
@@ -79,7 +81,7 @@ pushdots() {
     echo ">>> Adding changes to the staging area..."
     git add .
     echo ">>> Committing changes..."
-    git commit -m "add:"
+    git commit -m "auto"
     echo ">>> Pushing changes to the remote repository..."
     git push -u origin main
     echo
@@ -208,7 +210,3 @@ checkall() {
     echo
 }
 
-
-
-# Created by `pipx` on 2024-12-31 03:55:36
-export PATH="$PATH:/home/mufeedcm/.local/bin"
