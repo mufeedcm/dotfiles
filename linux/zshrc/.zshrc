@@ -22,6 +22,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+figlet mufeedcm
+buckle &
 
 source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
 alias sourcezshrc='source ~/.zshrc'

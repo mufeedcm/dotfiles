@@ -152,7 +152,7 @@ for_window [instance="win10kitty"] move container to workspace number $ws10
 # workspace number $ws1
 
 
-
+exec_always --no-startup-id bash -c 'pgrep -x buckle > /dev/null || buckle -g 40 &'
 
 
 
