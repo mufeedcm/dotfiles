@@ -7,20 +7,22 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH="$PATH:/home/mufeedcm/.local/bin" # Added by `pipx`
 
-# === Starship Prompt (Initialize if in tmux) ===
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
+
+# Ensure Starship is always initialized, even inside tmux
 if [[ -z "$TMUX" ]]; then
     eval "$(starship init zsh)"
 fi
-
-# === NVM Setup ===
+#
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 
+
 # == auto ==
 figlet mufeedcm
-buckle &
+pgrep -x buckle > /dev/null || buckle -g 30 &
 
 # === Aliases ===
 # Common Aliases
@@ -30,8 +32,9 @@ alias conf='cd ~/.config'
 alias confnvim='nvim ~/.config/nvim/'
 
 # Books
-alias cbook1='zathura ~/books/the-c-programming-language.pdf &'
-alias cbook2='zathura ~/books/c_programming_a_modern_approach_2e_c89_c99_king.pdf &'
+alias cbook1='zathura ~/books/programmingbooks/the-c-programming-language.pdf &'
+alias cbook2='zathura ~/books/programmingbooks/c_programming_a_modern_approach_2e_c89_c99_king.pdf &'
+alias ebook='zathura ~/books/electronicsbooks/art-of-electronics.pdf &'
 
 # Quran Player
 alias todo='nvim ~/notes/3.Main_notes/Todo.md'
