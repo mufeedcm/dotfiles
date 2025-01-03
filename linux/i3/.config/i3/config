@@ -4,16 +4,17 @@ set $term kitty
 font pango:Meslo LGM Nerd Font 10
 
 # Gaps and borders
-gaps inner 10
-gaps outer 5
-gaps top 30
-new_window none
-new_float none
-hide_edge_borders both
+# gaps inner 10
+# gaps outer 5
+gaps top 24
+# gaps top 30
+# new_window none
+# new_float none
+# hide_edge_borders both
 
 # General window settings
-for_window [class=".*"] border pixel 0 
-for_window [all] border pixel 5
+# for_window [class=".*"] border pixel 0 
+for_window [all] border pixel 2
 
 # Window management
 bindsym $mod+x kill
@@ -131,7 +132,7 @@ exec_always feh --bg-scale ~/.config/backgrounds/mistbg.jpg
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec --no-startup-id xcape -e 'Control_L=Escape'
+exec_always --no-startup-id xcape -e 'Control_L=Escape'
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png'
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/scripts/caffeine.sh
 exec --no-startup-id QT_QPA_PLATFORMTHEME=qt5ct
