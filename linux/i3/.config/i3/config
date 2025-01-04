@@ -6,7 +6,7 @@ font pango:Meslo LGM Nerd Font 10
 # Gaps and borders
 # gaps inner 10
 # gaps outer 5
-gaps top 24
+gaps top 32
 # gaps top 30
 # new_window none
 # new_float none
@@ -32,6 +32,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id xcape -e 'Control_L=Escape'
 
 bindsym $mod+t exec ~/.config/i3/scripts/open_todo.sh
 # for_window [class="todo_float"] floating enable, resize set 30 ppt 60 ppt, move position center
@@ -131,8 +133,6 @@ exec_always --no-startup-id autotiling
 exec_always feh --bg-scale ~/.config/backgrounds/mistbg.jpg
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
-exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec_always --no-startup-id xcape -e 'Control_L=Escape'
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png'
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/scripts/caffeine.sh
 exec --no-startup-id QT_QPA_PLATFORMTHEME=qt5ct

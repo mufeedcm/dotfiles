@@ -22,7 +22,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # == auto ==
 figlet mufeedcm
-pgrep -x buckle > /dev/null || buckle -g 30 &
 
 # === Aliases ===
 # Common Aliases
