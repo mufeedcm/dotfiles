@@ -12,12 +12,26 @@ volume() {
         echo "🔊 $level"
     fi
 }
+
 wifi (){
-  if [ $(nmcli general | awk '{print $1}' | tail -n 1 ) = "disconnected" ]; then
-    echo " 睊 "  
+  if [ "$(nmcli general | awk '{print $1}' | tail -n 1)" = "disconnected" ]; then
+    echo " 睊 No Wi-Fi "
   else 
-    echo "   "  
+    ssid=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
+    echo "   $ssid"
   fi
+}
+
+cpu_usage(){
+  usage=$(top -bn1 | grep "Cpu(s)" | awk '{print 100 - $8"%"}')
+  echo " $usage"
+}
+
+ram_usage(){
+  total=$(free -m | awk '/^Mem:/ {print $2}')
+  used=$(free -m | awk '/^Mem:/ {print $3}')
+  percent=$((used * 100 / total))
+  echo " ${percent}%"
 }
 
 timedate(){
@@ -25,7 +39,6 @@ timedate(){
 }
 
 while :; do 
-  xsetroot -name "$(dayanddate)"";""|  $(volume)  |""  $(wifi)  |""  $(timedate)  "
+  xsetroot -name "$(dayanddate)"";""|  $(cpu_usage)  |""  $(ram_usage)  |""  $(volume)  |""  $(wifi)  |""  $(timedate)  "
   sleep 1
 done
-
