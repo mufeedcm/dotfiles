@@ -3,11 +3,16 @@ HISTSIZE=10000           # Number of commands to remember in the current session
 SAVEHIST=10000           # Number of commands to save to history file
 HISTFILE=~/.zsh_history  # Path to the history file
 
+# export FUNCNEST=100
+
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH="$PATH:/home/mufeedcm/.local/bin" # Added by `pipx`
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+
+
 eval "$(starship init zsh)"
 
 export PATH="$HOME/anaconda3/bin:$PATH"
@@ -18,10 +23,14 @@ if [[ -z "$TMUX" ]]; then
     eval "$(starship init zsh)"
 fi
 #
+export STARSHIP_ZSH_KEYMAP_SELECT=0
+
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 
+source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # == auto ==
 figlet mufeedcm
