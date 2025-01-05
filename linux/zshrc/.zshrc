@@ -10,6 +10,9 @@ export PATH="$PATH:/home/mufeedcm/.local/bin" # Added by `pipx`
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 
+export PATH="$HOME/anaconda3/bin:$PATH"
+. "$HOME/anaconda3/etc/profile.d/conda.sh"
+
 # Ensure Starship is always initialized, even inside tmux
 if [[ -z "$TMUX" ]]; then
     eval "$(starship init zsh)"

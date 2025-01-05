@@ -4,7 +4,7 @@
 feh --bg-scale ~/.config/backgrounds/mistbg.jpg &
 
 # Start other applications
-picom &
+# picom &
 # pkill -f status-bar.sh
 ~/.config/suckless/dwm/scripts/status-bar.sh &
 xautolock -time 10 -locker "slock & systemctl suspend" &
@@ -19,7 +19,7 @@ pgrep -x buckle > /dev/null || buckle -g 40 &
 st -n win1tmux -e zsh -ic tmux &
 
 # Start Firefox on tag 2
-firefox &
+# brave-browser &
 
 # Start Beeper on tag 9
 /home/mufeedcm/Applications/beeper-nightly.AppImage &
@@ -33,7 +33,7 @@ wait $DWM_PID
 
 # Cleanup: Kill `start.sh` and any processes it started
 pkill -f status-bar.sh
-pkill picom
+# pkill picom
 pkill nm-applet
 pkill dunst
 pkill xautolock

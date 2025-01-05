@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 1; /* border pixel of windows */
+static const unsigned int borderpx = 4; /* border pixel of windows */
 static const unsigned int gappx = 6;    /* gaps between windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
@@ -45,8 +45,9 @@ static const Rule rules[] = {
     /*{"Gimp", NULL, NULL, 0, 1, -1},*/
     /*{"Firefox", NULL, NULL, 1 << 8, 0, -1},*/
     {"St", "win1tmux", NULL, 1 << 0, 0, -1}, // Tag 1
-    {"firefox", NULL, NULL, 1 << 1, 0, -1},  // Tag 2
-    {"Beeper", NULL, NULL, 1 << 8, 0, -1},   // Tag 9
+    /*{"firefox", NULL, NULL, 1 << 1, 0, -1},       // Tag 2*/
+    /*{"brave-browser", NULL, NULL, 1 << 1, 0, -1}, // Tag 2*/
+    {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
 };
 
 /* layout(s) */
@@ -104,7 +105,7 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_s, spawn, SHCMD("slock & systemctl suspend")},
     {0, XK_Print, spawn, SHCMD("flameshot gui")},
     {MODKEY, XK_q, spawn, {.v = todocmd}},
-    {MODKEY, XK_c, spawn,
+    {MODKEY, XK_w, spawn,
      SHCMD("~/.config/suckless/dwm/scripts/caffeine-mode.sh")},
     {MODKEY | ShiftMask, XK_k, spawn, {.v = upvol}},
     {MODKEY | ShiftMask, XK_j, spawn, {.v = downvol}},
