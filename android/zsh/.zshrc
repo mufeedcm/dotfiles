@@ -23,7 +23,7 @@ export LC_ALL=en_US.UTF-8
     # echo "source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 # fi
 
-source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
 alias la='ls -la'
 alias conf='cd ~/.config'
 alias confnvim='nvim ~/.config/nvim/'
