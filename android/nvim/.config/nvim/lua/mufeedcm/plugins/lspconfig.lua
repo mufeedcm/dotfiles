@@ -95,6 +95,7 @@ return {
 					filetypes = { "c", "cpp" },
 				},
 				lua_ls = {},
+				gop_ls = {},
 			}
 
 			for server_name, options in pairs(external_servers) do
@@ -112,7 +113,6 @@ return {
 				svelte = {},
 				astro = {},
 				pyright = {},
-				harper_ls = {},
 				tailwindcss = {
 					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact" },
 				},
