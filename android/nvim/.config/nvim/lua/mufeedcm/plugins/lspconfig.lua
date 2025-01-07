@@ -95,9 +95,7 @@ return {
 					filetypes = { "c", "cpp" },
 				},
 				ts_ls = {},
-				html = {},
 				emmet_language_server = {},
-				css_variables = {},
 				lua_ls = {},
 			}
 
@@ -109,6 +107,8 @@ return {
 			local servers = {
 				marksman = {},
 				cssls = {},
+				html = {},
+				css_variables = {},
 			}
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
