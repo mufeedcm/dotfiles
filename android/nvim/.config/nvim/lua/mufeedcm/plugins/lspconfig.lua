@@ -111,7 +111,7 @@ return {
 				ts_ls = {},
 				svelte = {},
 				astro = {},
-				gols = {},
+				gopls = {},
 				pyright = {},
 				tailwindcss = {
 					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact" },
