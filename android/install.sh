@@ -2,6 +2,8 @@
 set -e
 
 echo "Setting up configurations with stow..."
+
+stow -t $HOME zsh
 stow -t $HOME nvim
 stow -t $HOME starship
 stow -t $HOME tmux
@@ -30,8 +32,6 @@ echo "Git configured with username '$git_username' and email '$git_email'."
 
 echo "Installing Termux API..."
 pkg i -y termux-api
-termux-clipboard-set "text"
-termux-clipboard-get
 
 echo "Installing additional programming tools..."
 pkg i -y clang lua-language-server gopls
@@ -41,3 +41,5 @@ pkg i -y build-essential curl wget fzf neofetch
 cd ~ 
 
 echo "Setup complete! Please restart Termux"
+
+zsh

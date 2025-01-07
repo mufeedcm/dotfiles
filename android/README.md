@@ -17,7 +17,7 @@ Long-press on the Termux terminal, then change the style and font using Termux:S
 Run the following commands in Termux:
 
 ```bash
-pkg update -y && pkg upgrade -y
+pkg update -y && pkg upgrade -y --allow-downgrades --option Dpkg::Options::="--force-confold"
 pkg i git stow -y
 cd ~
 git clone https://github.com/mufeedcm/dotfiles
