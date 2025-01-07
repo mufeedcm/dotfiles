@@ -94,8 +94,6 @@ return {
 					cmd = { "clangd" },
 					filetypes = { "c", "cpp" },
 				},
-				ts_ls = {},
-				emmet_language_server = {},
 				lua_ls = {},
 			}
 
@@ -109,6 +107,8 @@ return {
 				cssls = {},
 				html = {},
 				css_variables = {},
+				emmet_language_server = {},
+				ts_ls = {},
 			}
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
