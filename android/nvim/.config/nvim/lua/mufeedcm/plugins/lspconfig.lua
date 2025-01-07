@@ -94,6 +94,11 @@ return {
 					cmd = { "clangd" },
 					filetypes = { "c", "cpp" },
 				},
+				ts_ls = {},
+				html = {},
+				emmet_language_server = {},
+				css_variables = {},
+				lua_ls = {},
 			}
 
 			for server_name, options in pairs(external_servers) do
@@ -102,8 +107,8 @@ return {
 
 			-- Mason-managed LSPs
 			local servers = {
-				-- svelte = {},
 				marksman = {},
+				cssls = {},
 			}
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
