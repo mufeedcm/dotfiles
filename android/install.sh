@@ -40,4 +40,4 @@ pkg i -y build-essential curl wget fzf neofetch
 
 cd ~ 
 
-echo "Setup complete! Please restart Termux or run 'zsh' to use your new shell."
+echo "Setup complete! Please restart Termux"
