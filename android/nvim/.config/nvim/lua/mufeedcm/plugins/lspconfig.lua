@@ -94,7 +94,6 @@ return {
 					cmd = { "clangd" },
 					filetypes = { "c", "cpp" },
 				},
-				lua_ls = {},
 			}
 
 			for server_name, options in pairs(external_servers) do
@@ -109,6 +108,7 @@ return {
 				css_variables = {},
 				emmet_language_server = {},
 				ts_ls = {},
+				lua_ls = {},
 			}
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
