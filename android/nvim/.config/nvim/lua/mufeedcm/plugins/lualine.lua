@@ -16,40 +16,40 @@ return {
 		vim.o.laststatus = vim.g.lualine_laststatus
 
 		-- Define the TokyoNight Night theme for lualine with harder colors
-local theme = {
-  normal = {
-    a = { fg = "#fabd2f", bg = "#3c3836", gui = "bold" },  -- Yellow on dark gray
-    b = { fg = "#d5c4a1", bg = "#1d2021" },                  -- Light beige on very dark gray
-    c = { fg = "#b8bb26", bg = "#1d2021" },                  -- Green on very dark gray
-  },
-  insert = {
-    a = { fg = "#1d2021", bg = "#8ec07c", gui = "bold" },  -- Dark gray on green
-    b = { fg = "#d5c4a1", bg = "#1d2021" },                -- Light beige on very dark gray
-    c = { fg = "#b8bb26", bg = "#1d2021" },                -- Green on very dark gray
-  },
-  visual = {
-    a = { fg = "#1d2021", bg = "#fb4934", gui = "bold" },  -- Dark gray on red
-    b = { fg = "#d5c4a1", bg = "#1d2021" },                -- Light beige on very dark gray
-    c = { fg = "#b8bb26", bg = "#1d2021" },                -- Green on very dark gray
-  },
-  replace = {
-    a = { fg = "#1d2021", bg = "#d3869b", gui = "bold" },  -- Dark gray on purple
-    b = { fg = "#d5c4a1", bg = "#1d2021" },                -- Light beige on very dark gray
-    c = { fg = "#b8bb26", bg = "#1d2021" },                -- Green on very dark gray
-  },
-  command = {
-    a = { fg = "#1d2021", bg = "#fabd2f", gui = "bold" },  -- Dark gray on yellow
-    b = { fg = "#d5c4a1", bg = "#1d2021" },                -- Light beige on very dark gray
-    c = { fg = "#b8bb26", bg = "#1d2021" },                -- Green on very dark gray
-  },
-  inactive = {
-    a = { fg = "#a89984", bg = "#1d2021" },  -- Light beige on very dark gray
-    b = { fg = "#a89984", bg = "#1d2021" },  -- Light beige on very dark gray
-    c = { fg = "#a89984", bg = "#1d2021" },  -- Light beige on very dark gray
-  },
-}
+		local theme = {
+			normal = {
+				a = { fg = "#e0af68", bg = "#383c56", gui = "bold" },
+				b = { fg = "#c0caf5", bg = "#24283b" },
+				c = { fg = "#a9b1d6", bg = "#24283b" },
+			},
+			insert = {
+				a = { fg = "#1e1e2e", bg = "#9ece6a", gui = "bold" },
+				b = { fg = "#c0caf5", bg = "#24283b" },
+				c = { fg = "#a9b1d6", bg = "#24283b" },
+			},
+			visual = {
+				a = { fg = "#1e1e2e", bg = "#f7768e", gui = "bold" },
+				b = { fg = "#c0caf5", bg = "#24283b" },
+				c = { fg = "#a9b1d6", bg = "#24283b" },
+			},
+			replace = {
+				a = { fg = "#1e1e2e", bg = "#9d7cd8", gui = "bold" },
+				b = { fg = "#c0caf5", bg = "#24283b" },
+				c = { fg = "#a9b1d6", bg = "#24283b" },
+			},
+			command = {
+				a = { fg = "#1e1e2e", bg = "#e0af68", gui = "bold" },
+				b = { fg = "#c0caf5", bg = "#24283b" },
+				c = { fg = "#a9b1d6", bg = "#24283b" },
+			},
+			inactive = {
+				a = { fg = "#a9b1d6", bg = "#24283b" },
+				b = { fg = "#a9b1d6", bg = "#24283b" },
+				c = { fg = "#a9b1d6", bg = "#24283b" },
+			},
+		}
 
-vim.cmd("highlight custom_tab_active guifg=#fabd2f")  -- Set active tab color to yellow
+		vim.cmd("highlight custom_tab_active guifg=#e69875")
 		return {
 			options = {
 				component_separators = { left = " ", right = " " },
