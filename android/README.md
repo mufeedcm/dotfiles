@@ -12,6 +12,8 @@ Install the following apps:
 
 ### Step 3: Customize Termux Appearance
 Long-press on the Termux terminal, then change the style and font using Termux:Styling.
+   - **Theme**: Set to "Gruvbox."
+   - **Font**: Choose any font you prefer, exept the default.
 
 ### Step 4: Run the Setup Script
 Run the following commands in Termux:

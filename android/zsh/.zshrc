@@ -11,7 +11,7 @@ export LC_ALL=en_US.UTF-8
 eval "$(starship init zsh)"
 
 
-# source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # == auto ==

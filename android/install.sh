@@ -23,8 +23,17 @@ echo "Configuring Git..."
 read -p "Enter your Git username: " git_username
 read -p "Enter your Git email: " git_email
 
-echo "Logging into GitHub CLI..."
-gh auth login
+
+echo "Would you like to configure GitHub CLI (gh)? [y/N]"
+read -r configure_gh
+
+if [[ "$configure_gh" =~ ^[Yy]$ ]]; then
+    echo "Logging into GitHub CLI..."
+    gh auth login
+    echo "GitHub CLI configured."
+else
+    echo "Skipping GitHub CLI configuration."
+fi
 
 git config --global user.name "$git_username"
 git config --global user.email "$git_email"
@@ -39,6 +48,11 @@ pkg i -y python python-pip
 pkg i -y build-essential curl wget fzf neofetch
 
 cd ~ 
+
+echo "Configuring zsh auto suggestions..."
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+cd ~
 
 echo "Setup complete! Please restart Termux"
 
