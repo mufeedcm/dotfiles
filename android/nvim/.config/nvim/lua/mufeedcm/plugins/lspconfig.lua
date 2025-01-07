@@ -80,83 +80,35 @@ return {
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
--- Configure `clangd` without Mason
-			require("lspconfig").clangd.setup({
-				cmd = { "clangd" }, -- Ensure this points to your external clangd
-				capabilities = capabilities,
-				filetypes = { "c", "cpp" },
-				on_attach = function(client, bufnr)
-					-- Additional per-buffer settings if required
-				end,
-			})
-			local servers = {
-				-- html = {},
-				-- cssls = {},
-				-- svelte = {},
-				-- tailwindcss = {
-				-- 	filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact" },
-				-- },
-				--
-				marksman = {},
-				-- clangd = {
-				--       mason=false,
-				-- 	cmd = { "clangd" },
-				-- 	filetypes = { "c", "cpp" },
-				-- },
-				-- pyright = {},
-				-- ts_ls = {},
-				-- lua_ls = {
-				-- 	settings = {
-				-- 		Lua = {
-				-- 			completion = {
-				-- 				callSnippet = "Replace",
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
-				-- -- Latex Setup
 
-				-- texlab = {
-				-- 	cmd = { "texlab" },
-				-- 	filetypes = { "tex", "plaintex", "bib" },
-				-- 	settings = {
-				-- 		auxDirectory = ".",
-				-- 		bibtexFormatter = "texlab",
-				-- 		build = {
-				-- 			executable = "tectonic",
-				-- 			args = {
-				-- 				"-X",
-				-- 				"compile",
-				-- 				"%f",
-				-- 				"--synctex",
-				-- 				"--keep-logs",
-				-- 				"--keep-intermediates",
-				-- 			},
-				-- 			forwardSearchAfter = true,
-				-- 			onSave = true,
-				-- 		},
-				-- 		chktex = {
-				-- 			onEdit = false,
-				-- 			onOpenAndSave = false,
-				-- 		},
-				-- 		diagnosticsDelay = 300,
-				-- 		formatterLineLength = 80,
-				-- 		forwardSearch = {
-				-- 			executable = "zathura",
-				-- 			args = {
-				-- 				"--synctex-forward",
-				-- 				"%l:1:%f",
-				-- 				"%p",
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
+			-- Custom LSP setup function
+			local function setup_lsp(server_name, options)
+				local lspconfig = require("lspconfig")
+				lspconfig[server_name].setup(vim.tbl_deep_extend("force", {
+					capabilities = capabilities,
+				}, options or {}))
+			end
+
+			local external_servers = {
+				clangd = {
+					cmd = { "clangd" },
+					filetypes = { "c", "cpp" },
+				},
+			}
+
+			for server_name, options in pairs(external_servers) do
+				setup_lsp(server_name, options)
+			end
+
+			-- Mason-managed LSPs
+			local servers = {
+				-- svelte = {},
+				marksman = {},
 			}
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				-- "isort",
-				-- "black",
 				-- "stylua",
 				-- "eslint_d",
 				-- "pylint",
