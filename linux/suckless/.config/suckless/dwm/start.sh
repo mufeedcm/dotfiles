@@ -3,7 +3,7 @@
 # Set the wallpaper
 feh --bg-scale ~/.config/backgrounds/mistbg.jpg &
 
-# picom &
+picom &
 # pkill -f status-bar.sh
 ~/.config/suckless/dwm/scripts/status-bar.sh &
 xautolock -time 10 -locker "slock & systemctl suspend" &
@@ -32,7 +32,7 @@ wait $DWM_PID
 
 # Cleanup: Kill `start.sh` and any processes it started
 pkill -f status-bar.sh
-# pkill picom
+pkill picom
 pkill nm-applet
 pkill dunst
 pkill xautolock
