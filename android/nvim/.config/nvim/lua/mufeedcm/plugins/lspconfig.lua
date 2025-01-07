@@ -110,6 +110,8 @@ return {
 				emmet_language_server = {},
 				ts_ls = {},
 				svelte = {},
+				astro = {},
+				pyright = {},
 				tailwindcss = {
 					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact" },
 				},
