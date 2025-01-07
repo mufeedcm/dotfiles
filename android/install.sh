@@ -14,9 +14,6 @@ pkg i -y zsh
 echo "Changing default shell to Zsh..."
 chsh -s zsh
 
-echo "Launching Zsh..."
-zsh
-
 echo "Installing essential packages..."
 pkg i -y starship git gh vim neovim nodejs-lts ripgrep tmux
 
@@ -43,6 +40,4 @@ pkg i -y build-essential curl wget fzf neofetch
 
 cd ~ 
 
-echo "Setup complete!"
-
-
+echo "Setup complete! Please restart Termux or run 'zsh' to use your new shell."
