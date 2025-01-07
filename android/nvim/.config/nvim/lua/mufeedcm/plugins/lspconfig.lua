@@ -80,7 +80,15 @@ return {
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
+-- Configure `clangd` without Mason
+			require("lspconfig").clangd.setup({
+				cmd = { "clangd" }, -- Ensure this points to your external clangd
+				capabilities = capabilities,
+				filetypes = { "c", "cpp" },
+				on_attach = function(client, bufnr)
+					-- Additional per-buffer settings if required
+				end,
+			})
 			local servers = {
 				-- html = {},
 				-- cssls = {},
@@ -90,10 +98,11 @@ return {
 				-- },
 				--
 				marksman = {},
-				clangd = {
-					cmd = { "clangd" },
-					filetypes = { "c", "cpp" },
-				},
+				-- clangd = {
+				--       mason=false,
+				-- 	cmd = { "clangd" },
+				-- 	filetypes = { "c", "cpp" },
+				-- },
 				-- pyright = {},
 				-- ts_ls = {},
 				-- lua_ls = {
