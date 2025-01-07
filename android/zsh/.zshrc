@@ -1,166 +1,106 @@
-
 HISTSIZE=10000           # Number of commands to remember in the current session
 SAVEHIST=10000           # Number of commands to save to history file
 HISTFILE=~/.zsh_history  # Path to the history file
 
-clear 
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(starship init zsh)"
+clear
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-#
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+eval "$(starship init zsh)"
 
-# if ! grep -q "source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" ~/.zshrc; then
-    # echo "source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-# fi
+
+if [[ -z "$TMUX" ]]; then
+    eval "$(starship init zsh)"
+fi
+#
+export STARSHIP_ZSH_KEYMAP_SELECT=0
+
 
 # source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
+# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# == auto ==
+# figlet mufeedcm
+
 alias la='ls -la'
+alias cls='clear'
 alias conf='cd ~/.config'
 alias confnvim='nvim ~/.config/nvim/'
-alias cls='clear'
 
-# alias cbook='zathura ~/books/c_programming_a_modern_approach_2e_c89_c99_king.pdf &'
+alias sourcezshrc='source ~/.zshrc'
 
 
-# === push notes ===
 pushnotes() {
     local prev_dir=$(pwd)
-    echo
-    echo "======================================="
-    echo "         PUSHING NOTES REPO"
-    echo "======================================="
-    echo
-    echo ">>> Switching to ~/notes"
+    echo "Pushing Notes..."
     cd ~/notes || return
-    echo ">>> Adding changes to the staging area..."
     git add .
-    echo ">>> Committing changes..."
-    git commit -m "note add"
-    echo ">>> Pushing changes to the remote repository..."
+    git commit -m "auto"
     git push -u origin main
-    echo
-    echo "=== Notes repository pushed successfully! ==="
-    echo
     cd "$prev_dir"
 }
 
 pushdots() {
     local prev_dir=$(pwd)
-    echo
-    echo "======================================="
-    echo "         PUSHING DOTFILES REPO"
-    echo "======================================="
-    echo
-    echo ">>> Switching to ~/dotfiles"
+    echo "Pushing Dotfiles..."
     cd ~/dotfiles || return
-    echo ">>> Adding changes to the staging area..."
     git add .
-    echo ">>> Committing changes..."
-    git commit -m "add:"
-    echo ">>> Pushing changes to the remote repository..."
+    git commit -m "auto"
     git push -u origin main
-    echo
-    echo "=== Dotfiles repository pushed successfully! ==="
-    echo
     cd "$prev_dir"
 }
 
 pushall() {
-    echo
-    echo "======================================="
-    echo "    STARTING PUSHING NOTES & DOTFILES"
-    echo "======================================="
-    echo
+    echo "Pushing Notes & Dotfiles..."
     pushnotes
-    echo "---------------------------------------"
+    echo "------------------------"
     pushdots
-    echo "---------------------------------------"
-    echo
-    echo "======================================="
-    echo "  ALL REPOSITORIES PUSHED SUCCESSFULLY!"
-    echo "======================================="
-    echo
 }
-# === pull notes ===
+
 pullnotes() {
     local prev_dir=$(pwd)
-    echo
-    echo "======================================="
-    echo "         PULLING NOTES REPO"
-    echo "======================================="
-    echo
-    echo ">>> Switching to ~/notes"
+    echo "Pulling Notes..."
     cd ~/notes || return
-    echo ">>> Pulling changes from the remote repository..."
     git pull origin main
-    echo
-    echo "=== Notes repository updated successfully! ==="
-    echo
     cd "$prev_dir"
 }
 
 pulldots() {
     local prev_dir=$(pwd)
-    echo
-    echo "======================================="
-    echo "         PULLING DOTFILES REPO"
-    echo "======================================="
-    echo
-    echo ">>> Switching to ~/dotfiles"
+    echo "Pulling Dotfiles..."
     cd ~/dotfiles || return
-    echo ">>> Pulling changes from the remote repository..."
     git pull origin main
-    echo
-    echo "=== Dotfiles repository updated successfully! ==="
-    echo
     cd "$prev_dir"
 }
 
 pullall() {
-    echo
-    echo "======================================="
-    echo "    STARTING PULLING NOTES & DOTFILES"
-    echo "======================================="
-    echo
+    echo "Pulling Notes & Dotfiles..."
     pullnotes
-    echo "---------------------------------------"
+    echo "------------------------"
     pulldots
-    echo "---------------------------------------"
-    echo
-    echo "======================================="
-    echo "  ALL REPOSITORIES UPDATED SUCCESSFULLY!"
-    echo "======================================="
-    echo
 }
 
-VAULT_PATH="$HOME/storage/shared/notes"
-
-pullnotes() {
+checknotes() {
     local prev_dir=$(pwd)
-    echo "Pulling notes from Git..."
-    cd "$VAULT_PATH" || { echo "Vault not found at $VAULT_PATH"; return 1; }
-    git pull --rebase
-    echo "Notes pulled successfully."
+    echo "Checking Notes Repo Status..."
+    cd ~/notes || return
+    git status
     cd "$prev_dir"
 }
 
-pushnotes() {
+checkdots() {
     local prev_dir=$(pwd)
-    echo "Pushing notes to Git..."
-    cd "$VAULT_PATH" || { echo "Vault not found at $VAULT_PATH"; return 1; }
-    git add .
-    git commit -m "Sync notes on $(date)"
-    git push
-    echo "Notes pushed successfully."
+    echo "Checking Dotfiles Repo Status..."
+    cd ~/dotfiles || return
+    git status
     cd "$prev_dir"
+}
+
+checkall() {
+    echo "Checking Status of Notes & Dotfiles..."
+    checknotes
+    echo "------------------------"
+    checkdots
 }
