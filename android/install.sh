@@ -31,7 +31,7 @@ echo "Git configured with username '$git_username' and email '$git_email'."
 echo "Installing Termux API..."
 pkg i -y termux-api
 termux-clipboard-set "text"
-termux-clipboard-set-get
+termux-clipboard-get
 
 echo "Installing additional programming tools..."
 pkg i -y clang lua-language-server gopls

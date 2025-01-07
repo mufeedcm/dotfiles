@@ -11,13 +11,6 @@ export LC_ALL=en_US.UTF-8
 eval "$(starship init zsh)"
 
 
-if [[ -z "$TMUX" ]]; then
-    eval "$(starship init zsh)"
-fi
-#
-export STARSHIP_ZSH_KEYMAP_SELECT=0
-
-
 # source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
 # source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
