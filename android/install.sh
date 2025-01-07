@@ -41,4 +41,8 @@ pkg i -y clang lua-language-server gopls
 pkg i -y python python-pip
 pkg i -y build-essential curl wget fzf neofetch
 
+cd ~ 
+
 echo "Setup complete!"
+
+
