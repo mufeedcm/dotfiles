@@ -53,6 +53,9 @@ echo "Configuring zsh auto suggestions..."
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
 cd ~
+termux-setup-storage
+
+cd ~
 
 echo "Setup complete! Please restart Termux"
 
