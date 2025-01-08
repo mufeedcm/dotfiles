@@ -49,8 +49,11 @@ pkg i -y build-essential curl wget fzf neofetch
 
 cd ~ 
 
-echo "Configuring zsh auto suggestions..."
+echo "Configuring zsh auto suggestions and vi-mode..."
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+git clone https://github.com/jeffreytse/zsh-vi-mode.git ~/.zsh/.zsh-vi-mode
+
 
 cd ~
 termux-setup-storage
