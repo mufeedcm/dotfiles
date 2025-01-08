@@ -96,6 +96,10 @@ return {
 				},
 				lua_ls = {},
 				gop_ls = {},
+				tailwindcss = {
+					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact", "astro", "svelte" },
+				},
+				astro = {},
 			}
 
 			for server_name, options in pairs(external_servers) do
@@ -111,11 +115,7 @@ return {
 				emmet_language_server = {},
 				ts_ls = {},
 				svelte = {},
-				astro = {},
 				pyright = {},
-				tailwindcss = {
-					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact", "astro", "svelte" },
-				},
 			}
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
