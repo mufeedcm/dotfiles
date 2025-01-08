@@ -47,9 +47,6 @@ pkg i -y clang lua-language-server gopls
 pkg i -y python python-pip
 pkg i -y build-essential curl wget fzf neofetch
 
-npm install -g @astrojs/language-server --yes
-npm install -g @tailwindcss/language-server --yes
-
 cd ~ 
 
 echo "Configuring zsh auto suggestions..."
