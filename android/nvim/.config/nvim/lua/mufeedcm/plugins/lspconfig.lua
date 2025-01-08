@@ -114,7 +114,7 @@ return {
 				astro = {},
 				pyright = {},
 				tailwindcss = {
-					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact" },
+					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact", "astro", "svelte" },
 				},
 			}
 			require("mason").setup()
