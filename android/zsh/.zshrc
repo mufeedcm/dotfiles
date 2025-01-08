@@ -12,7 +12,10 @@ eval "$(starship init zsh)"
 
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+source ~/.zsh/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+
 
 # == auto ==
 # figlet mufeedcm
