@@ -102,11 +102,21 @@ static const Key keys[] = {
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
     {MODKEY | ShiftMask, XK_Return, spawn, {.v = termcmd}},
     /*{MODKEY | ShiftMask, XK_l, spawn, SHCMD("slock")},*/
-    {MODKEY | ShiftMask, XK_s, spawn, SHCMD("slock & systemctl suspend")},
+    /*{Mod4Mask | ShiftMask, XK_s, spawn, SHCMD("slock & systemctl suspend")},*/
+    /*{Mod4Mask | ShiftMask, XK_u, spawn, SHCMD("shutdown now")},*/
+    /*{Mod4Mask | ShiftMask, XK_p, spawn,
+       SHCMD("~/.config/suckless/dwm/scripts/power_menu.sh")},*/
+    {MODKEY | ShiftMask, XK_p, spawn,
+     SHCMD("~/.config/suckless/dwm/scripts/power_menu.sh")},
+    {MODKEY | ShiftMask, XK_w, spawn,
+     SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},
+    {MODKEY | ShiftMask, XK_slash, spawn,
+     SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts.sh")},
     {0, XK_Print, spawn, SHCMD("flameshot gui")},
     {MODKEY, XK_q, spawn, {.v = todocmd}},
     {MODKEY, XK_w, spawn,
      SHCMD("~/.config/suckless/dwm/scripts/caffeine-mode.sh")},
+    {MODKEY, XK_space, spawn, SHCMD("rofi -show drun")},
     {MODKEY | ShiftMask, XK_k, spawn, {.v = upvol}},
     {MODKEY | ShiftMask, XK_j, spawn, {.v = downvol}},
     {MODKEY | ShiftMask, XK_m, spawn, {.v = mutevol}},
