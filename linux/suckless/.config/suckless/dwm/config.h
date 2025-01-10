@@ -90,12 +90,13 @@ static const char *termcmd[] = {"st", NULL};
 static const char *todocmd[] = {
     "/bin/sh", "-c", "~/.config/suckless/dwm/scripts/open_todo.sh", NULL};
 
-static const char *upvol[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
-                              "+10%", NULL};
-static const char *downvol[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
-                                "-10%", NULL};
-static const char *mutevol[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",
-                                "toggle", NULL};
+/*static const char *upvol[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",*/
+/*                              "+10%", NULL};*/
+/*static const char *downvol[] = {"pactl", "set-sink-volume",
+ * "@DEFAULT_SINK@",*/
+/*                                "-10%", NULL};*/
+/*static const char *mutevol[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",*/
+/*                                "toggle", NULL};*/
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -117,9 +118,15 @@ static const Key keys[] = {
     {MODKEY, XK_w, spawn,
      SHCMD("~/.config/suckless/dwm/scripts/caffeine-mode.sh")},
     {MODKEY, XK_space, spawn, SHCMD("rofi -show drun")},
-    {MODKEY | ShiftMask, XK_k, spawn, {.v = upvol}},
-    {MODKEY | ShiftMask, XK_j, spawn, {.v = downvol}},
-    {MODKEY | ShiftMask, XK_m, spawn, {.v = mutevol}},
+    /*{MODKEY | ShiftMask, XK_k, spawn, {.v = upvol}},*/
+    /*{MODKEY | ShiftMask, XK_j, spawn, {.v = downvol}},*/
+    /*{MODKEY | ShiftMask, XK_m, spawn, {.v = mutevol}},*/
+    {MODKEY | ShiftMask, XK_k, spawn,
+     SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh up")},
+    {MODKEY | ShiftMask, XK_j, spawn,
+     SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh down")},
+    {MODKEY | ShiftMask, XK_m, spawn,
+     SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh toggle")},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
