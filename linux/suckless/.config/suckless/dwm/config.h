@@ -102,6 +102,10 @@ static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
     {MODKEY | ShiftMask, XK_Return, spawn, {.v = termcmd}},
+    {MODKEY | ShiftMask,
+     XK_grave,
+     spawn,
+     {.v = (const char *[]){"st", "-e", "htop", NULL}}},
     /*{MODKEY | ShiftMask, XK_l, spawn, SHCMD("slock")},*/
     /*{Mod4Mask | ShiftMask, XK_s, spawn, SHCMD("slock & systemctl suspend")},*/
     /*{Mod4Mask | ShiftMask, XK_u, spawn, SHCMD("shutdown now")},*/
