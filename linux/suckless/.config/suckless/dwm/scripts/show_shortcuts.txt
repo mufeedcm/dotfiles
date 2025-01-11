@@ -1,0 +1,75 @@
+### dwm shortcuts ###
+
+#### general
+mod+p                : open dmenu  
+mod+shift+enter      : open terminal (st)  
+mod+shift+grave      : open htop in terminal  
+mod+shift+p          : open power menu  
+mod+shift+w          : open wifi menu  
+mod+/                : show shortcuts  
+mod+shift+/          : show shortcuts - dynamic  
+mod+q                : open todo list  
+mod+w                : toggle caffeine mode  
+mod+shift+q          : quit dwm  
+
+#### volume control
+mod+shift+k          : increase volume  
+mod+shift+j          : decrease volume  
+mod+shift+m          : toggle mute  
+
+#### layout and navigation
+mod+b                : toggle status bar  
+mod+j                : focus next window  
+mod+k                : focus previous window  
+mod+tab              : cycle through layouts  
+mod+return           : zoom window  
+mod+t                : tiled layout  
+mod+f                : floating layout  
+mod+m                : monocle layout  
+mod+shift+space      : toggle floating  
+mod+h                : decrease master area size  
+mod+l                : increase master area size  
+mod+i                : add master window  
+mod+d                : remove master window  
+mod+comma            : focus previous monitor  
+mod+period           : focus next monitor  
+mod+shift+comma      : move window to previous monitor  
+mod+shift+period     : move window to next monitor  
+
+#### tags
+mod+shift+c          : close current window  
+mod+1-9              : switch to specific tag  
+mod+shift+1-9        : assign window to specific tag  
+
+#### screenshots
+print                : open flameshot gui  
+mod+print            : open flameshot gui with 5-second delay  
+
+### st terminal shortcuts ###
+
+#### clipboard and url handling
+ctrl+c               : copy selection to clipboard  
+ctrl+v               : paste from clipboard  
+shift+insert         : paste from selection  
+mod+c                : copy selection to clipboard  
+mod+v                : paste from clipboard  
+mod+l                : open url in browser  
+mod+y                : copy url to clipboard  
+mod+o                : copy command output  
+
+#### scrolling
+mod+k                : scroll up one line  
+mod+j                : scroll down one line  
+mod+page_up          : scroll up by page  
+mod+page_down        : scroll down by page  
+mod+u                : scroll up  
+mod+d                : scroll down  
+
+#### zoom and transparency
+ctrl+up / ctrl+k     : zoom in  
+ctrl+down / ctrl+j   : zoom out  
+ctrl+u               : increase zoom by 2 levels  
+ctrl+d               : decrease zoom by 2 levels  
+mod+s                : decrease transparency  
+mod+a                : increase transparency  
+ctrl+home            : reset zoom
