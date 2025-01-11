@@ -1,15 +1,17 @@
 #!/bin/bash
 
-# Check if caffeine is already active (xautolock is running)
-if pgrep -x "xautolock" > /dev/null
-then
-    # If xautolock is running, kill it (disable caffeine mode)
+# File to store the state of caffeine mode
+CAFFEINE_STATE_FILE="/tmp/caffeine_mode"
+
+# Check the current state
+if [ -f "$CAFFEINE_STATE_FILE" ] && grep -q "on" "$CAFFEINE_STATE_FILE"; then
+    # Disable Caffeine Mode
     pkill xautolock
-    # Send notification that caffeine mode is off
-    notify-send "Caffeine Mode" "Caffeine mode is OFF. The system will sleep as usual." -u low
+    notify-send -u low "Caffeine Mode" "Disabled"
+    echo "off" > "$CAFFEINE_STATE_FILE"
 else
-    # Otherwise, start xautolock again to resume the lock timer
-    xautolock -time 10 -locker "slock & systemctl suspend;" &
-    # Send notification that caffeine mode is on
-    notify-send "Caffeine Mode" "Caffeine mode is ON. The system will not sleep." -u low
+    # Enable Caffeine Mode
+    xautolock -time 10 -locker "slock & systemctl suspend;" & disown
+    notify-send -u low "Caffeine Mode" "Enabled"
+    echo "on" > "$CAFFEINE_STATE_FILE"
 fi

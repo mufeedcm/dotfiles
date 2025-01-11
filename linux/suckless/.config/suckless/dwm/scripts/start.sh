@@ -14,7 +14,7 @@ echo $! >> "$PID_FILE"
 ~/.config/suckless/dwm/scripts/status-bar.sh &
 echo $! >> "$PID_FILE"
 
-xautolock -time 10 -locker "slock & systemctl suspend" &
+xautolock -time 1 -locker "slock & systemctl suspend" &
 echo $! >> "$PID_FILE"
 
 
