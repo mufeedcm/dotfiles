@@ -29,15 +29,15 @@ else
     echo "No brew-packages.txt found!"
 fi
 #
-# # Add more package manager installations here, e.g., Flatpak
-# if [ -f $SETUP_DIR/flatpak-packages.txt ]; then
-#     echo "Installing Flatpak packages..."
-#     while read -r package; do
-#         flatpak install -y $package
-#     done < $SETUP_DIR/flatpak-packages.txt
-# else
-#     echo "No flatpak-packages.txt found!"
-# fi
-#
+# Add more package manager installations here, e.g., Flatpak
+if [ -f $SETUP_DIR/flatpak-packages.txt ]; then
+    echo "Installing Flatpak packages..."
+    while read -r package; do
+        flatpak install -y $package
+    done < $SETUP_DIR/flatpak-packages.txt
+else
+    echo "No flatpak-packages.txt found!"
+fi
+
 echo "Setup complete!"
 
