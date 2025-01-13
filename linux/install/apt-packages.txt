@@ -1,6 +1,8 @@
+alsa-tools-gui
 brave-browser
 bucklespring
 cowsay
+cuneiform
 droidcam-client
 dunst
 dzen2
@@ -12,8 +14,10 @@ gawk
 gir1.2-gtk-4.0
 git
 gobject-introspection
+gocr
 htop
 i3lock
+imagemagick
 jq
 kitty
 latexmk
@@ -48,6 +52,8 @@ meson
 mpv
 ninja-build
 numlockx
+ocrad
+pavucontrol
 picom
 pipx
 playerctl
@@ -62,6 +68,7 @@ ripgrep
 rofi
 sassc
 suckless-tools
+tesseract-ocr
 texlive
 texlive-latex-extra
 texlive-science
