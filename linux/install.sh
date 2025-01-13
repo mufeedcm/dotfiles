@@ -17,11 +17,11 @@ stow -t $HOME nvim
 stow -t $HOME picom
 stow -t $HOME tmux
 stow -t $HOME zathura
-stow -t $HOME i3
-stow -t $HOME kitty
-stow -t $HOME polybar
-stow -t $HOME rofi
-
+# stow -t $HOME i3
+# stow -t $HOME kitty
+# stow -t $HOME polybar
+# stow -t $HOME rofi
+#
 
 cd ~
 
@@ -35,7 +35,7 @@ brew install starship gh -y
 sudo apt install tmux vim lf -y
 sudo apt install dunst feh flameshot fzf htop imagemagick mpv picom latexmk texlive texlive-latex-extra ripgrep zathura brave-browser -y
 sudo apt install xcape xclip -y
-sudo apt install i3 polybar rofi -y
+# sudo apt install i3 polybar rofi -y
 sudo apt install cowsay figlet neofetch tree lxappearance bucklespring -y
 sudo apt instal curl wget -y
 
