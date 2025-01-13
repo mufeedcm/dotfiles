@@ -8,6 +8,9 @@ PID_FILE="$HOME/.config/suckless/dwm/start_pids.txt"
 feh --bg-scale ~/.config/backgrounds/mistbg.jpg &
 echo $! >> "$PID_FILE"
 
+
+amixer set Headphone 30% unmute
+
 picom &
 echo $! >> "$PID_FILE"
 

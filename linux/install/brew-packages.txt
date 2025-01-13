@@ -94,5 +94,4 @@ x265
 xorgproto
 xz
 zlib
-zsh-vi-mode
 zstd

@@ -10,4 +10,18 @@ SSD -
 Graphics Card - NVIDIA Corporation GK208B [GeForce GT 710]
 Graphics driver - [graphics driver](./graphics_driver.jpg)
 
+## Installation Guide
+
+### Step 1: Run the Setup Script
+
+```bash
+sudo apt update && apt upgrade
+sudo apt install git stow -y
+
+cd ~
+git clone https://github.com/mufeedcm/dotfiles
+cd ~/dotfiles/linux/
+chmod +x install.sh
+./install.sh
+```
 

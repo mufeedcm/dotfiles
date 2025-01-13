@@ -14,7 +14,6 @@ gawk
 gir1.2-gtk-4.0
 git
 gobject-introspection
-gocr
 htop
 i3lock
 imagemagick
@@ -52,7 +51,6 @@ meson
 mpv
 ninja-build
 numlockx
-ocrad
 pavucontrol
 picom
 pipx
@@ -68,7 +66,6 @@ ripgrep
 rofi
 sassc
 suckless-tools
-tesseract-ocr
 texlive
 texlive-latex-extra
 texlive-science
