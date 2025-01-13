@@ -113,14 +113,20 @@ static const Key keys[] = {
        SHCMD("~/.config/suckless/dwm/scripts/power_menu.sh")},*/
     {MODKEY | ShiftMask, XK_p, spawn,
      SHCMD("~/.config/suckless/dwm/scripts/power_menu.sh")},
+
     {MODKEY | ShiftMask, XK_w, spawn,
      SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},
+
     {MODKEY | ShiftMask, XK_slash, spawn,
      SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts.sh")},
+
     {MODKEY, XK_slash, spawn,
      SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts_txt.sh")},
+
     {0, XK_Print, spawn, SHCMD("flameshot gui")},
+
     {MODKEY, XK_Print, spawn, SHCMD("flameshot gui -d 5000")},
+
     {MODKEY, XK_q, spawn, {.v = todocmd}},
     {MODKEY, XK_w, spawn,
      SHCMD("~/.config/suckless/dwm/scripts/caffeine-mode.sh")},
