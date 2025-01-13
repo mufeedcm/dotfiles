@@ -1,14 +1,17 @@
 ## Current System Specifications
 
-- **OS:** Linux Mint 22 Cinnamon
-- **Window Manager (WM):** i3wm
-- **Linux Kernel:** 6.8.0-38-generic
-- **Processor:** Intel© Core™ i3-9100F CPU @ 3.60GHz × 4
-- **Memory:**  
-- **HDD:** 
-- **SSD:** 
-- **Graphics Card:** NVIDIA Corporation GK208B [GeForce GT 710]
-- **Graphics Driver:** ![Graphics Driver](./graphics_driver.jpg)
+| **Component**           | **Details**                                     |
+|-------------------------|-------------------------------------------------|
+| **OS**                  | Linux Mint 22 Cinnamon                          |
+| **Window Manager (WM)** | dwm                                             |
+| **Linux Kernel**        | 6.8.0-38-generic                                |
+| **Processor**           | Intel© Core™ i3-9100F CPU @ 3.60GHz × 4         |
+| **Graphics Card**       | Gigabyte Nvidia Geforce GT 710                  |
+| **MotherBoard**         | Asus Prime H310M-E R2.0                         |
+| **Memory**              | Adata DDR4 2400 8GB                             |
+| **HDD**                 | -                                               |
+| **SSD**                 | Maxtor Z1 240GB SATA 6Gb/s                      |
+| **Graphics Driver**     | ![Graphics Driver](./graphics_driver.jpg)       |
 
 ---
 
