@@ -1,5 +1,5 @@
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-    echo "login"
+  echo "Login to WM ? (y/n)"
     read -r choice
     case "$choice" in
         "" | [yY]*)

@@ -39,16 +39,6 @@ case "$WM" in
         exec dwm
         ;;
     i3wm)
-        # Start background processes
-        feh --bg-scale ~/.config/backgrounds/mistbg.jpg &
-        picom &
-        nm-applet &
-        dunst &
-        setxkbmap -option ctrl:nocaps
-        xcape -e 'Control_L=Escape'
-        # buckle -g 40 &
-        
-        # Start i3wm
         exec i3
         ;;
     cinnamon)
