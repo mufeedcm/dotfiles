@@ -1,26 +1,22 @@
 #!/bin/bash
+
 options="Sleep\nLogout\nShutdown\nReboot"
-# chosen=$(echo -e "$options" | dmenu -i -p "Power Menu:")
+
+# Display the menu using dmenu
 chosen=$(echo -e "$options" | dmenu -i -p "Power Menu:" \
     -nb "#1a1b26" -nf "#c0caf5" \
     -sb "#7aa2f7" -sf "#1a1b26")
+
+# Handle the chosen option
 case "$chosen" in
     Sleep)
-        slock & systemctl suspend ;; 
+        slock & systemctl suspend ;;  # Lock and suspend
     Logout)
-        PID_FILE="$HOME/.config/suckless/dwm/start_pids.txt"
-        if [ -f "$PID_FILE" ]; then
-            while read pid; do
-                kill "$pid"
-            done < "$PID_FILE"
-        fi
-        pkill dwm ;; 
-    # Logout)
-    #     pkill dwm ;; # Ends the dwm session
+        pkill dwm ;;  # Ends the dwm session, triggering .xinitrc cleanup
     Shutdown)
-        systemctl poweroff ;; 
+        systemctl poweroff ;;  # Shutdown the system
     Reboot)
-        systemctl reboot ;; 
+        systemctl reboot ;;  # Reboot the system
     *)
-        exit 0 ;; 
+        exit 0 ;;  # Exit if no valid option is chosen
 esac
