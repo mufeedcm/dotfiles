@@ -1,22 +1,94 @@
 [global]
-    origin = top-right
-    offset = 30x55
-    font = "Meslo LGM Nerd Font 10"
-    padding = 20
-    frame_width = 2
-    frame_color = "#7aa2f7"
-    separator_color = "#3b4261"
-    follow = mouse
-    transparency = 0
+    ### Display ###
+    monitor = 0                  # Monitor index to display notifications on (0 for primary monitor)
+    indicate_hidden = yes        # Show a marker for hidden notifications
+    shrink = no                  # Don't shrink notifications to fit content
+    transparency = 0            # Transparency level (0 for opaque, 100 for fully transparent)
+    separator_height = 1         # Height of the separator between notifications
+    separator_color = frame      # Color of the separator (uses frame color)
+    padding = 12                 # Vertical padding around notifications
+    horizontal_padding = 16      # Horizontal padding around notifications
+    frame_width = 2              # Width of the frame around notifications
+    frame_color = "#7aa2f7"      # Color of the frame (Tokyonight Blue)
+    sort = yes                   # Sort notifications by urgency and time
+    idle_threshold = 120         # Time in seconds after which the notifications will idle
+    font = "Meslo LGM Nerd Font 10"        # Font for notifications (Font name and size)
+    line_height = 0              # Line height multiplier (0 for default)
+    markup = full                # Allow full HTML-like markup in notifications
+    format = "<b>%s</b>\n%b"     # Format for notifications (%s: summary, %b: body)
+    alignment = left             # Align notification text to the left
+    show_age_threshold = 60      # Show the age of notifications older than this threshold (in seconds)
+    word_wrap = yes              # Wrap long lines in notifications
+    ellipsize = middle           # Shorten text in the middle if it's too long
+    ignore_newline = no          # Preserve newlines in notifications
+    stack_duplicates = true      # Combine duplicate notifications into one
+    hide_duplicate_count = false # Show the count of duplicate notifications
+    show_indicators = yes        # Show visual indicators for urgency levels
+
+    ### Icons ###
+    icon_position = left         # Position of icons (left or right of the text)
+    max_icon_size = 48           # Maximum icon size (in pixels)
+    #icon_path = /usr/share/icons/hicolor/48x48/apps:/usr/share/icons/Adwaita/48x48/status
+                                # Paths to search for icons (colon-separated)
+
+    ### History ###
+    sticky_history = no          # Keep notifications in history even if they're closed
+    history_length = 20          # Maximum number of notifications in history
+
+    ### Misc/Advanced ###
+    browser = brave-browser        # Default browser to open notification links
+    always_run_script = true     # Always run script actions even if notification is closed
+    title = Dunst                # Window title of the notification system
+    class = Dunst                # X11 window class for the notifications
+    corner_radius = 2            # Radius of the rounded corners (in pixels)
+    mouse_left_click = close_current
+                                # Action for left mouse button click (close the current notification)
+    mouse_middle_click = do_action
+                                # Action for middle mouse button click (execute the notification action)
+    mouse_right_click = close_all
+                                # Action for right mouse button click (close all notifications)
+    dmenu = "dmenu -i -nb '#1a1b26' -nf '#a9b1d6' -sb '#7aa2f7' -sf '#1a1b26'"
+
+
+[experimental]
+    per_monitor_dpi = false      # Disable per-monitor DPI scaling
 
 [urgency_low]
-    background = "#1a1b26"
-    foreground = "#c0caf5"
+    background = "#1a1b26"       # Background color for low urgency notifications
+    foreground = "#565f89"       # Text color for low urgency notifications
+    timeout = 10                 # Time in seconds before low urgency notifications disappear
 
 [urgency_normal]
-    background = "#1a1b26"
-    foreground = "#7aa2f7"
+    background = "#1a1b26"       # Background color for normal urgency notifications
+    foreground = "#a9b1d6"       # Text color for normal urgency notifications
+    timeout = 10                 # Time in seconds before normal urgency notifications disappear
 
 [urgency_critical]
-    background = "#f7768e"
-    foreground = "#1a1b26"
+    background = "#1a1b26"       # Background color for critical urgency notifications
+    foreground = "#f7768e"       # Text color for critical urgency notifications
+    frame_color = "#ff9e64"      # Frame color for critical urgency notifications (highlighted)
+    timeout = 0                  # Notifications with critical urgency persist until manually closed
+
+
+# [global]
+    # origin = top-right
+    # offset = 30x55
+    # font = "Meslo LGM Nerd Font 10"
+    # padding = 20
+    # frame_width = 2
+    # frame_color = "#7aa2f7"
+    # separator_color = "#3b4261"
+    # follow = mouse
+    # transparency = 0
+# 
+# [urgency_low]
+    # background = "#1a1b26"
+    # foreground = "#c0caf5"
+# 
+# [urgency_normal]
+    # background = "#1a1b26"
+    # foreground = "#7aa2f7"
+# 
+# [urgency_critical]
+    # background = "#f7768e"
+    # foreground = "#1a1b26"

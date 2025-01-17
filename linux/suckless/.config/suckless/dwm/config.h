@@ -106,6 +106,15 @@ static const Key keys[] = {
      XK_grave,
      spawn,
      {.v = (const char *[]){"st", "-e", "htop", NULL}}},
+    // Keybindings for Dunst
+    {MODKEY, XK_F6, spawn,
+     SHCMD("dunstctl close")}, // Close the current notification
+    {MODKEY | ShiftMask, XK_F6, spawn,
+     SHCMD("dunstctl close-all")}, // Close all notifications
+    {MODKEY, XK_F7, spawn,
+     SHCMD("dunstctl history-pop")}, // Open the notification history
+    {MODKEY, XK_F8, spawn,
+     SHCMD("dunstctl context")}, // Open the Dunst context menu
     /*{MODKEY | ShiftMask, XK_l, spawn, SHCMD("slock")},*/
     /*{Mod4Mask | ShiftMask, XK_s, spawn, SHCMD("slock & systemctl suspend")},*/
     /*{Mod4Mask | ShiftMask, XK_u, spawn, SHCMD("shutdown now")},*/

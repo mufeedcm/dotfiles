@@ -59,7 +59,7 @@ case "$chosen_option" in
                 fi
             fi
         else
-            notify-send "Wi-Fi" "No network selected"
+            # notify-send "Wi-Fi" "No network selected"
         fi
         ;;
     "Disconnect from Wi-Fi")

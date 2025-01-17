@@ -11,11 +11,9 @@ export LC_ALL=en_US.UTF-8
 eval "$(starship init zsh)"
 
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source ~/.zsh/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-
+source ~/.zsh/plugins/zsh-autosuggestions
+source ~/.zsh/plugins/.zsh-vi-mode
+source ~/.zsh/plugins/zsh-syntax-highlighting
 
 # == auto ==
 # figlet mufeedcm
