@@ -1,4 +1,5 @@
 alsa-tools-gui
+android-sdk-platform-tools
 brave-browser
 bucklespring
 cowsay
