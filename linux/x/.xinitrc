@@ -32,7 +32,7 @@ case "$WM" in
         dunst &
         setxkbmap -option ctrl:nocaps
         xcape -e 'Control_L=Escape'
-        buckle -g 40 &
+        # buckle -g 40 &
         st -n win1tmux -e zsh -ic tmux &
 
         # Start dwm
