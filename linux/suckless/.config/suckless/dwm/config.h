@@ -96,6 +96,8 @@ static const Key keys[] = {
     {MODKEY,                       XK_p,          spawn,          {.v = dmenucmd}},
     {TERMMOD,                      XK_Return,     spawn,          {.v = termcmd}},
     {TERMMOD,                      XK_grave,      spawn,          {.v = (const char *[]){"st", "-e", "htop", NULL}}},
+    {MODKEY,                       XK_space,      spawn,          SHCMD("rofi -show drun")},
+    {0,                            XK_Print,      spawn,          SHCMD("flameshot gui")},
 
     // Dunst Notifications
     {MODKEY,                       XK_F6,         spawn,          SHCMD("dunstctl close")},
@@ -111,6 +113,10 @@ static const Key keys[] = {
     // Custom Scripts
     {MODKEY,                       XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},
     {TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},
+    {MODKEY,                       XK_c,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/caffeine-mode.sh")},
+    /*{MODKEY,                       XK_Print,      spawn,          SHCMD("flameshot gui -d 5000")},*/
+    /*{TERMMOD,                      XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts.sh")},*/
+    /*{MODKEY,                       XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts_txt.sh")},*/
     /*{TERMMOD,                      XK_p,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/power_menu.sh")},*/
     /*{TERMMOD,                      XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts.sh")},*/
     /*{MODKEY,                       XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts_txt.sh")},*/
@@ -131,20 +137,20 @@ static const Key keys[] = {
     /*{TERMMOD,                      XK_q,          quit,           {0}},*/
 
     
-    {MODKEY, XK_i, incnmaster, {.i = +1}},
-    {MODKEY, XK_d, incnmaster, {.i = -1}},
-    {MODKEY | ShiftMask, XK_c, killclient, {0}},
-    {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
-    {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
-    {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
-    {MODKEY, XK_space, setlayout, {0}},
-    {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
-    {MODKEY, XK_0, view, {.ui = ~0}},
-    {MODKEY | ShiftMask, XK_0, tag, {.ui = ~0}},
-    {MODKEY, XK_comma, focusmon, {.i = -1}},
-    {MODKEY, XK_period, focusmon, {.i = +1}},
-    {MODKEY | ShiftMask, XK_comma, tagmon, {.i = -1}},
-    {MODKEY | ShiftMask, XK_period, tagmon, {.i = +1}},
+    {MODKEY,                       XK_i,         incnmaster,      {.i = +1}},
+    {MODKEY,                       XK_d,         incnmaster,      {.i = -1}},
+    {TERMMOD,                      XK_c,         killclient,      {0}},
+    {MODKEY,                       XK_t,         setlayout,       {.v = &layouts[0]}},
+    {MODKEY,                       XK_f,         setlayout,       {.v = &layouts[1]}},
+    {MODKEY,                       XK_m,         setlayout,       {.v = &layouts[2]}},
+    {MODKEY,                       XK_space,     setlayout,       {0}},
+    {TERMMOD,                      XK_space,     togglefloating,  {0}},
+    {MODKEY,                       XK_0,         view,            {.ui = ~0}},
+    {TERMMOD,                      XK_0,         tag,             {.ui = ~0}},
+    {MODKEY,                       XK_comma,     focusmon,        {.i = -1}},
+    {MODKEY,                       XK_period,    focusmon,        {.i = +1}},
+    {TERMMOD,                      XK_comma,     tagmon,          {.i = -1}},
+    {TERMMOD,                      XK_period,    tagmon,          {.i = +1}},
 
 
 
