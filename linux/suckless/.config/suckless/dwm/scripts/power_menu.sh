@@ -3,9 +3,7 @@
 options="Sleep\nLogout\nShutdown\nReboot"
 
 # Display the menu using dmenu
-chosen=$(echo -e "$options" | dmenu -i -p "Power Menu:" \
-    -nb "#1a1b26" -nf "#c0caf5" \
-    -sb "#7aa2f7" -sf "#1a1b26")
+chosen=$(echo -e "$options" | dmenu -i -p "Power Menu:")
 
 # Handle the chosen option
 case "$chosen" in

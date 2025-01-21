@@ -11,7 +11,7 @@ if [ -f "$CAFFEINE_STATE_FILE" ] && grep -q "on" "$CAFFEINE_STATE_FILE"; then
     echo "off" > "$CAFFEINE_STATE_FILE"
 else
     # Enable Caffeine Mode
-    xautolock -time 10 -locker "slock & systemctl suspend;" & disown
+    xautolock -time 15 -locker "slock & systemctl suspend;" & disown
     notify-send -u low "Caffeine Mode" "Enabled"
     echo "on" > "$CAFFEINE_STATE_FILE"
 fi

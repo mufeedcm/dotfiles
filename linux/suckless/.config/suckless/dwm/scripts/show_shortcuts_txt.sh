@@ -9,10 +9,5 @@ if [ ! -f "$SHORTCUTS_FILE" ]; then
     exit 1
 fi
 
-# Colors for Tokyo Night theme
-BG_COLOR="#1a1b26"
-FG_COLOR="#c0caf5"
-SEL_BG_COLOR="#7aa2f7"
-SEL_FG_COLOR="#1a1b26"
-# Display the contents of the shortcuts file in dmenu
-cat "$SHORTCUTS_FILE" | dmenu -l 20 -nb "$BG_COLOR" -nf "$FG_COLOR" -sb "$SEL_BG_COLOR" -sf "$SEL_FG_COLOR"
+# Display the contents of the shortcuts file in dmenu using default colors
+cat "$SHORTCUTS_FILE" | dmenu -l 20

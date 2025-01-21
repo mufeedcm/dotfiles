@@ -40,14 +40,8 @@ if [ ! -s "$KEYBINDINGS" ]; then
     exit 1
 fi
 
-# Colors for Tokyo Night theme
-BG_COLOR="#1a1b26"
-FG_COLOR="#c0caf5"
-SEL_BG_COLOR="#7aa2f7"
-SEL_FG_COLOR="#1a1b26"
-
-# Display the content in dmenu with Tokyo Night colors
-cat "$KEYBINDINGS" | dmenu -l 20 -nb "$BG_COLOR" -nf "$FG_COLOR" -sb "$SEL_BG_COLOR" -sf "$SEL_FG_COLOR"
+# Display the content in dmenu using default colors
+cat "$KEYBINDINGS" | dmenu -l 20
 
 # Clean up the temporary file
 rm "$KEYBINDINGS"

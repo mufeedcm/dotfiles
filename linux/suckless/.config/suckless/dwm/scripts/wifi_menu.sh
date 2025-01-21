@@ -1,18 +1,11 @@
 #!/bin/bash
 
-# Set colors for Tokyonight theme
-DMENU_NB="#1a1b26"
-DMENU_NF="#c0caf5"
-DMENU_SB="#7aa2f7"
-DMENU_SF="#1a1b26"
-
 # Get available Wi-Fi networks
 networks=$(nmcli -t -f SSID dev wifi | awk '!seen[$0]++')
 
 # Menu options
 options="Connect to Wi-Fi\nDisconnect from Wi-Fi\nExit"
-chosen_option=$(echo -e "$options" | dmenu -i -p "Choose an option:" \
-    -nb "$DMENU_NB" -nf "$DMENU_NF" -sb "$DMENU_SB" -sf "$DMENU_SF")
+chosen_option=$(echo -e "$options" | dmenu -i -p "Choose an option:")
 
 # Exit if no option is selected
 [ -z "$chosen_option" ] && exit 0
@@ -20,8 +13,7 @@ chosen_option=$(echo -e "$options" | dmenu -i -p "Choose an option:" \
 case "$chosen_option" in
     "Connect to Wi-Fi")
         available_networks=$(nmcli -t -f SSID dev wifi | grep -v '^--' | uniq)
-        chosen_network=$(echo -e "$available_networks" | dmenu -i -p "Available Networks:" \
-            -nb "$DMENU_NB" -nf "$DMENU_NF" -sb "$DMENU_SB" -sf "$DMENU_SF")
+        chosen_network=$(echo -e "$available_networks" | dmenu -i -p "Available Networks:")
 
         if [ -n "$chosen_network" ]; then
             # Disable auto-connect for all saved networks
@@ -44,8 +36,7 @@ case "$chosen_option" in
                 fi
             else
                 # Prompt for password for new network
-                password=$(dmenu -p "Enter password for $chosen_network:" \
-                    -nb "$DMENU_NB" -nf "$DMENU_NF" -sb "$DMENU_SB" -sf "$DMENU_SF")
+                password=$(dmenu -p "Enter password for $chosen_network:")
                 if [ -n "$password" ]; then
                     nmcli dev wifi connect "$chosen_network" password "$password"
                     if [ $? -eq 0 ]; then
@@ -59,7 +50,7 @@ case "$chosen_option" in
                 fi
             fi
         else
-            # notify-send "Wi-Fi" "No network selected"
+            notify-send "Wi-Fi" "No network selected"
         fi
         ;;
     "Disconnect from Wi-Fi")

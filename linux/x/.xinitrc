@@ -14,10 +14,7 @@ cleanup() {
 trap cleanup EXIT
 
 # Select the window manager
-WM=$(echo -e "dwm\ni3wm\ncinnamon" | dmenu -i -p "Select Window Manager:" \
-    -nb "#1a1b26" -nf "#c0caf5" \
-    -sb "#7aa2f7" -sf "#1a1b26" \
-    -fn "monospace-10")
+WM=$(echo -e "dwm\ni3wm\ncinnamon" | dmenu -i -p "Select Window Manager:" -fn "monospace-10")
 
 case "$WM" in
     dwm)
@@ -26,7 +23,7 @@ case "$WM" in
         amixer set Headphone 30% unmute &
         picom &
         ~/.config/suckless/dwm/scripts/status-bar.sh &
-        xautolock -time 5 -locker "slock & systemctl suspend" &
+        xautolock -time 15 -locker "slock & systemctl suspend" &
         /home/mufeedcm/Applications/beeper-nightly.AppImage &
         nm-applet &
         dunst &
