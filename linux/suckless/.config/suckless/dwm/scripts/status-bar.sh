@@ -39,6 +39,7 @@ timedate(){
 }
 
 while :; do 
-  xsetroot -name "$(dayanddate)"";""|  $(cpu_usage)  |""  $(ram_usage)  |""  $(volume)  |""  $(wifi)  |""  $(timedate)  "
+  # xsetroot -name "$(dayanddate)"";""|  $(cpu_usage)  |""  $(ram_usage)  |""  $(volume)  |""  $(wifi)  |""  $(timedate)  "
+  xsetroot -name "$(dayanddate)"";""|  $(volume)  |""  $(wifi)  |""  $(timedate)  "
   sleep 1
 done

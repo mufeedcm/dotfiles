@@ -114,7 +114,7 @@ static const Key keys[] = {
     // Custom Scripts
     {MODKEY,                       XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},
     {TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},
-    {MODKEY,                       XK_c,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/caffeine-mode.sh")},
+    {MODKEY,                       XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/caffeine-mode.sh")},
     /*{MODKEY,                       XK_Print,      spawn,          SHCMD("flameshot gui -d 5000")},*/
     /*{TERMMOD,                      XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts.sh")},*/
     /*{MODKEY,                       XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts_txt.sh")},*/
