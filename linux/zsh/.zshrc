@@ -8,6 +8,8 @@ HISTFILE=~/.zsh_history  # Path to the history file
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH="$PATH:/home/mufeedcm/.local/bin" # Added by `pipx`
+export EDITOR=nvim
+export VISUAL=nvim
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 

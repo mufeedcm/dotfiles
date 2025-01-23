@@ -19,7 +19,8 @@ WM=$(echo -e "dwm\ni3wm\ncinnamon" | dmenu -i -p "Select Window Manager:" -fn "m
 case "$WM" in
     dwm)
         # Start background processes
-        feh --bg-scale ~/.config/backgrounds/mistbg.jpg &
+        feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
+        # feh --bg-scale ~/.config/backgrounds/mistbg.jpg &
         amixer set Headphone 30% unmute &
         picom &
         ~/.config/suckless/dwm/scripts/status-bar.sh &
