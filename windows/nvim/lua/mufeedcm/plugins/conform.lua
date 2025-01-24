@@ -1,6 +1,7 @@
 -- Autoformat
 return {
 	"stevearc/conform.nvim",
+	enabled = true,
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
 	keys = {
@@ -40,10 +41,6 @@ return {
 			css = { "prettier" },
 			html = { "prettier" },
 			json = { "prettier" },
-			yaml = { "prettier" },
-			markdown = { "prettier" },
-			graphql = { "prettier" },
-			liquid = { "prettier" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 		},

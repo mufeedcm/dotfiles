@@ -1,4 +1,3 @@
--- LSP Plugins
 return {
 	{
 		"folke/lazydev.nvim",
@@ -86,9 +85,11 @@ return {
 				html = {},
 				cssls = {},
 				svelte = {},
-				tailwindcss = {},
-				-- gopls = {},
-				-- rust_analyzer = {},
+				tailwindcss = {
+					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact" },
+				},
+
+				marksman = {},
 				clangd = {
 					cmd = { "clangd" },
 					filetypes = { "c", "cpp" },
@@ -148,37 +149,38 @@ return {
 							--For seoyek
 
 							-- forwardSearch = {
-							-- 	executable = "sioyek",
-							-- 	args = {
-							-- 		"--reuse-window",
-							-- 		"--execute-command",
-							-- 		"toggle_synctex",
-							-- 		"--inverse-search",
-							-- 		'texlab inverse-search -i "%%1" -l %%2',
-							-- 		"--forward-search-file",
-							-- 		"%f",
-							-- 		"--forward-search-line",
-							-- 		"%l",
-							-- 		"%p",
-							-- 	},
-							-- },
-						},
-						latexFormatter = "latexindent",
-						latexindent = {
-							modifyLineBreaks = false,
-						},
-					},
-				},
-			}
-
+								-- 	executable = "sioyek",
+								-- 	args = {
+									-- 		"--reuse-window",
+									-- 		"--execute-command",
+									-- 		"toggle_synctex",
+									-- 		"--inverse-search",
+									-- 		'texlab inverse-search -i "%%1" -l %%2',
+									-- 		"--forward-search-file",
+									-- 		"%f",
+									-- 		"--forward-search-line",
+									-- 		"%l",
+									-- 		"%p",
+									-- 	},
+									-- },
+								},
+								latexFormatter = "latexindent",
+								latexindent = {
+									modifyLineBreaks = false,
+								},
+							},
+						},			}
 			require("mason").setup()
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
+				"isort",
+				"black",
 				"stylua",
 				"eslint_d",
 				"pylint",
 				"clang-format",
 				"latexindent",
+				-- "luacheck",
 				"prettierd",
 				"prettier",
 			})
