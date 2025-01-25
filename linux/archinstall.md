@@ -284,6 +284,25 @@ sudo pacman -S xorg-setxkbmap
 sudo pacman -S xcape
 
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install --lts
+
+
+sudo pacman -S fuse2
+
+
+sudo pacman -S noto-fonts-emoji
+
+
+sudo pacman -S alsa-utils
+
+
+sudo pacman -S bucklespring
+
+
+sudo pacman -S unzip wget
+
+sudo pacman -S ripgrep
 ```
 
 

@@ -112,7 +112,7 @@ static const Key keys[] = {
     {TERMMOD,                      XK_r,          spawn,          SHCMD("systemctl reboot")},
 
     // Custom Scripts
-    {TERMMOD,                       XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},
+    {TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},
     {TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},
     {MODKEY,                       XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/caffeine-mode.sh")},
     /*{MODKEY,                       XK_Print,      spawn,          SHCMD("flameshot gui -d 5000")},*/

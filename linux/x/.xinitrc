@@ -16,18 +16,17 @@ trap cleanup EXIT
 
 # Start background processes
 feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
-# feh --bg-scale ~/.config/backgrounds/mistbg.jpg &
-amixer set Headphone 30% unmute &
+# amixer set Headphone 30% unmute &
 picom &
 ~/.config/suckless/dwm/scripts/status-bar.sh &
 xautolock -time 15 -locker "slock & systemctl suspend" &
-# /home/mufeedcm/Applications/beeper-nightly.AppImage &
+beeper-nightly &  # Assuming it's symlinked to ~/.local/bin/
 nm-applet &
 dunst &
 setxkbmap -option ctrl:nocaps
 xcape -e 'Control_L=Escape'
-# buckle -g 40 &
-st -n win1tmux -e zsh -ic tmux &
+st -n win1tmux -e zsh -ic tmux &  # Ensure st and tmux are installed
+buckle -g 40 &
 exec dwm
 
 
