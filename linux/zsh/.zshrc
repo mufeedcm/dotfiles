@@ -31,7 +31,7 @@ export STARSHIP_ZSH_KEYMAP_SELECT=0
 
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
-source ./.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 zvm_vi_yank () {
