@@ -242,7 +242,6 @@ rm -rf yay
 
 ```
 sudo pacman -Sy dunst zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd xclip zathura
-pacman -Ss xsetroot
 ```
 
 `yay -S github-cli-git`
@@ -303,6 +302,9 @@ sudo pacman -S bucklespring
 sudo pacman -S unzip wget
 
 sudo pacman -S ripgrep
+
+sudo pacman -S lf
+
 ```
 
 
