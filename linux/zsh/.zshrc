@@ -11,12 +11,12 @@ export PATH="$PATH:/home/mufeedcm/.local/bin" # Added by `pipx`
 export EDITOR=nvim
 export VISUAL=nvim
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 eval "$(starship init zsh)"
 
-export PATH="$HOME/anaconda3/bin:$PATH"
-. "$HOME/anaconda3/etc/profile.d/conda.sh"
+# export PATH="$HOME/anaconda3/bin:$PATH"
+# . "$HOME/anaconda3/etc/profile.d/conda.sh"
 
 # Ensure Starship is always initialized, even inside tmux
 if [[ -z "$TMUX" ]]; then
@@ -25,11 +25,11 @@ fi
 #
 export STARSHIP_ZSH_KEYMAP_SELECT=0
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 
-source ~/.zsh/plugins/autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source ./.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
