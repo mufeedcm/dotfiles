@@ -5,6 +5,7 @@ export XDG_SESSION_TYPE=x11
 
 # Apply user-specific configurations
 [ -f ~/.xprofile ] && source ~/.xprofile
+xrdb ~/.Xresources
 
 # Function to clean up background processes
 cleanup() {
@@ -29,7 +30,6 @@ xcape -e 'Control_L=Escape'
 st -n win1tmux -e zsh -ic tmux &
 exec dwm
 
-esac 
 
 
 # Select the window manager

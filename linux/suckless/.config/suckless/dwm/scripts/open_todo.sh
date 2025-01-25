@@ -1,5 +1,5 @@
 #!/bin/bash
-# Open today's to-do file in Neovim inside Kitty
+# Open today's to-do file in Neovim inside st
 
 todo_dir=~/notes/5.TODO
 todo_file="$todo_dir/$(date +'%Y-%m-%d').md"
@@ -10,7 +10,7 @@ yesterday_todo_file="$todo_dir/$yesterday_date.md"
 # Check if today's to-do file already exists. If it does, do nothing.
 if [[ -f "$todo_file" ]]; then
     echo "Today's to-do file already exists, no changes made."
-    kitty --class "todo_float" nvim "$todo_file"
+    st -e nvim "$todo_file"
     exit 0
 fi
 
@@ -37,5 +37,5 @@ final_content=$(sed -e "s/{{date}}/$(date +'%Y-%m-%d')/g" \
 # Create today's to-do file with the template and unfinished tasks
 echo "$final_content" > "$todo_file"
 
-# Open the file with Kitty and Neovim
-kitty --class "todo_float" nvim "$todo_file"
+# Open the file with st and Neovim
+st -e nvim "$todo_file"
