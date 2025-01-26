@@ -1,6 +1,6 @@
 # Dotfiles Repository
 
-This repository contains my personal dotfiles for various systems, including **Linux**, **Android**, and **Windows**. It helps me maintain a consistent environment across different platforms.
+This repository contains my personal dotfiles for  **Linux**, **Android**, and **Windows**.
 
 ---
 
