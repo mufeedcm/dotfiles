@@ -15,7 +15,7 @@ volume() {
 
 wifi (){
   if [ "$(nmcli general | awk '{print $1}' | tail -n 1)" = "disconnected" ]; then
-    echo " 睊  No Wi-Fi "
+    echo " No Wi-Fi "
   else 
     ssid=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
     echo "   $ssid"

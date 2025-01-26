@@ -233,35 +233,5 @@ nvm install --lts
 
 
 #to setup up appimages (example)
-ln -s ~/Applications/beeper-nightly.AppImage ~/.local/bin/beeper-nightly
+ln -s ~/Applications/<app-name>.AppImage ~/.local/bin/<app-name>
 ```
-
-
-
-
-
-
-
-sudo apt install dunst feh flameshot fzf htop imagemagick mpv picom latexmk texlive texlive-latex-extra ripgrep zathura brave-browser -y
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

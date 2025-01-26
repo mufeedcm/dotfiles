@@ -14,10 +14,10 @@ cleanup() {
 
 trap cleanup EXIT
 
-# Start background processes
+## Start background processes
 feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
 # amixer set Headphone 30% unmute &
-picom &
+#picom &
 ~/.config/suckless/dwm/scripts/status-bar.sh &
 xautolock -time 15 -locker "slock & systemctl suspend" &
 beeper-nightly &  # Assuming it's symlinked to ~/.local/bin/
