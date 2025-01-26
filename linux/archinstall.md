@@ -305,6 +305,7 @@ sudo pacman -S ripgrep
 
 sudo pacman -S lf
 
+ln -s ~/Applications/beeper-nightly.AppImage ~/.local/bin/beeper-nightly
 ```
 
 
