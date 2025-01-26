@@ -17,7 +17,7 @@
 ![neofetch](./neofetch.png)
 ---
 
-## Installation Guide.
+## Installation.
 
 Follow the guide : [my personal guide](./archinstall.md)
 
