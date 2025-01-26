@@ -62,7 +62,7 @@ swapon /dev/sda7 #enable swap
 ## 8. Installing essential packages.
 
 ```bash
-pacstrap -K /mnt base linux linux-firmware intel-ucode base-devel git sudo vim bluez bluez-utils networkmanager
+pacstrap -K /mnt base linux linux-firmware intel-ucode base-devel git sudo vim bluez bluez-utils networkmanager man
 ```
 
 ## 9. Generating fstab
@@ -175,7 +175,7 @@ nvidia-smi
 sudo pacman -Sy xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
 
 #installing beautification and monitoring
-sudo pacman -Sy htop neofetch figlet bucklespring
+sudo pacman -Sy htop neofetch figlet bucklespring tree
 
 #installing stow for symlink and setting it up
 sudo pacman -Sy stow
@@ -203,7 +203,11 @@ sudo make clean install
 cd ~
 
 #installing essential packages
-sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd xclip zathura rofi dunst libnotify xorg-xsetroot xautolock xorg-setxkbmap xcape network-manager-applet fuse2 noto-fonts-emoji unzip wget ripgrep lf
+sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd xclip zathura rofi dunst libnotify xorg-xsetroot xautolock xorg-setxkbmap xcape network-manager-applet fuse2 noto-fonts-emoji unzip wget ripgrep lf imagemagick mpv 
+
+#latex-setup (optional) 
+sudo pacman -S texlive-core texlive-latexextra texlive-binextra
+
 
 #audio setup
 sudo pacman -S pipewire pipewire-alsa pipewire-pulse wireplumber pavucontrol alsa-utils
@@ -238,6 +242,7 @@ ln -s ~/Applications/beeper-nightly.AppImage ~/.local/bin/beeper-nightly
 
 
 
+sudo apt install dunst feh flameshot fzf htop imagemagick mpv picom latexmk texlive texlive-latex-extra ripgrep zathura brave-browser -y
 
 
 
