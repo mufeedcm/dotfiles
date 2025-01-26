@@ -19,7 +19,7 @@ This repository contains my personal dotfiles for  **Linux**, **Android**, and *
 
 | **Component**           | **Details**                                     |
 |-------------------------|-------------------------------------------------|
-| **OS**                  | Arch Linux | Windows | Termux                    |
+| **OS**                  | Arch Linux / Windows / Termux                   |
 | **Processor**           | Intel© Core™ i3-9100F CPU @ 3.60GHz × 4         |
 | **Graphics Card**       | Gigabyte Nvidia Geforce GT 710                  |
 | **MotherBoard**         | Asus Prime H310M-E R2.0                         |
