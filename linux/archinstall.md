@@ -208,6 +208,9 @@ sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd
 #latex-setup (optional) 
 sudo pacman -S texlive-core texlive-latexextra texlive-binextra
 
+#pyton setup
+sudo pacman -S python python-pip python-pipx
+sudo pacman -S gobject-introspection python-gobject
 
 #audio setup
 sudo pacman -S pipewire pipewire-alsa pipewire-pulse wireplumber pavucontrol alsa-utils

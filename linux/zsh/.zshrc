@@ -10,6 +10,8 @@ export LC_ALL=en_US.UTF-8
 export PATH="$PATH:/home/mufeedcm/.local/bin" # Added by `pipx`
 export EDITOR=nvim
 export VISUAL=nvim
+export GTK_MODULES=gail:atk-bridge
+export AT_SPI_BUS=at-spi-bus-launcher
 
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
