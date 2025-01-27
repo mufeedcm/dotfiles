@@ -31,9 +31,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/plugins/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
-source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/mufeedcm/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/mufeedcm/.zsh/plugins/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source /home/mufeedcm/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 zvm_vi_yank () {
@@ -74,31 +74,31 @@ neofetch
 # Common Aliases
 alias la='ls -la'
 alias cls='clear'
-alias conf='cd ~/.config'
-alias confnvim='nvim ~/.config/nvim/'
+alias conf='cd /home/mufeedcm/.config'
+alias confnvim='nvim /home/mufeedcm/.config/nvim/'
 
 # Books
-alias cbook1='zathura ~/books/programmingbooks/the-c-programming-language.pdf &'
-alias cbook2='zathura ~/books/programmingbooks/c_programming_a_modern_approach_2e_c89_c99_king.pdf &'
-alias ebook='zathura ~/books/electronicsbooks/art-of-electronics.pdf &'
+alias cbook1='zathura /home/mufeedcm/books/programmingbooks/the-c-programming-language.pdf &'
+alias cbook2='zathura /home/mufeedcm/books/programmingbooks/c_programming_a_modern_approach_2e_c89_c99_king.pdf &'
+alias ebook='zathura /home/mufeedcm/books/electronicsbooks/art-of-electronics.pdf &'
 
 # Quran Player
-alias todo='nvim ~/notes/3.Main_notes/Todo.md'
+alias todo='nvim /home/mufeedcm/notes/3.Main_notes/Todo.md'
 
-alias sourcezshrc='source ~/.zshrc'
-alias azantimes="~/azantimes/azantime.sh"
+alias sourcezshrc='source /home/mufeedcm/.zshrc'
+alias azantimes="/home/mufeedcm/azantimes/azantime.sh"
 
 # === Functions ===
 # Quran Player
 quran() {
   volume=${1:-50}  # Default volume if not provided
-  mpv --volume=$volume ~/Music/surah_muhammed.m4a
+  mpv --volume=$volume /home/mufeedcm/Music/surah_muhammed.m4a
 }
 
 pushnotes() {
     local prev_dir=$(pwd)
     echo "Pushing Notes..."
-    cd ~/notes || return
+    cd /home/mufeedcm/notes || return
     git add .
     git commit -m "auto"
     git push -u origin main
@@ -108,7 +108,7 @@ pushnotes() {
 pushdots() {
     local prev_dir=$(pwd)
     echo "Pushing Dotfiles..."
-    cd ~/dotfiles || return
+    cd /home/mufeedcm/dotfiles || return
     git add .
     git commit -m "auto"
     git push -u origin main
@@ -125,7 +125,7 @@ pushall() {
 pullnotes() {
     local prev_dir=$(pwd)
     echo "Pulling Notes..."
-    cd ~/notes || return
+    cd /home/mufeedcm/notes || return
     git pull origin main
     cd "$prev_dir"
 }
@@ -133,7 +133,7 @@ pullnotes() {
 pulldots() {
     local prev_dir=$(pwd)
     echo "Pulling Dotfiles..."
-    cd ~/dotfiles || return
+    cd /home/mufeedcm/dotfiles || return
     git pull origin main
     cd "$prev_dir"
 }
@@ -148,7 +148,7 @@ pullall() {
 checknotes() {
     local prev_dir=$(pwd)
     echo "Checking Notes Repo Status..."
-    cd ~/notes || return
+    cd /home/mufeedcm/notes || return
     git status
     cd "$prev_dir"
 }
@@ -156,7 +156,7 @@ checknotes() {
 checkdots() {
     local prev_dir=$(pwd)
     echo "Checking Dotfiles Repo Status..."
-    cd ~/dotfiles || return
+    cd /home/mufeedcm/dotfiles || return
     git status
     cd "$prev_dir"
 }
