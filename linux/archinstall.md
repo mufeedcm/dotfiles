@@ -62,7 +62,7 @@ swapon /dev/sda7 #enable swap
 ## 8. Installing essential packages.
 
 ```bash
-pacstrap -K /mnt base linux linux-firmware intel-ucode base-devel git sudo vim bluez bluez-utils networkmanager man
+pacstrap -K /mnt base linux linux-firmware intel-ucode base-devel git sudo vim bluez bluez-utils networkmanager man ntfs-3g
 ```
 
 ## 9. Generating fstab
