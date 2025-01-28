@@ -288,8 +288,8 @@ static Shortcut shortcuts[] = {
     { MODKEY,              XK_c,          clipcopy,        {.i = 0} },
     { MODKEY,              XK_v,          clippaste,       {.i = 0} },
 
-    { ControlMask,         XK_k,          kscrollup,      {.i = 1} },
-    { ControlMask,         XK_j,          kscrolldown,    {.i = 1} },
+    /*{ ControlMask,         XK_k,          kscrollup,      {.i = 1} },*/
+    /*{ ControlMask,         XK_j,          kscrolldown,    {.i = 1} },*/
 
     /* Num lock toggle */
     { TERMMOD,           XK_Num_Lock,     numlock,        {.i = 0} },
