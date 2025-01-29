@@ -1,20 +1,25 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 1; /* border pixel of windows */
+static const unsigned int borderpx = 4; /* border pixel of windows */
 static const unsigned int gappx = 6;    /* gaps between windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
+
+static const int splitstatus = 1;    /* 1 for split status items */
+static const char *splitdelim = ";"; /* Character used for separating status */
+
 static const char *fonts[] = {"Meslo LGM Nerd Font:size=10"};
 /*static const char *fonts[] = {"monospace:size=10"};*/
 static const char dmenufont[] = "Meslo LGM Nerd Font:size=10";
 /*static const char dmenufont[] = "monospace:size=10";*/
+
 static const char col_gray1[] = "#1a1b26"; // Background
 static const char col_gray2[] = "#414868"; // Inactive border
 static const char col_gray3[] = "#a9b1d6"; // Foreground (text)
 static const char col_gray4[] = "#c0caf5"; // Selected text
-static const char col_cyan[] = "#292e42";  // Accent (selected bar)
+static const char col_cyan[] = "#5a73ad";  // Accent (selected bar)
 
 /*static const char col_gray1[] = "#222222";*/
 /*static const char col_gray2[] = "#444444";*/
@@ -29,6 +34,7 @@ static const char *colors[][3] = {
 
 /* tagging */
 static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+/*static const char *tags[] = {"1", "2", "3", "4", "5"};*/
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -47,8 +53,6 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster = 1;    /* number of clients in master area */
-/* 1 means respect size hints in tiled resizals */
-/*static const int resizehints = 1;*/
 static const int resizehints =
     0; /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen =
@@ -76,9 +80,7 @@ static const Layout layouts[] = {
     .v = (const char *[]) { "/bin/sh", "-c", cmd, NULL }                       \
   }
 
-/* commands */
-static char dmenumon[2] =
-    "0"; /* component of dmenucmd, manipulated in spawn() */
+static char dmenumon[2] = "0";
 static const char *dmenucmd[] = {"dmenu_run", NULL};
 /*static const char *dmenucmd[] = {*/
 /*    "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb", col_gray1,*/
@@ -92,10 +94,10 @@ static const Key keys[] = {
     /* modifier                     key             function        argument */
     
     // Applications
-    {MODKEY,                       XK_space,      spawn,          {.v = dmenucmd}},
+    {MODKEY,                       XK_p,          spawn,          {.v = dmenucmd}},
     {TERMMOD,                      XK_Return,     spawn,          {.v = termcmd}},
     {TERMMOD,                      XK_grave,      spawn,          {.v = (const char *[]){"st", "-e", "htop", NULL}}},
-    {MODKEY,                       XK_p,          spawn,          SHCMD("rofi -show drun")},
+    {MODKEY,                       XK_space,      spawn,          SHCMD("rofi -show drun")},
     {0,                            XK_Print,      spawn,          SHCMD("flameshot gui")},
 
     // Dunst Notifications

@@ -1,3 +1,7 @@
+dayanddate(){
+  LC_TIME="en_IN.UTF-8" TZ="Asia/Kolkata" date '+%A,%e - %B - %G'
+}
+
 volume() {
     muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
     level=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | head -n 1)
@@ -18,24 +22,16 @@ wifi (){
   fi
 }
 
-# cpu_usage(){
-#   usage=$(top -bn1 | grep "Cpu(s)" | awk '{print 100 - $8"%"}')
-#   echo " $usage"
-# }
+cpu_usage(){
+  usage=$(top -bn1 | grep "Cpu(s)" | awk '{print 100 - $8"%"}')
+  echo " $usage"
+}
 
-# ram_usage(){
-#   total=$(free -m | awk '/^Mem:/ {print $2}')
-#   used=$(free -m | awk '/^Mem:/ {print $3}')
-#   percent=$((used * 100 / total))
-#   echo " ${percent}%"
-# }
-
-# dayanddate(){
-#   LC_TIME="en_IN.UTF-8" TZ="Asia/Kolkata" date '+%A,%e - %B - %G'
-# }
-
-dayanddate(){
-  LC_TIME="en_IN.UTF-8" TZ="Asia/Kolkata" date '+%A    %d/%m/%Y'
+ram_usage(){
+  total=$(free -m | awk '/^Mem:/ {print $2}')
+  used=$(free -m | awk '/^Mem:/ {print $3}')
+  percent=$((used * 100 / total))
+  echo " ${percent}%"
 }
 
 timedate(){
@@ -44,7 +40,6 @@ timedate(){
 
 while :; do 
   # xsetroot -name "$(dayanddate)"";""|  $(cpu_usage)  |""  $(ram_usage)  |""  $(volume)  |""  $(wifi)  |""  $(timedate)  "
-  # xsetroot -name "  $(dayanddate)  ""|  $(volume)  |""  $(wifi)  |""  $(timedate)  "
-  xsetroot -name "|  $(volume)  ""|  $(wifi)  ""|  $(dayanddate)  ""|  $(timedate)  "
+  xsetroot -name "$(dayanddate)"";""|  $(volume)  |""  $(wifi)  |""  $(timedate)  "
   sleep 1
 done

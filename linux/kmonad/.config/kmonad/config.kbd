@@ -1,0 +1,55 @@
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-SIGMACHIP_HP_Wired_Keyboard-event-kbd")
+  output (uinput-sink "My KMonad output"
+  "sleep 1 && setxkbmap -option compose:ralt")
+  cmp-seq ralt   
+  cmp-seq-delay 5 
+
+  fallthrough true
+  allow-cmd true
+  implicit-around around
+)
+
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9    f10  f11  f12  fn    prnt  slck  pause
+  grv  1    2    3    4    5    6    7    8    9     0    -    =    bspc        home  end   
+  tab  q    w    e    r    t    y    u    i    o     p    [    ]    \           ins   pgup  
+  caps a    s    d    f    g    h    j    k    l     ;    '    ret              del   pgdn
+  lsft z    x    c    v    b    n    m    ,    .     /    rsft                  up          
+  lctl lmet lalt           spc            ralt menu  rctl                 left  down  right
+  )
+
+(defsrc :name numpad
+  nlck kp/ kp* kp-
+  kp7  kp8 kp9 kp+
+  kp4  kp5 kp6
+  kp1  kp2 kp3 kprt
+  kp0    kp.
+)
+
+(defalias
+  nav (tap-next q (layer-toggle navs))
+  ce  (tap-hold-next 200 esc lctrl))
+
+
+(deflayer base
+  caps f1   f2   f3   f4   f5   f6   f7   f8   f9    f10  f11  f12  fn    prnt  slck  pause
+  grv  1    2    3    4    5    6    7    8    9     0    -    =    bspc        home  end   
+  tab  @nav w    e    r    t    y    u    i    o     p    [    ]    \           ins   pgup  
+  @ce  a    s    d    f    g    h    j    k    l     ;    '    ret              del   pgdn
+  lsft z    x    c    v    b    n    m    ,    .     /    rsft                  up          
+  lctl lmet lalt           spc            ralt menu  rctl                 left  down  right
+  )
+
+(deflayer navs
+  -    -    -    -    -    -    -    -    -    -     -    -    -    -     -     -     -
+  -    -    -    -    -    -    -    -    -    -     -    -    -    -           -     -
+  -    -    -    end  -    -    -    -    -    -     -    -    -    -           -     -
+  -    -    -    -    -    -    left down up   right -    -    -                -     -
+  -    -    -    -    -    -    -    -    -    -     -    -                     -      
+  -    -    -           -                 -    -    -                     -     -     -
+  )
+
+
+

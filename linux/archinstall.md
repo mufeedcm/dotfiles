@@ -208,6 +208,13 @@ sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd
 #latex-setup (optional) 
 sudo pacman -S texlive-core texlive-latexextra texlive-binextra
 
+#kmonadsetup
+cd ~dotfiles/linux/
+stow -t $HOME kmonad
+cp ~/dotfiles/linux/kmonad/.config/kmonad/kmonad.service /etc/systemd/system/kmonad.service
+sudo systemctl enable kmonad.service
+sudo systemctl start kmonad.service
+
 #pyton setup
 sudo pacman -S python python-pip python-pipx
 sudo pacman -S gobject-introspection python-gobject

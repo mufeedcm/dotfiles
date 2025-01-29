@@ -1,0 +1,13 @@
+[Unit]
+Description=KMonad keyboard remapper
+After=local-fs.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kmonad /home/mufeedcm/.config/kmonad/config.kbd
+Restart=on-failure
+User=mufeedcm
+Group=input
+
+[Install]
+WantedBy=multi-user.target

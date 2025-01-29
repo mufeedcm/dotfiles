@@ -23,10 +23,11 @@ xautolock -time 15 -locker "slock & systemctl suspend" &
 beeper-nightly &  # Assuming it's symlinked to ~/.local/bin/
 nm-applet &
 dunst &
-setxkbmap -option ctrl:nocaps
-xcape -e 'Control_L=Escape'
+# setxkbmap -option ctrl:nocaps
+# xcape -e 'Control_L=Escape'
 st -n win1tmux -e zsh -ic tmux &  # Ensure st and tmux are installed
 buckle -g 40 &
+flameshot &
 exec dwm
 
 
