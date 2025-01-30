@@ -92,11 +92,12 @@ static const Key keys[] = {
     /* modifier                     key             function        argument */
     
     // Applications
-    {MODKEY,                       XK_space,      spawn,          {.v = dmenucmd}},
+    /*{MODKEY,                       XK_space,      spawn,          {.v = dmenucmd}},*/
     {TERMMOD,                      XK_Return,     spawn,          {.v = termcmd}},
     {TERMMOD,                      XK_grave,      spawn,          {.v = (const char *[]){"st", "-e", "htop", NULL}}},
-    {MODKEY,                       XK_p,          spawn,          SHCMD("rofi -show drun")},
+    /*{MODKEY,                       XK_p,          spawn,          SHCMD("rofi -show drun")},*/
     {0,                            XK_Print,      spawn,          SHCMD("flameshot gui")},
+    {MODKEY,                       XK_space,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/dmenu_launch.sh")},
 
     // Dunst Notifications
     {MODKEY,                       XK_F6,         spawn,          SHCMD("dunstctl close")},
@@ -111,8 +112,7 @@ static const Key keys[] = {
 
     // Custom Scripts
     {TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},
-    {TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},
-    {MODKEY,                       XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/caffeine-mode.sh")},
+    /*{TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},*/
     /*{MODKEY,                       XK_Print,      spawn,          SHCMD("flameshot gui -d 5000")},*/
     /*{TERMMOD,                      XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts.sh")},*/
     /*{MODKEY,                       XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts_txt.sh")},*/
@@ -142,7 +142,7 @@ static const Key keys[] = {
     {MODKEY,                       XK_t,         setlayout,       {.v = &layouts[0]}},
     {MODKEY,                       XK_f,         setlayout,       {.v = &layouts[1]}},
     {MODKEY,                       XK_m,         setlayout,       {.v = &layouts[2]}},
-    {MODKEY,                       XK_space,     setlayout,       {0}},
+    /*{MODKEY,                       XK_space,     setlayout,       {0}},*/
     {TERMMOD,                      XK_space,     togglefloating,  {0}},
     {MODKEY,                       XK_0,         view,            {.ui = ~0}},
     {TERMMOD,                      XK_0,         tag,             {.ui = ~0}},
