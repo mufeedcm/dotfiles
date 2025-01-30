@@ -12,8 +12,8 @@
   ;; input  (iokit-name "Apple Internal Keyboard / Trackpad")
   ;; output (kext)
 
-  cmp-seq ralt   
-  cmp-seq-delay 5 
+  cmp-seq ralt   ;; Allow rapid sequence of Right Alt key
+  cmp-seq-delay 5 ;; 5 ms delay between sequence keys for better responsiveness
 
   fallthrough true
   allow-cmd true
@@ -22,6 +22,7 @@
 
 
 (defsrc
+;;default mappings of the keyboard
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9    f10  f11  f12  fn    prnt  slck  pause
   grv  1    2    3    4    5    6    7    8    9     0    -    =    bspc        home  end   
   tab  q    w    e    r    t    y    u    i    o     p    [    ]    \           ins   pgup  
@@ -31,6 +32,7 @@
   )
 
 (defsrc :name numpad
+;;numpad default mappings
   nlck kp/ kp* kp-
   kp7  kp8 kp9 kp+
   kp4  kp5 kp6
@@ -39,11 +41,17 @@
 )
 
 (defalias
+;;aliases 
+
+;;nav for hjkl navigation and q for home and e for end
   nav (tap-next tab (layer-toggle navs))
+
+;;caps-lock as esc and left ctrl on hold
   ce  (tap-hold-next 200 esc lctrl))
 
 
 (deflayer base
+;; base layer changed esc with caps and put the alias
   caps f1   f2   f3   f4   f5   f6   f7   f8   f9    f10  f11  f12  fn    prnt  slck  pause
   grv  1    2    3    4    5    6    7    8    9     0    -    =    bspc        home  end   
   @nav q    w    e    r    t    y    u    i    o     p    [    ]    \           ins   pgup  
@@ -53,6 +61,7 @@
   )
 
 (deflayer navs
+;;nav navigation layer
   -    -    -    -    -    -    -    -    -    -     -    -    -    -     -     -     -
   -    -    -    -    -    -    -    -    -    -     -    -    -    -           -     -
   -    home -    -    -    -    -    -    -    -     end  -    -    -           -     -
