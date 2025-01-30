@@ -18,13 +18,16 @@ static const char *colors[SchemeLast][2] = {
     [SchemeNorm] = {"#ffffff", "#1a1b26"},
     [SchemeSel] = {"#ffffff", "#3b4261"},
     [SchemeOut] = {"#ffffff", "#565f89"},
-    [SchemeNorm] = {"#bbbbbb", "#222222"},
-    [SchemeSel] = {"#eeeeee", "#005577"},
-    [SchemeOut] = {"#000000", "#00ffff"},
+    /*[SchemeNorm] = {"#bbbbbb", "#222222"},*/
+    /*[SchemeSel] = {"#eeeeee", "#005577"},*/
+    /*[SchemeOut] = {"#000000", "#00ffff"},*/
 };
 /* -l and -g options; controls number of lines and columns in grid if > 0 */
-static unsigned int lines = 10;
-static unsigned int columns = 0;
+static unsigned int lines = 8;
+/* -h option; minimum height of a menu line */
+static unsigned int lineheight = 0;
+static unsigned int min_lineheight = 8;
+static unsigned int columns = 1;
 
 /*
  * Characters not considered part of a word while deleting words

@@ -78,7 +78,7 @@ menu_items=$(
 
 # Get user input from dmenu
 # input=$(echo -e "$menu_items" | dmenu -i -p "Search or command:")
-input=$(echo -e "$menu_items" | dmenu -i )
+input=$(echo -e "$menu_items" | dmenu -i)
 
 # Handle searches
 if [[ "$input" =~ ^(g|yt)\ (.+) ]]; then
