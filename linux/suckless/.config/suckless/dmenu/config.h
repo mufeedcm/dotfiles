@@ -23,7 +23,7 @@ static const char *colors[SchemeLast][2] = {
     /*[SchemeOut] = {"#000000", "#00ffff"},*/
 };
 /* -l and -g options; controls number of lines and columns in grid if > 0 */
-static unsigned int lines = 10;
+static unsigned int lines = 8;
 static unsigned int columns = 1;
 
 /*
