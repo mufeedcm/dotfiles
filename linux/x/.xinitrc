@@ -1,69 +1,32 @@
 #!/bin/bash
-
-# Set up the X environment
 export XDG_SESSION_TYPE=x11
-
-# Apply user-specific configurations
 [ -f ~/.xprofile ] && source ~/.xprofile
-xrdb ~/.Xresources
-
-# Function to clean up background processes
+[ -f ~/.Xresources ] && xrdb ~/.Xresources
 cleanup() {
-    pkill -P $$  # Kill all child processes when exiting
+    pkill -P $$  
+    tmux kill-server  
 }
-
 trap cleanup EXIT
 
-## Start background processes
+
+
 feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
-# amixer set Headphone 30% unmute &
-#picom &
 ~/.config/suckless/dwm/scripts/status-bar.sh &
 xautolock -time 15 -locker "slock & systemctl suspend" &
-beeper-nightly &  # Assuming it's symlinked to ~/.local/bin/
+beeper-nightly &  
 nm-applet &
 dunst &
-# setxkbmap -option ctrl:nocaps
-# xcape -e 'Control_L=Escape'
-st -n win1tmux -e zsh -ic tmux &  # Ensure st and tmux are installed
+numlockx &
 buckle -g 40 &
 flameshot &
+# amixer set Headphone 30% unmute &
+#picom &
+# setxkbmap -option ctrl:nocaps
+# xcape -e 'Control_L=Escape'
+st -n win1tmux -e zsh -ic tmux &  
+
+
+
+
 exec dwm
 
-
-
-# Select the window manager
-# WM=$(echo -e "dwm\ni3wm\ncinnamon" | dmenu -i -p "Select Window Manager:" -fn "monospace-10")
-# 
-# case "$WM" in
-    # dwm)
-        # # Start background processes
-        # feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
-        # # feh --bg-scale ~/.config/backgrounds/mistbg.jpg &
-        # amixer set Headphone 30% unmute &
-        # picom &
-        # ~/.config/suckless/dwm/scripts/status-bar.sh &
-        # xautolock -time 15 -locker "slock & systemctl suspend" &
-        # /home/mufeedcm/Applications/beeper-nightly.AppImage &
-        # nm-applet &
-        # dunst &
-        # setxkbmap -option ctrl:nocaps
-        # xcape -e 'Control_L=Escape'
-        # # buckle -g 40 &
-        # st -n win1tmux -e zsh -ic tmux &
-# 
-        # # Start dwm
-        # exec dwm
-        # ;;
-    # i3wm)
-        # exec i3
-        # ;;
-    # cinnamon)
-        # # Start Cinnamon desktop environment
-        # exec cinnamon-session-cinnamon
-        # ;;
-    # *)
-        # echo "Invalid selection or canceled. Exiting."
-        # exit 1
-        # ;;
-# esac

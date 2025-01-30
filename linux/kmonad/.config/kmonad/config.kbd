@@ -1,7 +1,17 @@
 (defcfg
+  ;; Linux
   input  (device-file "/dev/input/by-id/usb-SIGMACHIP_HP_Wired_Keyboard-event-kbd")
   output (uinput-sink "My KMonad output"
   "sleep 1 && setxkbmap -option compose:ralt")
+
+  ;; Windows
+  ;; input  (lowlevel-hook)
+  ;; output (sendevent-sink)
+
+  ;; macOS
+  ;; input  (iokit-name "Apple Internal Keyboard / Trackpad")
+  ;; output (kext)
+
   cmp-seq ralt   
   cmp-seq-delay 5 
 

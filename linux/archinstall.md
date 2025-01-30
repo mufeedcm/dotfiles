@@ -203,7 +203,7 @@ sudo make clean install
 cd ~
 
 #installing essential packages
-sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd xclip zathura rofi dunst libnotify xorg-xsetroot xautolock xorg-setxkbmap xcape network-manager-applet fuse2 noto-fonts-emoji unzip wget ripgrep lf imagemagick mpv 
+sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd xclip zathura rofi dunst libnotify xorg-xsetroot xautolock xorg-setxkbmap xcape network-manager-applet fuse2 noto-fonts-emoji unzip wget ripgrep lf imagemagick mpv numlockx
 
 #latex-setup (optional) 
 sudo pacman -S texlive-core texlive-latexextra texlive-binextra
