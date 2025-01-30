@@ -3,7 +3,7 @@ configuration {
     combi-modi: "drun,run,window";
     icon-theme: "Papirus-Dark";
     show-icons: true;
-    terminal: "kitty";
+    terminal: "st";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;

@@ -5,7 +5,8 @@ networks=$(nmcli -t -f SSID dev wifi | awk '!seen[$0]++')
 
 # Menu options
 options="Connect to Wi-Fi\nDisconnect from Wi-Fi\nExit"
-chosen_option=$(echo -e "$options" | dmenu -i -p "Choose an option:")
+# chosen_option=$(echo -e "$options" | dmenu -i -p "Choose an option:")
+chosen_option=$(echo -e "$options" | dmenu -i )
 
 # Exit if no option is selected
 [ -z "$chosen_option" ] && exit 0
