@@ -3,7 +3,7 @@ HISTSIZE=10000           # Number of commands to remember in the current session
 SAVEHIST=10000           # Number of commands to save to history file
 HISTFILE=~/.zsh_history  # Path to the history file
 
-# export FUNCNEST=100
+export FUNCNEST=1000
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -15,15 +15,19 @@ export AT_SPI_BUS=at-spi-bus-launcher
 
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-eval "$(starship init zsh)"
+# Ensure Starship runs only if it's not already running
+if ! pgrep -x starship > /dev/null; then
+    eval "$(starship init zsh)"
+fi
+
 
 # export PATH="$HOME/anaconda3/bin:$PATH"
 # . "$HOME/anaconda3/etc/profile.d/conda.sh"
 
 # Ensure Starship is always initialized, even inside tmux
-if [[ -z "$TMUX" ]]; then
-    eval "$(starship init zsh)"
-fi
+# if [[ -z "$TMUX" ]]; then
+#     eval "$(starship init zsh)"
+# fi
 #
 export STARSHIP_ZSH_KEYMAP_SELECT=0
 

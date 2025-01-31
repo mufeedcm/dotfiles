@@ -3,6 +3,7 @@
 # Files to store state
 CAFFEINE_STATE_FILE="/tmp/caffeine_mode"
 SEARCH_HISTORY_FILE="$HOME/.search_history"
+BROWSER='vieb'
 
 # Function to check if a string is a URL
 is_url() {
@@ -15,6 +16,7 @@ is_domain() {
 }
 
 # Function to handle web searches (Google, YouTube)
+# Function to handle web searches (Google, YouTube)
 search_web() {
     local engine="$1"
     local query="$2"
@@ -24,15 +26,15 @@ search_web() {
 
     if is_url "$query"; then
         # If it's a full URL (http:// or https://), open it directly
-        xdg-open "$query"
+        eval "$BROWSER \"$query\""
     elif is_domain "$query"; then
         # If it looks like a domain (without http://), open it directly
-        xdg-open "https://$query"
+        eval "$BROWSER \"https://$query\""
     else
         # Otherwise, search it on Google/YouTube
         case "$engine" in
-            "g") xdg-open "https://www.google.com/search?q=${query// /+}" ;;
-            "yt") xdg-open "https://www.youtube.com/results?search_query=${query// /+}" ;;
+            "g") eval "$BROWSER \"https://www.google.com/search?q=${query// /+}\"" ;;
+            "yt") eval "$BROWSER \"https://www.youtube.com/results?search_query=${query// /+}\"" ;;
         esac
     fi
 }
