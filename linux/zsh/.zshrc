@@ -76,6 +76,7 @@ xcape -e 'Control_L=Escape'
 
 # === Aliases ===
 # Common Aliases
+alias sp='pacman'
 alias la='ls -la'
 alias cls='clear'
 alias conf='cd /home/mufeedcm/.config'
