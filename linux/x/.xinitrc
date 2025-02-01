@@ -18,7 +18,7 @@ beeper-nightly &
 nm-applet &
 dunst &
 numlockx &
-buckle -g 40 &
+# buckle -g 40 &
 flameshot &
 picom &
 amixer set Headphone 30% unmute &
