@@ -2,6 +2,10 @@
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
+;;
+(setq x-alt-keysym 'control)
+(setq x-ctrl-keysym 'meta)
+
 
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
@@ -42,7 +46,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/notes/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
