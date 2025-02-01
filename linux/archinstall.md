@@ -244,4 +244,21 @@ nvm install --lts
 
 #to setup up appimages (example)
 ln -s ~/Applications/<app-name>.AppImage ~/.local/bin/<app-name>
+
+
+# doom emacs setup 
+sudo pacman -S emacs ripgrep fd
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+~/.config/emacs/bin/doom install
+# should replace the doom config.
+cd ~/dotfiles/linux/
+stow -t $HOME doom
+
+#syncthing setup 
+sudo pacman -S syncthing
+systemctl --user enable syncthing.service
+systemctl --user start syncthing.service
+
+
+
 ```
