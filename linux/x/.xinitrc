@@ -12,15 +12,16 @@ trap cleanup EXIT
 
 feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
 ~/.config/suckless/dwm/scripts/status-bar.sh &
-xautolock -time 15 -locker "slock & systemctl suspend" &
+# xautolock -time 15 -locker "slock & systemctl suspend" &
+xautolock -time 15 -locker "slock && systemctl suspend" -detectsleep
 beeper-nightly &  
 nm-applet &
 dunst &
 numlockx &
 buckle -g 40 &
 flameshot &
-# amixer set Headphone 30% unmute &
-#picom &
+picom &
+amixer set Headphone 30% unmute &
 # setxkbmap -option ctrl:nocaps
 # xcape -e 'Control_L=Escape'
 st -n win1tmux -e zsh -ic tmux &  
