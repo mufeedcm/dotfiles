@@ -12,8 +12,7 @@ trap cleanup EXIT
 
 feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
 ~/.config/suckless/dwm/scripts/status-bar.sh &
-# xautolock -time 15 -locker "slock & systemctl suspend" &
-xautolock -time 15 -locker "slock && systemctl suspend" -detectsleep
+xautolock -time 15 -locker "slock & systemctl suspend" &
 beeper-nightly &  
 nm-applet &
 dunst &
