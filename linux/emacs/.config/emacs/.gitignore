@@ -1,0 +1,8 @@
+# Ignore auto-save files
+auto-save-list/
+# Ignore Emacs backup files
+*~
+# Ignore installed packages
+elpa/
+# Ignore session data
+transient/
