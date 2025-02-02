@@ -12,10 +12,29 @@
 (setq scroll-step 1)              ;; Scroll one line at a time
 (setq scroll-preserve-screen-position 1)  ;; Keep cursor position while scrolling
 
+
 (setq default-directory "~/notes/")
 
 ;; Increase default font size (adjust as needed)
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 110)
+
+;;; Line numbers setup --------------------------------------------------------
+(column-number-mode)
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode t)
+
+;; Disable line numbers for some modes
+(dolist (mode '(
+		;; org-mode-hook
+                term-mode-hook
+                shell-mode-hook
+                eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+(setq display-line-numbers-width-start t) ;; Auto-adjust width on startup
+(setq display-line-numbers-width 3) ;; Adjust to fit your needs
+
+
 
 ;;; PACKAGE MANAGEMENT ------------------------------------------------------
 (require 'package)
@@ -145,11 +164,9 @@
 (defun my/org-mode-setup ()
   "Custom setup for Org mode."
   (org-indent-mode)
-  (visual-line-mode 1)
-  (variable-pitch-mode 1))
-
+  (visual-line-mode 1))
 (use-package org
-  :hook (org-mode . my/org-mode-setup)
+  :hook ((org-mode . my/org-mode-setup))
   :config
   ;; Visual tweaks.
   (setq org-ellipsis " ▾"
@@ -169,20 +186,15 @@
            "* TODO %?\n  %U\n  %i\n  %a")))
   (setq org-log-done 'time))  ; Record timestamp when a task is marked done.
 
-(use-package org-bullets
-  :after org
-  :hook (org-mode . org-bullets-mode)
-  :custom
-  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+;; (use-package org-bullets
+;;   :after org
+;;   :hook (org-mode . org-bullets-mode)
+;;   :custom
+;;   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●"))
+;;   )
 
-(use-package visual-fill-column
-  :hook (org-mode . visual-fill-column-mode)
-  :custom
-  (visual-fill-column-width 100)
-  (visual-fill-column-center-text t))
 
 ;;; DASHBOARD: WELCOME SCREEN FOR NOTES MANAGEMENT --------------------------
-;; The dashboard package gives you a start screen with quick shortcuts.
 (use-package dashboard
   :init
   (setq dashboard-startup-banner "") ;; No banner at all
@@ -207,6 +219,8 @@
 
 (provide 'init)
 ;;; init.el ends here
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
