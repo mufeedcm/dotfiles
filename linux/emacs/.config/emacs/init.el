@@ -75,10 +75,12 @@
   :init (marginalia-mode))
 
 (use-package consult
-  :bind (("C-s"     . consult-line)
-         ("C-x b"   . consult-buffer)
-         ("C-x C-r" . consult-recent-file)
-         ("C-c r"   . consult-ripgrep))  ;; Ripgrep search across files.
+  :bind (
+	 ;; ("C-s"     . consult-line)
+         ;; ("C-x b"   . consult-buffer)
+         ;; ("C-x C-r" . consult-recent-file)
+         ;; ("C-c r"   . consult-ripgrep) ;; Ripgrep search across files.
+	 )  
   :init
   (setq consult-project-root-function #'vc-root-dir))
 
@@ -153,7 +155,14 @@
     ;; Custom keys for Org management:
     "oa"  '(org-agenda :which-key "Org Agenda")
     "oc"  '(org-capture :which-key "Org Capture")
-    "on"  '(consult-notes :which-key "Open Notes")))
+    "on"  '(consult-notes :which-key "Open Notes")
+
+    "/" '(consult-line :which-key "find in file")
+    ;; "cs" (consult-line :which-key "find in file")
+    ;; "cxb" (consult-buffer :which-key "search buffer")
+    ;; "cxr" (consult-recent- :which-key "search recent-file")
+    ;; "ccr" (consult-ripgrep :which-key "search ripgrep")
+))
 
 ;;; DOOM MODELINE ----------------------------------------------------------
 (use-package doom-modeline
@@ -186,12 +195,6 @@
            "* TODO %?\n  %U\n  %i\n  %a")))
   (setq org-log-done 'time))  ; Record timestamp when a task is marked done.
 
-;; (use-package org-bullets
-;;   :after org
-;;   :hook (org-mode . org-bullets-mode)
-;;   :custom
-;;   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●"))
-;;   )
 
 
 ;;; DASHBOARD: WELCOME SCREEN FOR NOTES MANAGEMENT --------------------------
