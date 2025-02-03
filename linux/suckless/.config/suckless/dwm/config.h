@@ -93,7 +93,7 @@ static const Key keys[] = {
     
     // Applications
     /*{MODKEY,                       XK_space,      spawn,          {.v = dmenucmd}},*/
-    {MODKEY,                       XK_space,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/dmenu_launch.sh")},
+    {MODKEY,                       XK_p,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/dmenu_launch.sh")},
     {TERMMOD,                      XK_Return,     spawn,          {.v = termcmd}},
     {TERMMOD,                      XK_grave,      spawn,          {.v = (const char *[]){"st", "-e", "htop", NULL}}},
     /*{MODKEY,                      XK_p,          spawn,          SHCMD("rofi -show drun")},*/
