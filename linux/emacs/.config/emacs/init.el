@@ -5,12 +5,16 @@
 (scroll-bar-mode -1)                      ; Disable the visible scroll bar
 (tool-bar-mode -1)                        ; Disable the toolbar
 (menu-bar-mode -1)                        ; Disable the menu bar
-(set-fringe-mode 0)                       ; Adjust fringe (if desired)
+(set-fringe-mode 2)                       ; Adjust fringe (if desired)
 ;; (setq visible-bell t)                   ; Uncomment for a visible bell
 (setq scroll-conservatively 101)  ;; Scroll by lines, not full pages
 (setq scroll-margin 9)            ;; Keep cursor away from top/bottom
 (setq scroll-step 1)              ;; Scroll one line at a time
 (setq scroll-preserve-screen-position 1)  ;; Keep cursor position while scrolling
+
+(setq confirm-kill-emacs #'y-or-n-p)
+(setq use-dialog-box nil)
+(setq confirm-nonexistent-file-or-buffer nil)
 
 
 (setq default-directory "~/notes/")
@@ -107,7 +111,7 @@
   :init
   (setq evil-want-integration t
         evil-want-keybinding nil
-        evil-want-C-u-scroll t)
+        evil-want-C-u-scroll nil)
   :config
   (evil-mode 1))
 
@@ -132,6 +136,7 @@
 ;;; Keybindings
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(setq x-super-keysym 'meta)
 
 (use-package general
   :config
@@ -155,6 +160,7 @@
     ;; Custom keys for Org management:
     "oa"  '(org-agenda :which-key "Org Agenda")
     "oc"  '(org-capture :which-key "Org Capture")
+    "ol" '(org-store-link :which-key "Org Store Link")
     "on"  '(consult-notes :which-key "Open Notes")
 
     "/" '(consult-line :which-key "find in file")
@@ -162,7 +168,20 @@
     ;; "cxb" (consult-buffer :which-key "search buffer")
     ;; "cxr" (consult-recent- :which-key "search recent-file")
     ;; "ccr" (consult-ripgrep :which-key "search ripgrep")
-))
+    )
+  ;; Org mode keybindings
+  (general-define-key
+   :keymaps 'org-mode-map
+   :states '(normal visual)
+   "C-j" 'org-metadown
+   "C-k" 'org-metaup
+   "C-S-j" 'org-move-subtree-down
+   "C-S-k" 'org-move-subtree-up
+   "C-h" 'org-do-promote
+   "C-l" 'org-do-demote
+   "C-S-h" 'org-promote-subtree
+   "C-S-l" 'org-demote-subtree
+   ))
 
 ;;; DOOM MODELINE ----------------------------------------------------------
 (use-package doom-modeline
@@ -179,7 +198,12 @@
   :config
   ;; Visual tweaks.
   (setq org-ellipsis " ▾"
-        org-hide-leading-stars t)
+        org-hide-leading-stars t
+	org-hide-emphasis-markers nil
+	org-link-descriptive nil
+	)
+
+(setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE")))
   ;; Agenda files include your personal tasks and diploma/semester notes.
   (setq org-agenda-files '("~/notes/org/tasks.org"
                            "~/notes/org/diploma/sem4/sem4.org"))
@@ -230,7 +254,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(undo-tree which-key visual-fill-column vertico org-bullets orderless marginalia general evil-collection embark-consult doom-themes doom-modeline dashboard)))
+   '(undo-tree which-key visual-fill-column vertico  orderless marginalia general evil-collection embark-consult doom-themes doom-modeline dashboard)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
