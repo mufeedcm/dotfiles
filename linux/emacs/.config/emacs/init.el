@@ -98,6 +98,7 @@
   :demand t
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
+
 ;;which key
 (use-package which-key
   :init (which-key-mode)
@@ -254,7 +255,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(undo-tree which-key visual-fill-column vertico  orderless marginalia general evil-collection embark-consult doom-themes doom-modeline dashboard)))
+   '(undo-tree which-key visual-fill-column vertico orderless marginalia general evil-collection embark-consult doom-themes doom-modeline dashboard)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
