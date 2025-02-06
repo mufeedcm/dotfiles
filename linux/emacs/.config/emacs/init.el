@@ -5,7 +5,7 @@
 (scroll-bar-mode -1)                      ; Disable the visible scroll bar
 (tool-bar-mode -1)                        ; Disable the toolbar
 (menu-bar-mode -1)                        ; Disable the menu bar
-(set-fringe-mode 2)                       ; Adjust fringe (if desired)
+(set-fringe-mode 5)                       ; Adjust fringe (if desired)
 ;; (setq visible-bell t)                   ; Uncomment for a visible bell
 (setq scroll-conservatively 101)  ;; Scroll by lines, not full pages
 (setq scroll-margin 9)            ;; Keep cursor away from top/bottom
