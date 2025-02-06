@@ -12,9 +12,3 @@ recentf/
 
 
 
-drwx------  2 mufeedcm users 4096 Feb  3 00:11 auto-save-list
-drwxr-xr-x 29 mufeedcm users 4096 Feb  3 00:08 elpa
--rw-r--r--  1 mufeedcm users  139 Feb  2 16:15 .gitignore
--rw-r--r--  1 mufeedcm users 7758 Feb  3 00:11 init.el
--rw-------  1 mufeedcm users  301 Feb  3 00:11 recentf
-drwxr-xr-x  2 mufeedcm users 4096 Feb  3 00:06 transient

@@ -119,23 +119,30 @@
 (use-package evil-collection
   :after evil
   :config
+  (evil-collection-init)  ;; Initialize Evil collection for all supported modes
   (define-key evil-normal-state-map (kbd "gc") 'comment-line)
-  (evil-collection-init))
+  (evil-define-key 'visual 'global "p" "\"_dP"))
+
+;;; Dired Setup (optional)
+(use-package dired
+  :ensure nil
+  :commands (dired dired-jump)
+  :config
+  (setq dired-kill-when-opening-new-dired-buffer t))
 
 
-;;undo
+
+;; Undo configuration
 (use-package undo-tree
   :init
   (global-undo-tree-mode)
   :config
-  (setq undo-tree-auto-save-history nil)) ;; Don't save undo history to files
+  (setq undo-tree-auto-save-history t))  ;; Don't save undo history to files
 
-;; Evil integration
+;; Evil integration with Undo Tree
 (evil-set-undo-system 'undo-tree)
 
-
-;;; Keybindings
-
+;;; Keybindings with General
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (setq x-super-keysym 'meta)
 
@@ -158,19 +165,15 @@
     "wl" '(windmove-right :which-key "Move right")
     "wj" '(windmove-down :which-key "Move down")
     "wk" '(windmove-up :which-key "Move up")
-    ;; Custom keys for Org management:
+    ;; Org management keybindings:
     "oa"  '(org-agenda :which-key "Org Agenda")
     "oc"  '(org-capture :which-key "Org Capture")
     "ol" '(org-store-link :which-key "Org Store Link")
     "on"  '(consult-notes :which-key "Open Notes")
 
-    "/" '(consult-line :which-key "find in file")
-    ;; "cs" (consult-line :which-key "find in file")
-    ;; "cxb" (consult-buffer :which-key "search buffer")
-    ;; "cxr" (consult-recent- :which-key "search recent-file")
-    ;; "ccr" (consult-ripgrep :which-key "search ripgrep")
+    "/" '(consult-line :which-key "Search in file")
     )
-  ;; Org mode keybindings
+  ;; Org mode specific keybindings
   (general-define-key
    :keymaps 'org-mode-map
    :states '(normal visual)
@@ -183,6 +186,7 @@
    "C-S-h" 'org-promote-subtree
    "C-S-l" 'org-demote-subtree
    ))
+
 
 ;;; DOOM MODELINE ----------------------------------------------------------
 (use-package doom-modeline
@@ -207,7 +211,7 @@
 (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE")))
   ;; Agenda files include your personal tasks and diploma/semester notes.
   (setq org-agenda-files '("~/notes/org/tasks.org"
-                           "~/notes/org/diploma/sem4/sem4.org"))
+                           "~/notes/org/diploma/sem4.org"))
   ;; Archive completed tasks to a dedicated archive file.
   (setq org-archive-location "~/notes/org/archive.org::")
   ;; Org Capture templates.
@@ -216,7 +220,7 @@
            (file+headline "~/notes/org/tasks.org" "Inbox")
            "* TODO %?\n  %U\n  %i\n  %a")
           ("d" "Diploma Task" entry
-           (file+headline "~/notes/org/diploma/sem4/sem4.org" "Inbox")
+           (file+headline "~/notes/org/diploma/sem4.org" "Inbox")
            "* TODO %?\n  %U\n  %i\n  %a")))
   (setq org-log-done 'time))  ; Record timestamp when a task is marked done.
 
@@ -254,6 +258,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files '(
+		      "/home/mufeedcm/notes/org/tasks.org"
+		      "/home/mufeedcm/notes/org/diploma/sem4.org"))
  '(package-selected-packages
    '(undo-tree which-key visual-fill-column vertico orderless marginalia general evil-collection embark-consult doom-themes doom-modeline dashboard)))
 (custom-set-faces
