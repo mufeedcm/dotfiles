@@ -47,15 +47,17 @@
   nav (tap-next tab (layer-toggle navs))
 
 ;;caps-lock as esc and left ctrl on hold
-  ce  (tap-hold-next 200 esc lctrl))
+  ce  (tap-hold-next 200 esc lctrl)
 
+;;enter as ente and right ctrl on hold
+  ec  (tap-hold-next 200 ret rctrl))
 
 (deflayer base
 ;; base layer changed esc with caps and put the alias
   caps f1   f2   f3   f4   f5   f6   f7   f8   f9    f10  f11  f12  fn    prnt  slck  pause
   grv  1    2    3    4    5    6    7    8    9     0    -    =    bspc        home  end   
   @nav q    w    e    r    t    y    u    i    o     p    [    ]    \           ins   pgup  
-  @ce  a    s    d    f    g    h    j    k    l     ;    '    ret              del   pgdn
+  @ce  a    s    d    f    g    h    j    k    l     ;    '    @ec              del   pgdn
   lsft z    x    c    v    b    n    m    ,    .     /    rsft                  up          
   lctl lmet lalt           spc            ralt menu  rctl                 left  down  right
   )
