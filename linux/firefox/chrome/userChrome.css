@@ -1,44 +1,10 @@
-#titlebar {
-  display: none;
-}
-.urlbar-input-box {
-  text-align: center;
-}
-#nav-bar {
-  margin: 3px;
-}
-#urlbar:not([focused]) #urlbar-background {
-  opacity: 0 !important;
+/* Hide the tab bar completely */
+#main-window #TabsToolbar {
+  display: none !important;
 }
 
-* {
-  /*font-family: "monospace";*/
+/* Also hide the title bar and window buttons if needed */
+#main-window .titlebar-spacer,
+#main-window .titlebar-buttonbox-container {
+  display: none !important;
 }
-
-.browserContainer browser {
-  border-radius: 5px !important;
-  margin: 0vh 1vh 2vh 0vh;
-}
-
-.tab-background,
-.tab-loading-burst {
-  border: none !important;
-  border-radius: 8px !important;
-}
-
-/*#navigator-toolbox {*/
-/*  max-height: 2vh;*/
-/**/
-/*  & * {*/
-/*    opacity: 0;*/
-/*  }*/
-/*}*/
-/**/
-/*#navigator-toolbox:hover {*/
-/*  max-height: 100vh;*/
-/*  height: auto;*/
-/**/
-/*  & * {*/
-/*    opacity: 1;*/
-/*  }*/
-/*}*/
