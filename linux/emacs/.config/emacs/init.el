@@ -224,6 +224,9 @@
            "* TODO %?\n  %U\n  %i\n  %a")))
   (setq org-log-done 'time))  ; Record timestamp when a task is marked done.
 
+;; image setup
+(setq org-startup-with-inline-images t)
+(add-hook 'org-mode-hook 'org-display-inline-images)
 
 
 ;;; DASHBOARD: WELCOME SCREEN FOR NOTES MANAGEMENT --------------------------

@@ -73,10 +73,6 @@ zvm_after_lazy_keybindings() {
 # == auto ==
 # figlet mufeedcm
 neofetch
-capsync(){
-setxkbmap -option ctrl:nocaps
-xcape -e 'Control_L=Escape'
-} 
 
 # === Aliases ===
 # Common Aliases
