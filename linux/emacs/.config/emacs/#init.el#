@@ -171,13 +171,6 @@
     "ol" '(org-store-link :which-key "Org Store Link")
     "on"  '(consult-notes :which-key "Open Notes")
 
-    ;; Org management keybindings
-    "ot"  '(find-file "~/notes/org/tasks.org" :which-key "Open Tasks")  ;; Open tasks.org
-    "os"  '(find-file "~/notes/org/diploma/sem4.org" :which-key "Open Semester 4")  ;; Open sem4.org
-    "oe"  '(find-file "~/.config/emacs/init.el" :which-key "Open Emacs Config")  ;; Open init.el
-
-
-    
     "/" '(consult-line :which-key "Search in file")
     )
   ;; Org mode specific keybindings
@@ -199,18 +192,6 @@
 (use-package doom-modeline
   :init (doom-modeline-mode 1)
   :custom (doom-modeline-height 15))
-
-
-;; Auto-save org files when switching buffers
-(add-hook 'org-mode-hook
-          (lambda ()
-            (add-hook 'focus-out-hook 'org-save-all-org-buffers nil 'local)))
-
-;; Auto-save init.el when switching buffers
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (add-hook 'focus-out-hook (lambda () (save-buffer)) nil 'local)))
-
 
 ;;; ORG MODE CONFIGURATION --------------------------------------------------
 (defun my/org-mode-setup ()
@@ -253,6 +234,8 @@
   (setq org-alert-notification-title "Org Reminder")
   (setq org-alert-advance-notice-time nil)  ;; No advance notices unless specified
   (org-alert-enable))
+
+(org-agenda-redo)
 
 
 ;; image setup

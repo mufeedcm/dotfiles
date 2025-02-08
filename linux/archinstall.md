@@ -5,7 +5,7 @@
 1. install windows, 
 2. Download arch iso from https://archlinux.org/download
 3. create unallocated parition with **diskmgmnt** on windows and shrink the volume,
-4. check whether the layout is **uefi/gpt** or **bios/mbt**.
+4. check whether the layout is **uefi/gpt** or **bios/mbr**.
 5. flash the arch iso to the usb drive with **rufus**.
 6. create a **windows system restore point**
 7. reboot and go to bios (usually f2) and remove **secure boot** and boot into the usb
@@ -35,7 +35,7 @@ pacman -Sy archlinux-keyring  #package containing gpg keys used to verify the in
 
 ```bash
 lsblk #lists the storage devices
-cfdick /dev/sda #select the disk to install arch
+cfdisk /dev/sda #select the disk to install arch
 ```
 1. On the free space create a efi partition with TYPE as **Efi Partition**.(for eg: sda5).
 2. Create another root partition with TYPE as **Linux FileSytem**. (for eg: sda6).
@@ -83,7 +83,7 @@ passwd <user-name> #setting up user password
 Editor=vim visudo #to allow the user to run sudo commands uncomment the line
 # %wheel ALL=(ALL:ALL) NOPASSWD: ALL
 
-#checking weather the usr is working
+#checking whether the usr is working
 sudo - <user-name>
 sudo pacman -Syu
 exit #and exit
@@ -143,8 +143,8 @@ sudo pacman -S fuse3 #i heard os-prober is dependent on fuse3
 ## 14. Enable Network and Bluetooth.
 
 ```bash
-systemctl enalble bluetooth
-systemctl enalble NetworkManager
+systemctl enable bluetooth
+systemctl enable NetworkManager
 ```
 
 ## 15. Un-mounting and rebooting.
@@ -203,7 +203,7 @@ sudo make clean install
 cd ~
 
 #installing essential packages
-sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd xclip zathura rofi dunst libnotify xorg-xsetroot xautolock xorg-setxkbmap xcape network-manager-applet fuse2 noto-fonts-emoji unzip wget ripgrep lf imagemagick mpv numlockx
+sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd xclip zathura rofi dunst libnotify xorg-xsetroot xautolock xorg-setxkbmap xcape network-manager-applet fuse2 noto-fonts-emoji unzip wget ripgrep lf imagemagick mpv numlockx xdotool
 
 #latex-setup (optional) 
 sudo pacman -S texlive-core texlive-latexextra texlive-binextra
@@ -259,6 +259,15 @@ sudo pacman -S syncthing
 systemctl --user enable syncthing.service
 systemctl --user start syncthing.service
 
+# scrcpy for phone connection
+sudo pacman -S scrcpy
+# connect via usb
+adb tcpip 5555
+adb shell ip route
+adb connect <ip-address>:5555
+# get the ip and connect via wifi
+adb devices
+scrcpy --turn-screen-off --stay-awake
 
 
 ```

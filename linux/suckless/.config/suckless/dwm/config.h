@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 1; /* border pixel of windows */
+static const unsigned int borderpx = 3; /* border pixel of windows */
 static const unsigned int gappx = 6;    /* gaps between windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
@@ -30,18 +30,22 @@ static const char *colors[][3] = {
 /* tagging */
 static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = {"emacs", "--name", scratchpadname,
+                                      "-g",    "120x45", NULL};
+
 static const Rule rules[] = {
     /* xprop(1):
      *	WM_CLASS(STRING) = instance, class
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    /*{"Gimp", NULL, NULL, 0, 1, -1},*/
-    /*{"Firefox", NULL, NULL, 1 << 8, 0, -1},*/
     {"St", "win1tmux", NULL, 1 << 0, 0, -1}, // Tag 1
-    /*{"firefox", NULL, NULL, 1 << 1, 0, -1},       // Tag 2*/
-    /*{"brave-browser", NULL, NULL, 1 << 1, 0, -1}, // Tag 2*/
+    {"firefox", NULL, NULL, 1 << 1, 0, -1},
+    {"Emacs", NULL, scratchpadname, 0, 1, -1},
     {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
+                                           /*{"Gimp", NULL, NULL, 0, 1, -1},*/
+    /*{"Firefox", NULL, NULL, 1 << 8, 0, -1},*/
 };
 
 /* layout(s) */
@@ -113,7 +117,8 @@ static const Key keys[] = {
     {TERMMOD,                      XK_r,          spawn,          SHCMD("systemctl reboot")},
 
     // Custom Scripts
-    {TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},
+    { MODKEY,                     XK_n,          togglescratch,   {.v = scratchpadcmd } },
+    /*{TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},*/
     /*{TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},*/
     /*{MODKEY,                       XK_Print,      spawn,          SHCMD("flameshot gui -d 5000")},*/
     /*{TERMMOD,                      XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts.sh")},*/
