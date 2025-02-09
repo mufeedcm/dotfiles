@@ -44,7 +44,8 @@ static const Rule rules[] = {
     {"firefox", NULL, NULL, 1 << 1, 0, -1},
     {"Emacs", NULL, scratchpadname, 0, 1, -1},
     {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
-                                           /*{"Gimp", NULL, NULL, 0, 1, -1},*/
+    {"firefox", NULL, "Picture-in-Picture", 1, 1, -1},
+    /*{"Gimp", NULL, NULL, 0, 1, -1},*/
     /*{"Firefox", NULL, NULL, 1 << 8, 0, -1},*/
 };
 
