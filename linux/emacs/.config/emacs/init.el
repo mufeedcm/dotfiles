@@ -22,6 +22,8 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+
+
 ;;; LINE NUMBERS --------------------------------------------------------------
 (column-number-mode)
 (setq display-line-numbers-type 'relative)
@@ -108,7 +110,7 @@
   ;; Global keybindings
   (my/leader-keys
     "b"  '(:ignore t :which-key "Buffers")
-    "bb" '(switch-to-buffer)
+    "bb" '(switch-to-buffer :which-key "Switch Buffer")
     "w"  '(:ignore t :which-key "Windows")
     "wv" '(split-window-right :which-key "Split Window right")
     "ws" '(split-window-below :which-key "Split Window below")
@@ -191,7 +193,7 @@
 
 (use-package org-alert
   :config
-  (setq org-alert-interval 300
+  (setq org-alert-interval 600
         org-alert-notification-title "Org Reminder"
         org-alert-advance-notice-time nil)
   (org-alert-enable))

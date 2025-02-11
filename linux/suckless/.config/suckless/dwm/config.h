@@ -33,6 +33,11 @@ static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = {"emacs", "--name", scratchpadname,
                                       "-g",    "120x45", NULL};
+/*static const char *scratchpadcmd[] = {*/
+/*    "emacs", "--name", scratchpadname, "-g", "1200x600+400+45", NULL};*/
+
+/*static const char *scratchpadcmd[] = {"emacs", "--name", scratchpadname,
+ * NULL};*/
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -43,10 +48,10 @@ static const Rule rules[] = {
     {"St", "win1tmux", NULL, 1 << 0, 0, -1}, // Tag 1
     {"firefox", NULL, NULL, 1 << 1, 0, -1},
     {"Emacs", NULL, scratchpadname, 0, 1, -1},
+    {"ncmpcpp", NULL, NULL, 0, 1, -1},
     {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
     {"firefox", NULL, "Picture-in-Picture", 1, 1, -1},
-    /*{"Gimp", NULL, NULL, 0, 1, -1},*/
-    /*{"Firefox", NULL, NULL, 1 << 8, 0, -1},*/
+    {"ttyclock", NULL, NULL, 0, 1, -1},
 };
 
 /* layout(s) */
@@ -92,6 +97,10 @@ static const char *dmenucmd[] = {"dmenu_run", NULL};
 /*static const char *termcmd[] = {"kitty", NULL};*/
 static const char *termcmd[] = {"st", NULL};
 
+static const char *ttyclockcmd[] = {
+    "st", "-c", "ttyclock", "-g", "60x25+1425+25", "-e", "tty-clock", "-s",
+    "-c", "-C", "2",        NULL};
+
 /* clang-format off */
 static const Key keys[] = {
     /* modifier                     key             function        argument */
@@ -119,6 +128,8 @@ static const Key keys[] = {
 
     // Custom Scripts
     { MODKEY,                     XK_n,          togglescratch,   {.v = scratchpadcmd } },
+    { MODKEY,                     XK_o,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/ncmpcpp_toggle.sh") },
+    { MODKEY,                     XK_F12,        spawn,           {.v = ttyclockcmd } },
     /*{TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},*/
     /*{TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},*/
     /*{MODKEY,                       XK_Print,      spawn,          SHCMD("flameshot gui -d 5000")},*/
@@ -158,11 +169,6 @@ static const Key keys[] = {
     {MODKEY,                       XK_period,    focusmon,        {.i = +1}},
     {TERMMOD,                      XK_comma,     tagmon,          {.i = -1}},
     {TERMMOD,                      XK_period,    tagmon,          {.i = +1}},
-
-
-
-
-
 
     TAGKEYS(XK_1, 0)
     TAGKEYS(XK_2, 1)

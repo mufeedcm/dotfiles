@@ -1076,6 +1076,8 @@ void manage(Window w, XWindowAttributes *wa) {
 
     c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
     c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
+    /*c->x = c->mon->wx;*/
+    /*c->y = c->mon->wy;*/
   }
 
   wc.border_width = c->bw;
