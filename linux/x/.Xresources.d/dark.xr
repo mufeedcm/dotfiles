@@ -1,0 +1,32 @@
+! Dark Theme for dwm
+dwm.normbgcolor:    #000000
+dwm.normbordercolor:#333333
+dwm.normfgcolor:    #ffffff
+dwm.selbgcolor:     #333333
+dwm.selbordercolor: #ffffff
+dwm.selfgcolor:     #ffffff
+
+st.color0:        #000000
+st.color1:        #1a1a1a
+st.color2:        #333333
+st.color3:        #4d4d4d
+st.color4:        #666666
+st.color5:        #808080
+st.color6:        #999999
+st.color7:        #b3b3b3
+st.color8:        #cccccc
+st.color9:        #e6e6e6
+st.color10:       #f0f0f0
+st.color11:       #f0f0f0
+st.color12:       #f0f0f0
+st.color13:       #f0f0f0
+st.color14:       #f0f0f0
+st.color15:       #ffffff
+st.background:    #000000
+st.foreground:    #ffffff
+st.cursorColor:   #ffffff
+
+dmenu.background:     #000000
+dmenu.foreground:     #ffffff
+dmenu.selbackground:  #333333
+dmenu.selforeground:  #ffffff

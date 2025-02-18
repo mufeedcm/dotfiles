@@ -1,0 +1,34 @@
+! TokyoNight Theme for dwm
+dwm.normbgcolor:    #1a1b26
+dwm.normbordercolor:#414868
+dwm.normfgcolor:    #a9b1d6
+dwm.selbgcolor:     #292e42
+dwm.selbordercolor: #292e42
+dwm.selfgcolor:     #c0caf5
+
+
+st.color0:        #1a1b26
+st.color1:        #f7768e
+st.color2:        #9ece6a
+st.color3:        #e0af68
+st.color4:        #7aa2f7
+st.color5:        #bb9af7
+st.color6:        #7dcfff
+st.color7:        #a9b1d6
+st.color8:        #414868
+st.color9:        #f7768e
+st.color10:       #9ece6a
+st.color11:       #e0af68
+st.color12:       #7aa2f7
+st.color13:       #bb9af7
+st.color14:       #7dcfff
+st.color15:       #c0caf5
+st.background:    #1a1b26
+st.foreground:    #a9b1d6
+st.cursorColor:   #c0caf5
+
+
+dmenu.background:     #1a1b26
+dmenu.foreground:     #a9b1d6
+dmenu.selbackground:  #292e42
+dmenu.selforeground:  #c0caf5

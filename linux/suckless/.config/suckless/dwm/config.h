@@ -11,27 +11,16 @@ static const char *fonts[] = {"Meslo LGM Nerd Font:size=10"};
 static const char dmenufont[] = "Meslo LGM Nerd Font:size=10";
 /*static const char dmenufont[] = "monospace:size=10";*/
 
-static const char col_gray1[] = "#000000"; // Pure Black (Background)
-static const char col_gray2[] = "#303030"; // Dark Gray (Inactive border)
-static const char col_gray3[] = "#B0B0B0"; // Light Gray (Foreground/Text)
-static const char col_gray4[] = "#FFFFFF"; // Pure White (Selected text)
-static const char col_cyan[] = "#505050";  // Medium Gray (Accent/Selected bar)
-
-/*static const char col_gray1[] = "#1a1b26"; // Background*/
-/*static const char col_gray2[] = "#414868"; // Inactive border*/
-/*static const char col_gray3[] = "#a9b1d6"; // Foreground (text)*/
-/*static const char col_gray4[] = "#c0caf5"; // Selected text*/
-/*static const char col_cyan[] = "#292e42";  // Accent (selected bar)*/
-
-/*static const char col_gray1[] = "#222222";*/
-/*static const char col_gray2[] = "#444444";*/
-/*static const char col_gray3[] = "#bbbbbb";*/
-/*static const char col_gray4[] = "#eeeeee";*/
-/*static const char col_cyan[] = "#005577";*/
-static const char *colors[][3] = {
-    /*               fg         bg         border   */
-    [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
-    [SchemeSel] = {col_gray4, col_cyan, col_cyan},
+static char normbgcolor[] = "#222222";
+static char normbordercolor[] = "#444444";
+static char normfgcolor[] = "#bbbbbb";
+static char selfgcolor[] = "#eeeeee";
+static char selbordercolor[] = "#005577";
+static char selbgcolor[] = "#005577";
+static char *colors[][3] = {
+    /*               fg           bg           border   */
+    [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
+    [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
 };
 
 /* tagging */
@@ -107,6 +96,18 @@ static const char *termcmd[] = {"st", NULL};
 static const char *ttyclockcmd[] = {
     "st", "-c", "ttyclock", "-g", "60x25+1425+25", "-e", "tty-clock", "-s",
     "-c", "-C", "2",        NULL};
+
+/*
+ * Xresources preferences to load at startup
+ */
+ResourcePref resources[] = {
+    {"normbgcolor", STRING, &normbgcolor},
+    {"normbordercolor", STRING, &normbordercolor},
+    {"normfgcolor", STRING, &normfgcolor},
+    {"selbgcolor", STRING, &selbgcolor},
+    {"selbordercolor", STRING, &selbordercolor},
+    {"selfgcolor", STRING, &selfgcolor},
+};
 
 /* clang-format off */
 static const Key keys[] = {

@@ -1,0 +1,32 @@
+! Catppuccin Latte Theme for dwm
+dwm.normbgcolor:    #eff1f5
+dwm.normbordercolor:#acb0be
+dwm.normfgcolor:    #4c4f69
+dwm.selbgcolor:     #dce0e8
+dwm.selbordercolor: #dce0e8
+dwm.selfgcolor:     #4c4f69
+
+st.color0:        #2e2e2e
+st.color1:        #dc8a78
+st.color2:        #40a02b
+st.color3:        #df8e1d
+st.color4:        #1e66f5
+st.color5:        #ea76cb
+st.color6:        #04a5e5
+st.color7:        #a9b1d6
+st.color8:        #56526e
+st.color9:        #dc8a78
+st.color10:       #40a02b
+st.color11:       #df8e1d
+st.color12:       #1e66f5
+st.color13:       #ea76cb
+st.color14:       #04a5e5
+st.color15:       #eff1f5
+st.background:    #eff1f5
+st.foreground:    #4c4f69
+st.cursorColor:   #4c4f69
+
+dmenu.background:     #eff1f5
+dmenu.foreground:     #4c4f69
+dmenu.selbackground:  #dce0e8
+dmenu.selforeground:  #4c4f69

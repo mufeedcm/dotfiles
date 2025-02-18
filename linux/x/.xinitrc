@@ -1,7 +1,8 @@
 #!/bin/bash
 export XDG_SESSION_TYPE=x11
 [ -f ~/.xprofile ] && source ~/.xprofile
-[ -f ~/.Xresources ] && xrdb ~/.Xresources
+# [ -f ~/.Xresources ] && xrdb ~/.Xresources
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 cleanup() {
     pkill -P $$  
     tmux kill-server  

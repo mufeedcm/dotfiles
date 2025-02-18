@@ -50,6 +50,45 @@ toggle_caffeine() {
     fi
 }
 
+# Function to switch theme
+switch_theme() {
+    # List available themes, each on its own line.
+    themes=("tokyonight" "dark" "light")
+    
+    # Use printf to output each theme on a separate line.
+    theme=$(printf "%s\n" "${themes[@]}" | dmenu -i -p "Select Theme:")
+
+    if [ -z "$theme" ]; then
+        echo "No theme selected. Exiting..."
+        return
+    fi
+
+    # Construct the target theme file path.
+    target="$HOME/.Xresources.d/${theme}.xr"
+    
+    # Check that the target theme file exists and is not empty.
+    if [ ! -s "$target" ]; then
+        echo "Theme file $target is missing or empty!"
+        return
+    fi
+
+    # Update the current theme symlink.
+    ln -sf "$target" "$HOME/.Xresources.d/current.xr"
+
+    # Reload the main Xresources file which includes current.xr.
+    xrdb -merge "$HOME/.Xresources"
+
+    # Restart dwm.
+    # Option A: If your dwm supports reloading via USR1, send that signal.
+    # pkill -USR1 dwm
+
+    # Option B: Alternatively, you could fully restart dwm (uncomment the following lines).
+    # pkill dwm
+    # exec dwm
+}
+
+
+
 # Function to get search suggestions from history
 get_search_suggestions() {
     if [[ -f "$SEARCH_HISTORY_FILE" ]]; then
@@ -65,6 +104,7 @@ declare -A commands=(
     ["shutdown"]="systemctl poweroff"
     ["wifi"]="~/.config/suckless/dwm/scripts/wifi_menu.sh"
     ["caffeine mode"]="toggle_caffeine"
+    ["switch theme"]="switch_theme"  
 )
 
 # Generate menu options: system commands + search history + installed apps
