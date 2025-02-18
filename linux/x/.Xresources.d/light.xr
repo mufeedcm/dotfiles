@@ -30,3 +30,8 @@ dmenu.background:     #eff1f5
 dmenu.foreground:     #4c4f69
 dmenu.selbackground:  #dce0e8
 dmenu.selforeground:  #4c4f69
+
+
+slock.color0:  #000000  
+slock.color4:  #808080  
+slock.color1:  #ffffff  

@@ -15,11 +15,5 @@ static const char *colorname[NUMCOLS] = {
     [FAILED] = "#505050",
 };
 
-ResourcePref resources[] = {
-    {"color0", STRING, &colorname[INIT]},
-    {"color4", STRING, &colorname[INPUT]},
-    {"color1", STRING, &colorname[FAILED]},
-};
-
 /* treat a cleared input like a wrong password (color) */
 static const int failonclear = 1;
