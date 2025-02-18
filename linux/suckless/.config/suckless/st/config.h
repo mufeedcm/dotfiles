@@ -121,30 +121,21 @@ float alphaOffset = 0.0;
 float alphaUnfocus;
 
 /*Terminal colors(16 first used in escape sequence) */
+
 static const char *colorname[] = {
-    "#1a1b26", /* background */
-    "#f7768e", /* red */
-    "#9ece6a", /* green */
-    "#e0af68", /* yellow */
-    "#7aa2f7", /* blue */
-    "#bb9af7", /* magenta */
-    "#7dcfff", /* cyan */
-    "#a9b1d6", /* light gray */
-    "#414868", /* dark gray */
-    "#f7768e", /* bright red */
-    "#9ece6a", /* bright green */
-    "#e0af68", /* bright yellow */
-    "#7aa2f7", /* bright blue */
-    "#bb9af7", /* bright magenta */
-    "#7dcfff", /* bright cyan */
-    "#c0caf5", /* white */
-    [255] = 0,
-    /* Additional settings */
-    "#c0caf5", /* 256 -> cursor color */
-    "#565f89", /* 257 -> reverse cursor color */
-    "#1a1b26", /* 258 -> background */
-    "#c0caf5", /* 259 -> foreground */
+    "#000000", "#505050", "#707070", "#909090", "#B0B0B0", "#D0D0D0", "#808080",
+    "#FFFFFF", "#303030", "#505050", "#707070", "#909090", "#B0B0B0", "#D0D0D0",
+    "#808080", "#FFFFFF", [255] = 0, "#FFFFFF", "#505050", "#000000", "#FFFFFF",
 };
+/*static const char *colorname[] = {*/
+/**/
+/*    "#1a1b26", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7",
+ * "#7dcfff",*/
+/*    "#a9b1d6", "#414868", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7",
+ * "#bb9af7",*/
+/*    "#7dcfff", "#c0caf5", [255] = 0, "#c0caf5", "#565f89", "#1a1b26",
+ * "#c0caf5",*/
+/*};*/
 
 // Terminal colors (16 first used in escape sequence)
 /* static const char *colorname[] = { */

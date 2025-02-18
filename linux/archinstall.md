@@ -173,6 +173,7 @@ nvidia-smi
 ```bash
 #installing essential packages
 sudo pacman -Sy xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
+sudo pacman -S xorg-xrandr
 
 #installing beautification and monitoring
 sudo pacman -Sy htop neofetch figlet bucklespring tree

@@ -16,12 +16,16 @@ static const char *prompt =
 static const char *colors[SchemeLast][2] = {
     /*     fg         bg       */
 
+    [SchemeNorm] = {"#B0B0B0", "#000000"},
+    [SchemeSel] = {"#FFFFFF", "#505050"},
+    [SchemeOut] = {"#B0B0B0", "#303030"}
+    /*[SchemeNorm] = {"#C0CAF5", "#1A1B26"},*/
+    /*[SchemeSel] = {"#E0DEF4", "#505880"},*/
+    /*[SchemeOut] = {"#A9B1D6", "#565F89"}*/
+
     /*[SchemeNorm] = {"#ffffff", "#1a1b26"},*/
     /*[SchemeSel] = {"#ffffff", "#3b4261"},*/
     /*[SchemeOut] = {"#ffffff", "#565f89"},*/
-    [SchemeNorm] = {"#C0CAF5", "#1A1B26"},
-    [SchemeSel] = {"#E0DEF4", "#505880"},
-    [SchemeOut] = {"#A9B1D6", "#565F89"}
     /*[SchemeNorm] = {"#bbbbbb", "#222222"},*/
     /*[SchemeSel] = {"#eeeeee", "#005577"},*/
     /*[SchemeOut] = {"#000000", "#00ffff"},*/

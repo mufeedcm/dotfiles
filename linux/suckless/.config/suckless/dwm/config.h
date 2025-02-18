@@ -10,11 +10,18 @@ static const char *fonts[] = {"Meslo LGM Nerd Font:size=10"};
 /*static const char *fonts[] = {"monospace:size=10"};*/
 static const char dmenufont[] = "Meslo LGM Nerd Font:size=10";
 /*static const char dmenufont[] = "monospace:size=10";*/
-static const char col_gray1[] = "#1a1b26"; // Background
-static const char col_gray2[] = "#414868"; // Inactive border
-static const char col_gray3[] = "#a9b1d6"; // Foreground (text)
-static const char col_gray4[] = "#c0caf5"; // Selected text
-static const char col_cyan[] = "#292e42";  // Accent (selected bar)
+
+static const char col_gray1[] = "#000000"; // Pure Black (Background)
+static const char col_gray2[] = "#303030"; // Dark Gray (Inactive border)
+static const char col_gray3[] = "#B0B0B0"; // Light Gray (Foreground/Text)
+static const char col_gray4[] = "#FFFFFF"; // Pure White (Selected text)
+static const char col_cyan[] = "#505050";  // Medium Gray (Accent/Selected bar)
+
+/*static const char col_gray1[] = "#1a1b26"; // Background*/
+/*static const char col_gray2[] = "#414868"; // Inactive border*/
+/*static const char col_gray3[] = "#a9b1d6"; // Foreground (text)*/
+/*static const char col_gray4[] = "#c0caf5"; // Selected text*/
+/*static const char col_cyan[] = "#292e42";  // Accent (selected bar)*/
 
 /*static const char col_gray1[] = "#222222";*/
 /*static const char col_gray2[] = "#444444";*/
