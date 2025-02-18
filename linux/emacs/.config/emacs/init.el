@@ -193,7 +193,7 @@
 
 (use-package org-alert
   :config
-  (setq org-alert-interval 600
+  (setq org-alert-interval 1200
         org-alert-notification-title "Org Reminder"
         org-alert-advance-notice-time nil)
   (org-alert-enable))
