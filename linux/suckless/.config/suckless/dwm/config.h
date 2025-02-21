@@ -43,7 +43,7 @@ static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
     {"St", "win1tmux", NULL, 1 << 0, 0, -1}, // Tag 1
     /*{"firefox", NULL, NULL, 1 << 1, 0, -1},*/
-    {"zen-browser", NULL, NULL, 1 << 1, 0, -1},
+    {"zen", NULL, NULL, 1 << 1, 0, -1},
     {"Emacs", NULL, scratchpadname, 0, 1, -1},
     {"ncmpcpp", NULL, NULL, 0, 1, -1},
     {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
