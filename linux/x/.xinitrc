@@ -21,7 +21,8 @@ flameshot &
 picom &
 amixer set Headphone 30% unmute &
 st -n win1tmux -e zsh -ic tmux &  
-firefox &  
+# firefox &  
+zen-browser &
 beeper-nightly &  
 # emacs &
 emacs --daemon &
