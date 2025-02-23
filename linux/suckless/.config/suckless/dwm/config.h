@@ -41,7 +41,8 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    {"St", "win1tmux", NULL, 1 << 0, 0, -1}, // Tag 1
+    /*{"St", "win1tmux", NULL, 1 << 0, 0, -1}, // Tag 1*/
+    {"StWinTmux", NULL, NULL, 1 << 0, 0, -1}, // Tag 1
     /*{"firefox", NULL, NULL, 1 << 1, 0, -1},*/
     {"zen", NULL, NULL, 1 << 1, 0, -1},
     {"Emacs", NULL, scratchpadname, 0, 1, -1},

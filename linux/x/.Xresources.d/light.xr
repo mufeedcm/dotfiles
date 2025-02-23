@@ -1,37 +1,36 @@
-! Catppuccin Latte Theme for dwm
-dwm.normbgcolor:    #eff1f5
-dwm.normbordercolor:#acb0be
-dwm.normfgcolor:    #4c4f69
-dwm.selbgcolor:     #dce0e8
-dwm.selbordercolor: #dce0e8
-dwm.selfgcolor:     #4c4f69
+st.background:    #f8f9fb  
+st.foreground:    #4a4d62  
+st.cursorColor:   #5c5f77  
 
-st.color0:        #2e2e2e
-st.color1:        #dc8a78
-st.color2:        #40a02b
-st.color3:        #df8e1d
-st.color4:        #1e66f5
-st.color5:        #ea76cb
-st.color6:        #04a5e5
-st.color7:        #a9b1d6
-st.color8:        #56526e
-st.color9:        #dc8a78
-st.color10:       #40a02b
-st.color11:       #df8e1d
-st.color12:       #1e66f5
-st.color13:       #ea76cb
-st.color14:       #04a5e5
-st.color15:       #eff1f5
-st.background:    #eff1f5
-st.foreground:    #4c4f69
-st.cursorColor:   #4c4f69
+st.color0:        #e3e5ec  
+st.color1:        #d75f5f  
+st.color2:        #5e9f5e  
+st.color3:        #d7a84a  
+st.color4:        #5a84d7  
+st.color5:        #bb72b2  
+st.color6:        #54a9b8  
+st.color7:        #4a4d62  
+st.color8:        #b0b4c9  
+st.color9:        #e65c5c  
+st.color10:       #5e9f5e  
+st.color11:       #e6a75a  
+st.color12:       #5a84d7  
+st.color13:       #bb72b2  
+st.color14:       #54a9b8  
+st.color15:       #26273a  
 
-dmenu.background:     #eff1f5
-dmenu.foreground:     #4c4f69
-dmenu.selbackground:  #dce0e8
-dmenu.selforeground:  #4c4f69
+dmenu.background:     #f8f9fb  
+dmenu.foreground:     #4a4d62  
+dmenu.selbackground:  #e9ecf2  
+dmenu.selforeground:  #4a4d62  
 
+dwm.normbgcolor:    #f8f9fb  
+dwm.normbordercolor:#c6cad6  
+dwm.normfgcolor:    #4a4d62  
+dwm.selbgcolor:     #e9ecf2  
+dwm.selbordercolor: #e9ecf2  
+dwm.selfgcolor:     #4a4d62  
 
 slock.color0:  #000000  
-slock.color4:  #808080  
+slock.color4:  #9098a8  
 slock.color1:  #ffffff  

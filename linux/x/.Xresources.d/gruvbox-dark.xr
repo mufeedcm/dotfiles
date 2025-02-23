@@ -1,0 +1,36 @@
+st.background:    #1d2021  
+st.foreground:    #d4be98  
+st.cursorColor:   #d4be98  
+
+st.color0:        #282828  
+st.color1:        #ea6962  
+st.color2:        #a9b665  
+st.color3:        #d8a657  
+st.color4:        #7daea3  
+st.color5:        #d3869b  
+st.color6:        #89b482  
+st.color7:        #d4be98  
+st.color8:        #928374  
+st.color9:        #ea6962  
+st.color10:       #a9b665  
+st.color11:       #d8a657  
+st.color12:       #7daea3  
+st.color13:       #d3869b  
+st.color14:       #89b482  
+st.color15:       #ebdbb2  
+
+dmenu.background:     #1d2021  
+dmenu.foreground:     #d4be98  
+dmenu.selbackground:  #3c3836  
+dmenu.selforeground:  #d4be98  
+
+dwm.normbgcolor:    #1d2021  
+dwm.normbordercolor:#32302f  
+dwm.normfgcolor:    #d4be98  
+dwm.selbgcolor:     #3c3836  
+dwm.selbordercolor: #3c3836  
+dwm.selfgcolor:     #d4be98  
+
+slock.color0:  #000000  
+slock.color4:  #928374  
+slock.color1:  #ffffff  

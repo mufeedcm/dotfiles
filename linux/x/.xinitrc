@@ -20,7 +20,8 @@ numlockx &
 flameshot &
 picom &
 amixer set Headphone 30% unmute &
-st -n win1tmux -e zsh -ic tmux &  
+# st -n win1tmux -e zsh -ic tmux &  
+st -c StWinTmux -e zsh -ic tmux &
 # firefox &  
 zen-browser &
 beeper-nightly &  

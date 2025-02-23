@@ -50,12 +50,11 @@ toggle_caffeine() {
     fi
 }
 
-# Function to switch theme
 switch_theme() {
-    # List available themes, each on its own line.
-    themes=("tokyonight" "dark" "light")
-    
-    # Use printf to output each theme on a separate line.
+    # List all available themes in ~/.Xresources.d (excluding 'current.xr')
+    themes=($(ls -1 ~/.Xresources.d | grep -v 'current.xr' | sed 's/\.xr$//'))
+
+    # Use dmenu to let the user select a theme
     theme=$(printf "%s\n" "${themes[@]}" | dmenu -i -p "Select Theme:")
 
     if [ -z "$theme" ]; then
@@ -63,28 +62,24 @@ switch_theme() {
         return
     fi
 
-    # Construct the target theme file path.
+    # Construct the target theme file path
     target="$HOME/.Xresources.d/${theme}.xr"
-    
-    # Check that the target theme file exists and is not empty.
+
+    # Check if the selected theme file exists and is not empty
     if [ ! -s "$target" ]; then
         echo "Theme file $target is missing or empty!"
         return
     fi
 
-    # Update the current theme symlink.
+    # Update the current theme symlink
     ln -sf "$target" "$HOME/.Xresources.d/current.xr"
 
-    # Reload the main Xresources file which includes current.xr.
+    # Reload Xresources
     xrdb -merge "$HOME/.Xresources"
 
-    # Restart dwm.
-    # Option A: If your dwm supports reloading via USR1, send that signal.
-    # pkill -USR1 dwm
-
-    # Option B: Alternatively, you could fully restart dwm (uncomment the following lines).
-    # pkill dwm
-    # exec dwm
+    # Restart dwm (optional, uncomment if needed)
+    # pkill -USR1 dwm  # If dwm supports USR1 signal for reload
+    # pkill dwm && exec dwm  # Full restart alternative
 }
 
 
