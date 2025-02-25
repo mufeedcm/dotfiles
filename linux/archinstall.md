@@ -204,7 +204,7 @@ sudo make clean install
 cd ~
 
 #installing essential packages
-sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd xclip zathura rofi dunst libnotify xorg-xsetroot xautolock xorg-setxkbmap xcape network-manager-applet fuse2 noto-fonts-emoji unzip wget ripgrep lf imagemagick mpv numlockx xdotool
+sudo pacman -S zsh feh figlet firefox flameshot neovim picom tmux ttf-meslo-nerd xclip zathura zathura-pdf-poppler rofi dunst libnotify xorg-xsetroot xautolock xorg-setxkbmap xcape network-manager-applet fuse2 noto-fonts-emoji unzip wget ripgrep lf imagemagick mpv numlockx xdotool
 
 yay -S tty-clock
 
@@ -279,5 +279,18 @@ sudo pacman -S mpd ncmpcpp mpc
 cd ~/dotfiles/linux
 stow -t $HOME mpd
 systemctl --user enable --now mpd
+
+#for pentablet setup 
+yay -S opentabletdriver
+
+sudo ln -s /usr/lib/opentabletdriver/OpenTabletDriver.Daemon /usr/bin/opentabletdriver-daemon
+sudo ln -s /usr/lib/opentabletdriver/OpenTabletDriver.UX.Gtk /usr/bin/opentabletdriver
+
+opentabletdriver-daemon &
+opentabletdriver
+
+systemctl --user enable opentabletdriver
+systemctl --user start opentabletdriver
+
 
 ```

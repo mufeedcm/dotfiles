@@ -22,6 +22,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;;for pdf
+(setq org-file-apps
+      '(("\\.pdf\\'" . "zathura %s")))
+
 
 
 ;;; LINE NUMBERS --------------------------------------------------------------
@@ -188,15 +192,15 @@
 (add-hook 'org-mode-hook 'org-display-inline-images)
 
 ;;; NOTIFICATIONS ------------------------------------------------------------
-(use-package alert
-  :config (setq alert-default-style 'libnotify))
+;; (use-package alert
+;;   :config (setq alert-default-style 'libnotify))
 
-(use-package org-alert
-  :config
-  (setq org-alert-interval 1200
-        org-alert-notification-title "Org Reminder"
-        org-alert-advance-notice-time nil)
-  (org-alert-enable))
+;; (use-package org-alert
+;;   :config
+;;   (setq org-alert-interval 1200
+;;         org-alert-notification-title "Org Reminder"
+;;         org-alert-advance-notice-time nil)
+;;   (org-alert-enable))
 
 ;;; DASHBOARD -----------------------------------------------------------------
 (use-package dashboard
