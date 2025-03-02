@@ -24,7 +24,7 @@ amixer set Headphone 30% unmute &
 st -c StWinTmux -e zsh -ic tmux &
 # firefox &  
 zen-browser &
-beeper-nightly &  
+# beeper-nightly &  
 # emacs &
 emacs --daemon &
 # buckle -g 40 &
