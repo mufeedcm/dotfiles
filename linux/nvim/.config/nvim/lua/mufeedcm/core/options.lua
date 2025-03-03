@@ -20,7 +20,7 @@ vim.o.completeopt = "menu,menuone,noinsert"
 
 vim.cmd("filetype plugin on")
 
-opt.termguicolors = false
+-- opt.termguicolors = false
 -- Enable mouse mode, can be useful for resizing splits.
 opt.mouse = "a"
 -- Don't show the mode, since it's already in the status line

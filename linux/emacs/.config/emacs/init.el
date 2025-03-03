@@ -58,7 +58,8 @@
 ;;; THEME ---------------------------------------------------------------------
 (use-package doom-themes
   :config
-  (load-theme 'doom-tokyo-night t))
+  ;; (load-theme 'doom-tokyo-night t))
+  (load-theme 'doom-gruvbox t))
 
 ;;; COMPLETION & SEARCH -------------------------------------------------------
 (use-package vertico
@@ -186,6 +187,25 @@
   (add-hook 'org-mode-hook
             (lambda ()
               (add-hook 'focus-out-hook 'org-save-all-org-buffers nil 'local))))
+
+
+(defun my/org-smart-return ()
+  "Continue checkbox or list, but exit on empty checkbox."
+  (interactive)
+  (if (org-at-item-checkbox-p)
+      (let ((current-line (thing-at-point 'line t)))
+        (if (string-match "^[[:space:]]*- \\[ \\]\\s-*$" current-line)
+            (delete-region (line-beginning-position) (line-end-position)) ;; Remove empty checkbox
+          (org-insert-todo-heading nil))) ;; Otherwise, create a new checkbox
+    (org-return)))
+
+(with-eval-after-load 'org
+  (setq org-list-allow-alphabetical t
+        org-adapt-indentation nil)
+  (define-key org-mode-map (kbd "RET") 'my/org-smart-return))
+
+
+
 
 ;; Inline images
 (setq org-startup-with-inline-images t)

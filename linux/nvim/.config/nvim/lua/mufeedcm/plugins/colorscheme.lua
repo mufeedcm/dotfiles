@@ -1,15 +1,15 @@
 -- Color Scheme setup
 return {
-	-- {
-	-- 	"ellisonleao/gruvbox.nvim",
-	-- 	enabled = true,
-	-- 	priority = 1000,
-	-- 	opts = ...,
-	-- 	config = function()
-	-- 		vim.o.background = "dark"
-	-- 		vim.cmd([[colorscheme gruvbox]])
-	-- 	end,
-	-- },
+	{
+		"ellisonleao/gruvbox.nvim",
+		enabled = true,
+		priority = 1000,
+		opts = ...,
+		config = function()
+			vim.o.background = "dark"
+			vim.cmd([[colorscheme gruvbox]])
+		end,
+	},
 
 	-- return {
 	-- 	"AlexvZyl/nordic.nvim",
