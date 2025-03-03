@@ -15,23 +15,23 @@ $character"""
 command = "if [ $(whoami) = root ]; then echo '[ ROOT]'; else echo '[ USER]'; fi"
 when = "true"
 style = "bold"
-format = "[$output](fg:#ffeb95)" # Gold for user/root differentiation
+format = "[$output](fg:#fabd2f)" # Yellow (Gold) for user/root differentiation
 
 [directory]
-style = "fg:#82aaff" # Light blue for directory
+style = "fg:#83a598" # Aqua for directory
 
 [character]
-success_symbol = "[❯](fg:#cfcfcf)"
-error_symbol = "[❯](fg:#e57373)" # Light red for errors
-vimcmd_symbol = "[❮](fg:#f78c6c)" # Light orange for vim commands
+success_symbol = "[❯](fg:#ebdbb2)"
+error_symbol = "[❯](fg:#fb4934)" # Red for errors
+vimcmd_symbol = "[❮](fg:#fe8019)" # Orange for vim commands
 
 [git_branch]
 format = "[$branch]($style)"
-style = "fg:#c0caf5" # Soft cyan for branch
+style = "fg:#8ec07c" # Green for branch
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](fg:#f7768e) ($ahead_behind$stashed)]($style)"
-style = "fg:#b4befe" # Soft purple for git status
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](fg:#fb4934) ($ahead_behind$stashed)]($style)"
+style = "fg:#d3869b" # Purple for git status
 conflicted = "​"
 untracked = "​"
 modified = "​"
@@ -41,13 +41,13 @@ deleted = "​"
 stashed = "≡"
 
 [git_state]
-format = '\([$state( $progress_current/$progress_total)](fg:#7aa2f7)\) '
-style = "fg:#7aa2f7" # Light blue for git state
+format = '\([$state( $progress_current/$progress_total)](fg:#83a598)\) '
+style = "fg:#83a598" # Aqua for git state
 
 [cmd_duration]
-format = "[$duration](fg:#9ece6a) " # Green for command duration
-style = "fg:#9ece6a"
+format = "[$duration](fg:#b8bb26) " # Green for command duration
+style = "fg:#b8bb26"
 
 [python]
-format = "[$virtualenv](fg:#f9e2af) " # Light yellow for python virtualenv
-style = "fg:#f9e2af"
+format = "[$virtualenv](fg:#fabd2f) " # Yellow for Python virtualenv
+style = "fg:#fabd2f"
