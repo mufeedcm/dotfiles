@@ -112,7 +112,7 @@ pushnotes() {
 
 pushdots() {
     local prev_dir=$(pwd)
-    echo "Enter commit message for dotfiles: "
+    echo "Enter commit message for dotfiles : "
     read commit_msg
     echo "Pushing Dotfiles..."
     cd /home/mufeedcm/dotfiles || return
