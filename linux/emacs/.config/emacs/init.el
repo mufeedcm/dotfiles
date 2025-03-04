@@ -137,8 +137,15 @@
     "ot" `(,(lambda () (interactive) (find-file "~/notes/org/tasks.org")) :which-key "Tasks")
     "os" `(,(lambda () (interactive) (find-file "~/notes/org/diploma/sem4.org")) :which-key "Semester 4")
     "oe" `(,(lambda () (interactive) (find-file "~/.config/emacs/init.el")) :which-key "Emacs config")
+    "of" '(org-open-at-point :which-key "Open Link/File")
 
-    "/"  '(consult-line :whichkey "search in file"))
+    "/"  '(consult-line :whichkey "search in file")
+
+  ;; Task management keybindings
+    "s"  '(:ignore t :which-key "Set")
+    "ss" '(org-schedule :which-key "Schedule")
+    "sd" '(org-deadline :which-key "Deadline")
+    )
 
 
 
