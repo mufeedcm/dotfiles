@@ -112,10 +112,12 @@ pushnotes() {
 
 pushdots() {
     local prev_dir=$(pwd)
+    echo "Enter commit message for dotfiles: "
+    read commit_msg
     echo "Pushing Dotfiles..."
     cd /home/mufeedcm/dotfiles || return
     git add .
-    git commit -m "auto"
+    git commit -m "$commit_msg"
     git push -u origin main
     cd "$prev_dir"
 }
