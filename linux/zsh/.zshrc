@@ -72,7 +72,7 @@ zvm_after_lazy_keybindings() {
 
 # == auto ==
 # figlet mufeedcm
-neofetch
+fastfetch
 
 # === Aliases ===
 # Common Aliases

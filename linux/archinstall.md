@@ -176,7 +176,7 @@ sudo pacman -Sy xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
 sudo pacman -S xorg-xrandr
 
 #installing beautification and monitoring
-sudo pacman -Sy htop neofetch figlet bucklespring tree
+sudo pacman -Sy htop fastfetch figlet bucklespring tree
 
 #installing stow for symlink and setting it up
 sudo pacman -Sy stow
