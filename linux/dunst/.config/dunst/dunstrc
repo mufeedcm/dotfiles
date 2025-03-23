@@ -9,7 +9,7 @@
     padding = 12                 # Vertical padding around notifications
     horizontal_padding = 16      # Horizontal padding around notifications
     frame_width = 2              # Width of the frame around notifications
-    frame_color = "#b57614"      # Gruvbox Yellow for frame
+    frame_color = "#b57601"      # Gruvbox Yellow for frame
     sort = yes                   # Sort notifications by urgency and time
     idle_threshold = 120         # Time in seconds after which the notifications will idle
     font = "Meslo LGM Nerd Font 10"        # Font for notifications (Font name and size)

@@ -100,6 +100,14 @@ quran() {
   mpv --volume=$volume /home/mufeedcm/Music/surah_muhammed.m4a
 }
 
+alias shizuku=''
+shizhuku(){
+  echo "Finding devices"
+  adb devices
+  echo "Running the command: adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh"
+  adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
+}
+
 pushnotes() {
     local prev_dir=$(pwd)
     echo "Pushing Notes..."
