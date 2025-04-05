@@ -49,6 +49,7 @@ static const Rule rules[] = {
     {"ncmpcpp", NULL, NULL, 0, 1, -1},
     {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
     /*{"firefox", NULL, "Picture-in-Picture", 1, 1, -1},*/
+    {"zen", NULL, "Toolkit", 1, 1, -1},
     {"ttyclock", NULL, NULL, 0, 1, -1},
 };
 
