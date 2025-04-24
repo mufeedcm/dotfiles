@@ -100,7 +100,6 @@ quran() {
   mpv --volume=$volume /home/mufeedcm/Music/surah_muhammed.m4a
 }
 
-alias shizuku=''
 shizhuku(){
   echo "Finding devices"
   adb devices
