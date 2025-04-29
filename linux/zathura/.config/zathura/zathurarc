@@ -48,3 +48,8 @@ set recolor-darkcolor "#ebdbb2"
 set recolor-reverse-video "true"
 set recolor-keephue "false"
 set selection-clipboard clipboard
+
+map <Left> navigate previous
+map <Right> navigate next
+map h navigate previous
+map l navigate next
