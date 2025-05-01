@@ -27,7 +27,7 @@ zen-browser &
 beeper &  
 # emacs &
 emacs --daemon &
-# buckle -g 40 &
+buckle -g 40 &
 # setxkbmap -option ctrl:nocaps
 # xcape -e 'Control_L=Escape'
 

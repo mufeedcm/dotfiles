@@ -279,6 +279,9 @@ sudo pacman -S mpd ncmpcpp mpc
 cd ~/dotfiles/linux
 stow -t $HOME mpd
 systemctl --user enable --now mpd
+## to update music `mpc update`
+
+
 
 #for pentablet setup 
 yay -S opentabletdriver

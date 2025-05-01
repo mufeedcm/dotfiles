@@ -9,6 +9,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH="$PATH:/home/mufeedcm/.local/bin" # Added by `pipx`
 export EDITOR=nvim
+export RANGER_LOAD_DEFAULT_RC=false
 export VISUAL=nvim
 export GTK_MODULES=gail:atk-bridge
 export AT_SPI_BUS=at-spi-bus-launcher
@@ -76,6 +77,7 @@ fastfetch
 
 # === Aliases ===
 # Common Aliases
+alias rag='ranger'
 alias sp='pacman'
 alias la='ls -la'
 alias cls='clear'
