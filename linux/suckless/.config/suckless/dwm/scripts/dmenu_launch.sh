@@ -111,9 +111,16 @@ menu_items=$(
     } | sort -u
 )
 
+#input=$(echo -e "$menu_items" | dmenu -i)
+# Run dmenu and auto-terminate after 4s if no input
+(
+    sleep 3 && pkill -x dmenu
+) &
+
+input=$(echo -e "$menu_items" | dmenu -i)
+
 # Get user input from dmenu
 # input=$(echo -e "$menu_items" | dmenu -i -p "Search or command:")
-input=$(echo -e "$menu_items" | dmenu -i)
 # input=$(echo -e "$menu_items" | dmenu -i &)
 # input=$(echo -e "$menu_items" | nohup dmenu -i &)
 

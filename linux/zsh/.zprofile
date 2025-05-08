@@ -1,16 +1,13 @@
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-  echo "Login to WM ? (y/n)"
+  echo "Loging into WM to continue press Enter, to Stop press n"
     read -r choice
     case "$choice" in
         "" | [yY]*)
             exec startx
             ;;
         [nN]*)
-            # echo "Skipping window manager login. Use this terminal session."
             ;;
         *)
-            # echo "Invalid input. Exiting."
-            exit 1
             ;;
     esac
 fi

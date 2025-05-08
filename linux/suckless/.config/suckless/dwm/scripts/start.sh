@@ -20,7 +20,7 @@ echo $! >> "$PID_FILE"
 xautolock -time 5 -locker "slock & systemctl suspend" &
 echo $! >> "$PID_FILE"
 
-nohup /home/mufeedcm/Applications/beeper-nightly.AppImage >/dev/null 2>&1 &
+nohup /home/mufeedcm/Applications/beeper.AppImage >/dev/null 2>&1 &
 
 nm-applet &
 echo $! >> "$PID_FILE"
