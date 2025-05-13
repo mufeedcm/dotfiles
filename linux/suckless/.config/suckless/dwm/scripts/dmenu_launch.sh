@@ -114,7 +114,7 @@ menu_items=$(
 #input=$(echo -e "$menu_items" | dmenu -i)
 # Run dmenu and auto-terminate after 4s if no input
 (
-    sleep 3 && pkill -x dmenu
+    sleep 10 && pkill -x dmenu
 ) &
 
 input=$(echo -e "$menu_items" | dmenu -i)

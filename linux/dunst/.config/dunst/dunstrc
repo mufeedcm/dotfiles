@@ -9,7 +9,7 @@
     padding = 12                 # Vertical padding around notifications
     horizontal_padding = 16      # Horizontal padding around notifications
     frame_width = 2              # Width of the frame around notifications
-    frame_color = "#b57601"      # Gruvbox Yellow for frame
+    frame_color = "#ffffff"      
     sort = yes                   # Sort notifications by urgency and time
     idle_threshold = 120         # Time in seconds after which the notifications will idle
     font = "Meslo LGM Nerd Font 10"        # Font for notifications (Font name and size)
@@ -34,7 +34,7 @@
     history_length = 20          # Maximum number of notifications in history
 
     ### Misc/Advanced ###
-    browser = brave-browser      # Default browser to open notification links
+    browser = zen-browser      # Default browser to open notification links
     always_run_script = true     # Always run script actions even if notification is closed
     title = Dunst                # Window title of the notification system
     class = Dunst                # X11 window class for the notifications
@@ -48,9 +48,10 @@
     per_monitor_dpi = false      # Disable per-monitor DPI scaling
 
 [urgency_low]
-    background = "#282828"       # Gruvbox Dark Background
-    foreground = "#928374"       # Gruvbox Gray Text
-    timeout = 10                 # Time in seconds before low urgency notifications disappear
+    background = "#000000"  
+    foreground = "#ffffff"  
+    highlight = "#ffffff"  
+    timeout = 10            
 
 [urgency_normal]
     background = "#282828"       # Gruvbox Dark Background
