@@ -60,6 +60,12 @@
   :config
   ;; (load-theme 'doom-tokyo-night t))
   (load-theme 'doom-gruvbox t))
+  (set-face-background 'default "#000000")
+  (set-face-background 'fringe "#000000")
+  (set-face-background 'mode-line "#000000")
+  (set-face-background 'mode-line-inactive "#000000")
+  (set-face-background 'line-number "#000000")
+  (set-face-background 'line-number-current-line "#000000")
 
 ;;; COMPLETION & SEARCH -------------------------------------------------------
 (use-package vertico
