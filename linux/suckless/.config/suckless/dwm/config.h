@@ -132,10 +132,10 @@ static const Key keys[] = {
     {MODKEY,                       XK_F7,         spawn,          SHCMD("dunstctl history-pop")},
     {MODKEY,                       XK_F8,         spawn,          SHCMD("dunstctl context")},
 
-    {TERMMOD,                      XK_s,          spawn,          SHCMD("slock & systemctl suspend")},
-    {TERMMOD,                      XK_l,          spawn,          SHCMD("pkill dwm")},
-    {TERMMOD,                      XK_u,          spawn,          SHCMD("systemctl poweroff")},
-    {TERMMOD,                      XK_r,          spawn,          SHCMD("systemctl reboot")},
+    {TERMMOD,                      XK_s,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Sleep' 'mpc pause && slock & systemctl suspend'")},
+    {TERMMOD,                      XK_l,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Exit Dwm' 'pkill dwm'")},
+    {TERMMOD,                      XK_u,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Shutdown' 'systemctl poweroff'")},
+    {TERMMOD,                      XK_r,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Reboot' 'systemctl reboot'")},
 
     // Custom Scripts
     { MODKEY,                     XK_n,          togglescratch,   {.v = scratchpadcmd } },
@@ -154,6 +154,8 @@ static const Key keys[] = {
     {TERMMOD,                      XK_k,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh up")},
     {TERMMOD,                      XK_j,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh down")},
     {TERMMOD,                      XK_m,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh toggle")},
+    {TERMMOD,                      XK_a,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/audio-switcher.sh toggle")},  
+
 
     // Miscellaneous
     {MODKEY,                       XK_b,          togglebar,      {0}},

@@ -27,6 +27,7 @@ zen-browser &
 # beeper &  
 # emacs &
 emacs --daemon &
+# amixer -c 1 -q set Headphone 60% unmute
 buckle -g 40 &
 # setxkbmap -option ctrl:nocaps
 # xcape -e 'Control_L=Escape'
