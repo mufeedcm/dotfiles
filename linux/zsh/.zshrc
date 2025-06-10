@@ -17,20 +17,25 @@ export AT_SPI_BUS=at-spi-bus-launcher
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Ensure Starship runs only if it's not already running
-if ! pgrep -x starship > /dev/null; then
-    eval "$(starship init zsh)"
-fi
+# if ! pgrep -x starship > /dev/null; then
+#     eval "$(starship init zsh)"
+# fi
 
 
 # export PATH="$HOME/anaconda3/bin:$PATH"
 # . "$HOME/anaconda3/etc/profile.d/conda.sh"
+
+
+PROMPT='
+%F{cyan}%~%f
+❯ '
 
 # Ensure Starship is always initialized, even inside tmux
 # if [[ -z "$TMUX" ]]; then
 #     eval "$(starship init zsh)"
 # fi
 #
-export STARSHIP_ZSH_KEYMAP_SELECT=0
+# export STARSHIP_ZSH_KEYMAP_SELECT=0
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
