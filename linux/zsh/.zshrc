@@ -26,8 +26,19 @@ export AT_SPI_BUS=at-spi-bus-launcher
 # . "$HOME/anaconda3/etc/profile.d/conda.sh"
 
 
+setopt PROMPT_SUBST
+custom_pwd() {
+    if [[ $PWD == $HOME ]]; then
+        echo "~"
+    elif [[ $PWD == $HOME/* ]]; then
+        echo ${PWD/~}
+        # echo ${PWD/#$HOME/~}
+    else
+        echo $PWD
+    fi
+}
 PROMPT='
-%F{cyan}%~%f
+%F{cyan}$(custom_pwd)%f
 ❯ '
 
 # Ensure Starship is always initialized, even inside tmux
