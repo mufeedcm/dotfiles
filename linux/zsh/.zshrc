@@ -31,7 +31,7 @@ custom_pwd() {
     if [[ $PWD == $HOME ]]; then
         echo "~"
     elif [[ $PWD == $HOME/* ]]; then
-        echo ${PWD/~}
+        echo "~${PWD/~}"
         # echo ${PWD/#$HOME/~}
     else
         echo $PWD
