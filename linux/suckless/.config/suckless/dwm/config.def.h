@@ -132,7 +132,7 @@ static const Key keys[] = {
     {MODKEY,                       XK_F7,         spawn,          SHCMD("dunstctl history-pop")},
     {MODKEY,                       XK_F8,         spawn,          SHCMD("dunstctl context")},
 
-    {TERMMOD,                      XK_s,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Sleep' 'slock & systemctl suspend'")},
+    {TERMMOD,                      XK_s,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Sleep' 'mpc pause && slock & systemctl suspend'")},
     {TERMMOD,                      XK_l,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Exit Dwm' 'pkill dwm'")},
     {TERMMOD,                      XK_u,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Shutdown' 'systemctl poweroff'")},
     {TERMMOD,                      XK_r,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Reboot' 'systemctl reboot'")},
