@@ -47,8 +47,8 @@ static const Rule rules[] = {
     {"zen", NULL, NULL, 1 << 1, 0, -1},
     {"Emacs", NULL, scratchpadname, 0, 1, -1},
     {"ncmpcpp", NULL, NULL, 0, 1, -1},
-    {"nmtui", NULL, NULL, 0, 1, -1},
-    {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
+    // {"nmtui", NULL, NULL, 0, 1, -1},
+    // {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
     /*{"firefox", NULL, "Picture-in-Picture", 1, 1, -1},*/
     {"zen", NULL, "Toolkit", 1, 1, -1},
     {"ttyclock", NULL, NULL, 0, 1, -1},
@@ -85,7 +85,6 @@ static const Layout layouts[] = {
   {                                                                            \
     .v = (const char *[]) { "/bin/sh", "-c", cmd, NULL }                       \
   }
-#define STATUSBAR "dwmblocks"
 
 /* commands */
 static char dmenumon[2] =
@@ -142,7 +141,8 @@ static const Key keys[] = {
     // Custom Scripts
     { MODKEY,                     XK_n,          togglescratch,   {.v = scratchpadcmd } },
     { MODKEY,                     XK_o,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/ncmpcpp_toggle.sh") },
-    { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/nmtui_toggle.sh") },
+    { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh") },
+    // { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/nmtui_toggle.sh") },
     { MODKEY,                     XK_F12,        spawn,           {.v = ttyclockcmd } },
     /*{TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},*/
     /*{TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},*/
@@ -157,7 +157,7 @@ static const Key keys[] = {
     {TERMMOD,                      XK_k,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh up")},
     {TERMMOD,                      XK_j,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh down")},
     {TERMMOD,                      XK_m,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh toggle")},
-    {TERMMOD,                      XK_a,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/audio-switcher.sh toggle")},  
+    {MODKEY,                       XK_s,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/audio-switcher.sh toggle")},  
 
 
     // Miscellaneous
@@ -207,10 +207,7 @@ static const Button buttons[] = {
     {ClkLtSymbol, 0, Button1, setlayout, {0}},
     {ClkLtSymbol, 0, Button3, setlayout, {.v = &layouts[2]}},
     {ClkWinTitle, 0, Button2, zoom, {0}},
-    // {ClkStatusText, 0, Button2, spawn, {.v = termcmd}},
-    {ClkStatusText, 0, Button1, sigstatusbar, {.i = 1}},
-    {ClkStatusText, 0, Button2, sigstatusbar, {.i = 2}},
-    {ClkStatusText, 0, Button3, sigstatusbar, {.i = 3}},
+    {ClkStatusText, 0, Button2, spawn, {.v = termcmd}},
     {ClkClientWin, MODKEY, Button1, movemouse, {0}},
     {ClkClientWin, MODKEY, Button2, togglefloating, {0}},
     {ClkClientWin, MODKEY, Button3, resizemouse, {0}},

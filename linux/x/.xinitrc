@@ -12,6 +12,7 @@ trap cleanup EXIT
 
 
 feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
+# feh --bg-scale ~/.config/backgrounds/tree-cold-mountain-art.jpg &
 ~/.config/suckless/dwm/scripts/status-bar.sh &
 # slstatus &
 # dwmblocks &
@@ -20,7 +21,7 @@ nm-applet &
 dunst &
 numlockx &
 flameshot &
-picom &
+# picom &
 amixer set Headphone 30% unmute &
 # st -n win1tmux -e zsh -ic tmux &  
 st -c StWinTmux -e zsh -ic tmux &
