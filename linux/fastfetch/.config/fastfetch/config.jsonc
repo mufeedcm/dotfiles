@@ -94,12 +94,12 @@
             "type": "packages",
             "keyColor": "33"
         },
-        {
-            "key": "󰩟 network",
-            "type": "localip",
-            "format": "{ipv4} ({ifname})",
-            "keyColor": "32"
-        },
+        // {
+        //     "key": "󰩟 network",
+        //     "type": "localip",
+        //     "format": "{ipv4} ({ifname})",
+        //     "keyColor": "32"
+        // },
         {
             "key": " colors",
             "type": "colors",
