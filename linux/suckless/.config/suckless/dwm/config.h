@@ -142,6 +142,7 @@ static const Key keys[] = {
     { MODKEY,                     XK_n,          togglescratch,   {.v = scratchpadcmd } },
     { MODKEY,                     XK_o,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/ncmpcpp_toggle.sh") },
     { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh") },
+    { MODKEY,                     XK_v,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/clipmenu.sh sel") },
     // { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/nmtui_toggle.sh") },
     { MODKEY,                     XK_F12,        spawn,           {.v = ttyclockcmd } },
     /*{TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},*/
