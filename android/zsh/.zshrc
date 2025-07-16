@@ -4,9 +4,12 @@ HISTFILE=~/.zsh_history  # Path to the history file
 
 export FUNCNEST=1000
 
-clear
+tmux
 
-fastfetch
+clear
+echo "mufeedcm"
+
+# fastfetch
 
 
 export LANG=en_US.UTF-8
