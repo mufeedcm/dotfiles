@@ -45,7 +45,7 @@ pkg i -y termux-api
 echo "Installing additional programming tools..."
 pkg i -y clang lua-language-server gopls
 pkg i -y python python-pip
-pkg i -y build-essential curl wget fzf neofetch
+pkg i -y build-essential curl wget fzf fastfetch
 
 cd ~ 
 
