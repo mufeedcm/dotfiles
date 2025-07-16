@@ -63,8 +63,6 @@ zvm_vi_yank () {
 	zvm_exit_visual_mode
 }
 
-alias cbread='xclip -selection c'
-alias cbprint='xclip -o -selection clipboard'
 
 my_zvm_vi_put_after() {
   CUTBUFFER=$(cbprint)
@@ -99,6 +97,11 @@ alias la='ls -la'
 alias cls='clear'
 alias conf='cd /home/mufeedcm/.config'
 alias confnvim='nvim /home/mufeedcm/.config/nvim/'
+
+
+alias cbread='xclip -selection c'
+alias cbprint='xclip -o -selection clipboard'
+
 
 # Books
 alias cbook1='zathura /home/mufeedcm/books/programmingbooks/the-c-programming-language.pdf &'

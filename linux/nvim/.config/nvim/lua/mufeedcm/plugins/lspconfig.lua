@@ -105,6 +105,22 @@ return {
 						},
 					},
 				},
+
+				texlab = {
+					settings = {
+						texlab = {
+							build = {
+								executable = "latexmk",
+								onSave = true,
+								forwardSearchAfter = true,
+							},
+							forwardSearch = {
+								executable = "zathura",
+								args = { "--synctex-forward", "%l:1:%f", "%p" },
+							},
+						},
+					},
+				},
 				-- -- Latex Setup
 
 				-- texlab = {
@@ -156,6 +172,7 @@ return {
 				-- "luacheck",
 				"prettierd",
 				"prettier",
+				"texlab",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

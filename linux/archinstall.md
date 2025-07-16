@@ -210,7 +210,7 @@ yay -S tty-clock
 
 
 #latex-setup (optional) 
-sudo pacman -S texlive-core texlive-latexextra texlive-binextra
+sudo pacman -S texlive-core texlive-latexextra texlive-binextra texlive-fontsrecommended
 
 #kmonadsetup
 cd ~dotfiles/linux/
