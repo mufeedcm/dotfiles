@@ -93,7 +93,8 @@ fastfetch
 # Common Aliases
 alias rag='ranger'
 alias sp='pacman'
-alias la='ls -la'
+alias lsa='ls -a'
+alias la='ls -lahr'
 alias cls='clear'
 alias conf='cd /home/mufeedcm/.config'
 alias confnvim='nvim /home/mufeedcm/.config/nvim/'

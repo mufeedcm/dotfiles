@@ -1,6 +1,8 @@
 sw_volume: 100
 audio_device_state:1:PipeWire-Pulse
-state: stop
+state: pause
+current: 2
+time: 278.05400000000003
 random: 0
 repeat: 0
 single: 0
@@ -11,4 +13,6 @@ mixrampdelay: -1
 lastloadedplaylist: 
 playlist_begin
 0:surah-ambiya-haithm-aldokhin.mp3
+1:surah-muminun-yaseer-al-dasari.mp3
+2:surah-taha-haithm-aldokhin.mp3
 playlist_end

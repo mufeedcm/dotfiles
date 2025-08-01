@@ -22,7 +22,8 @@ nm-applet &
 dunst &
 numlockx &
 flameshot &
-# picom &
+# picom & ##picom is managed by restored_state.sh
+./.config/suckless/dwm/scripts/display_control/restore_state.sh
 amixer set Headphone 30% unmute &
 # st -n win1tmux -e zsh -ic tmux &  
 st -c StWinTmux -e zsh -ic tmux &
@@ -31,6 +32,7 @@ zen-browser &
 # beeper &  
 # emacs &
 emacs --daemon &
+opentabletdriver-daemon &
 # amixer -c 1 -q set Headphone 60% unmute
 buckle -g 40 &
 # setxkbmap -option ctrl:nocaps

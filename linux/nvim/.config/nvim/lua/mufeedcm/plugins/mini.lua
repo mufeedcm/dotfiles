@@ -1,6 +1,15 @@
 return {
 	"echasnovski/mini.nvim",
 	config = function()
+		-- require("mini.files").setup({
+		-- 	vim.keymap.set("n", "<leader>o", function()
+		-- 		require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+		-- 	end, { desc = "Open mini.files at current file", noremap = true, silent = true }),
+		-- 	mappings = {
+		-- 		go_in = "l", --  <CR> for Enter
+		-- 		go_out = "h",
+		-- 	},
+		-- })
 		-- ----------------------------------------
 		require("mini.indentscope").setup()
 		-- ----------------------------------------

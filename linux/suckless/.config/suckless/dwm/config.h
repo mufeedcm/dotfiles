@@ -142,7 +142,8 @@ static const Key keys[] = {
     { MODKEY,                     XK_n,          togglescratch,   {.v = scratchpadcmd } },
     { MODKEY,                     XK_o,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/ncmpcpp_toggle.sh") },
     { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh") },
-    { MODKEY,                     XK_v,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/clipmenu.sh sel") },
+    { TERMMOD,                    XK_b,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/books_list.sh") },
+    { TERMMOD,                    XK_v,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/clipmenu.sh sel") },
     // { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/nmtui_toggle.sh") },
     { MODKEY,                     XK_F12,        spawn,           {.v = ttyclockcmd } },
     /*{TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},*/
@@ -159,6 +160,11 @@ static const Key keys[] = {
     {TERMMOD,                      XK_j,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh down")},
     {TERMMOD,                      XK_m,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh toggle")},
     {MODKEY,                       XK_s,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/audio-switcher.sh toggle")},  
+
+    //display controls
+    { TERMMOD,                     XK_h,         spawn,          SHCMD("~/.config/suckless/dwm/scripts/display_control/display_control.sh") },
+    { MODKEY,                      XK_comma,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/display_control/display_adjust.sh down") },
+    { MODKEY,                      XK_period,     spawn,          SHCMD("~/.config/suckless/dwm/scripts/display_control/display_adjust.sh up") },
 
 
     // Miscellaneous

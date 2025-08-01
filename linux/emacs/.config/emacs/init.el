@@ -141,7 +141,7 @@
     "ol" '(org-store-link :which-key "Org Store Link")
     ;; "on" '(consult-notes :which-key "Find file")
     "ot" `(,(lambda () (interactive) (find-file "~/notes/org/tasks.org")) :which-key "Tasks")
-    "os" `(,(lambda () (interactive) (find-file "~/notes/org/diploma/sem4.org")) :which-key "Semester 4")
+    "os" `(,(lambda () (interactive) (find-file "~/notes/org/diploma/sem5.org")) :which-key "Semester 5")
     "oe" `(,(lambda () (interactive) (find-file "~/.config/emacs/init.el")) :which-key "Emacs config")
     "of" '(org-open-at-point :which-key "Open Link/File")
 
