@@ -20,6 +20,8 @@ vim.o.completeopt = "menu,menuone,noinsert"
 
 vim.cmd("filetype plugin on")
 
+vim.filetype.add({ extension = { mdx = "markdown" } })
+
 -- opt.termguicolors = false
 -- Enable mouse mode, can be useful for resizing splits.
 opt.mouse = "a"

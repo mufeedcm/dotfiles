@@ -43,6 +43,7 @@ return {
 			json = { "prettier" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			mdx = { "prettier" },
 		},
 	},
 }
