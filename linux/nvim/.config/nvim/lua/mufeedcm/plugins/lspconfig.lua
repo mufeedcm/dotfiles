@@ -96,6 +96,7 @@ return {
 				},
 				pyright = {},
 				ts_ls = {},
+				astro = {},
 				lua_ls = {
 					settings = {
 						Lua = {
