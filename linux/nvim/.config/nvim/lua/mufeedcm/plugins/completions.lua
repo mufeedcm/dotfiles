@@ -7,7 +7,6 @@ return {
 		{
 			"L3MON4D3/LuaSnip", -- Snippet engine
 			build = (function()
-				-- Build command for LuaSnip (only if not on Windows and 'make' is available)
 				if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
 					return
 				end
@@ -29,6 +28,7 @@ return {
 			"roobert/tailwindcss-colorizer-cmp.nvim", -- Tailwind CSS color preview in autocompletion
 			config = true, -- Use default configuration
 		},
+		"hrsh7th/cmp-buffer", -- Source for buffer autocompletion
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -52,43 +52,43 @@ return {
 
 		-- Keymap for jumping to the next snippet placeholder or expanding snippets
 		vim.api.nvim_set_keymap(
-			"i", -- Insert mode
-			"jk", -- Trigger key (jk)
-			"luasnip.jumpable(1) and '<Plug>luasnip-jump-next' or 'jk'", -- Jump to the next placeholder if available, otherwise type "jk"
+			"i",
+			"jk",
+			"luasnip.jump(1) and '<Plug>luasnip-jump-next' or 'jk'",
 			{ expr = true, silent = true }
 		)
 		vim.api.nvim_set_keymap(
-			"s", -- Select mode
-			"jk", -- Same behavior in Select mode
-			"luasnip.jumpable(1) and '<Plug>luasnip-jump-next' or 'jk'",
+			"s",
+			"jk",
+			"luasnip.jump(1) and '<Plug>luasnip-jump-next' or 'jk'",
 			{ expr = true, silent = true }
 		)
 
 		-- Keymap for jumping backward in snippet placeholders
 		vim.api.nvim_set_keymap(
 			"i",
-			"<S-Tab>", -- Shift + Tab
-			"luasnip.jumpable(-1) and '<Plug>luasnip-jump-prev' or '<S-Tab>'",
+			"<S-Tab>",
+			"luasnip.jump(-1) and '<Plug>luasnip-jump-prev' or '<S-Tab>'",
 			{ expr = true, silent = true }
 		)
 		vim.api.nvim_set_keymap(
 			"s",
 			"<S-Tab>",
-			"luasnip.jumpable(-1) and '<Plug>luasnip-jump-prev' or '<S-Tab>'",
+			"luasnip.jump(-1) and '<Plug>luasnip-jump-prev' or '<S-Tab>'",
 			{ expr = true, silent = true }
 		)
 
 		-- Keymap for cycling through choices in snippet placeholders
 		vim.api.nvim_set_keymap(
 			"i",
-			"<C-j>", -- Ctrl + j
-			"luasnip.choice_active() and '<Plug>luasnip-next-choice' or '<C-j>'",
+			"<C-j>",
+			"luasnip.choice_index() ~= 0 and '<Plug>luasnip-next-choice' or '<C-j>'",
 			{ expr = true, silent = true }
 		)
 		vim.api.nvim_set_keymap(
 			"s",
 			"<C-j>",
-			"luasnip.choice_active() and '<Plug>luasnip-next-choice' or '<C-j>'",
+			"luasnip.choice_index() ~= 0 and '<Plug>luasnip-next-choice' or '<C-j>'",
 			{ expr = true, silent = true }
 		)
 
@@ -101,8 +101,12 @@ return {
 			},
 			completion = { completeopt = "menu,menuone,noinsert" }, -- Customize completion behavior
 			window = {
-				completion = cmp.config.window.bordered(), -- Bordered completion window
-				documentation = cmp.config.window.bordered(), -- Bordered documentation window
+				completion = cmp.config.window.bordered(),
+				documentation = {
+					border = "rounded",
+					winhighlight = "Normal:Normal,FloatBorder:Normal",
+					side = "right",
+				},
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<Tab>"] = cmp.mapping(function(fallback)
@@ -137,15 +141,30 @@ return {
 				end,
 				expandable_indicator = false, -- Disable expandable indicator
 			},
-			sources = {
+			sources = cmp.config.sources({
 				{ name = "nvim_lsp" }, -- LSP-based completion source
 				{ name = "luasnip" }, -- Snippet completion source
 				{ name = "path" }, -- Filesystem path completion
+				{ name = "buffer" }, -- ADDED: Buffer-based completion (words in the current file)
 				{
 					name = "tailwindcss-colorizer-cmp",
 					priority = 1000, -- High priority for Tailwind CSS source
+					-- ADDED: Restrict this source to specific file types to prevent it from running everywhere
+					option = {
+						get_filetype = function()
+							local allowed_filetypes = {
+								"html",
+								"css",
+								"javascript",
+								"javascriptreact",
+								"typescriptreact",
+							}
+							local filetype = vim.bo.filetype
+							return vim.tbl_contains(allowed_filetypes, filetype) and filetype or nil
+						end,
+					},
 				},
-			},
+			}),
 		})
 	end,
 }

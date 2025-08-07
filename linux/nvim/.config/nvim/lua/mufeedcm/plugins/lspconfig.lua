@@ -38,7 +38,8 @@ return {
 
 					-- Highlight the references under teh curser
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+					-- Highlight the references under the cursor
+					if client and client.server_capabilities.documentHighlightProvider then
 						local highlight_augroup =
 							vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 						vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -46,7 +47,7 @@ return {
 							group = highlight_augroup,
 							callback = vim.lsp.buf.document_highlight,
 						})
-						-- To clear the highlight under the curser
+						-- To clear the highlight under the cursor
 						vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
 							buffer = event.buf,
 							group = highlight_augroup,
@@ -61,7 +62,7 @@ return {
 						})
 					end
 
-					if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+					if client and client.server_capabilities.inlayHintProvider then
 						map("<leader>th", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 						end, "[T]oggle Inlay [H]ints")
@@ -70,12 +71,18 @@ return {
 			})
 
 			-- Change diagnostic symbols in the sign column (gutter)
+			-- Change diagnostic symbols in the sign column (gutter)
 			if vim.g.have_nerd_font then
-				local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-				for type, icon in pairs(signs) do
-					local hl = "DiagnosticSign" .. type
-					vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-				end
+				vim.diagnostic.config({
+					signs = {
+						text = {
+							Error = "",
+							Warn = "",
+							Hint = "",
+							Info = "",
+						},
+					},
+				})
 			end
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -90,6 +97,13 @@ return {
 				},
 
 				marksman = {},
+				tinymist = {
+					settings = {
+						formatterMode = "typstyle",
+						exportPdf = "onType",
+						semanticTokens = "disable",
+					},
+				},
 				clangd = {
 					cmd = { "clangd" },
 					filetypes = { "c", "cpp" },

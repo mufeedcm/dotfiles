@@ -240,6 +240,8 @@ rm -rf yay
 
 #installing gh
 yay -S github-cli-git
+#set default branch
+git config --global init.defaultBranch main
 
 #installing nvm and nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
