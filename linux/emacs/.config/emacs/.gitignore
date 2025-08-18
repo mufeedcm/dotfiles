@@ -2,13 +2,14 @@
 auto-save-list/
 # Ignore Emacs backup files
 *~
+*.~undo-tree~
 # Ignore installed packages
 elpa/
 # Ignore session data
 transient/
-
-recentf/
-
-
-
-
+# Ignore recent files
+recentf
+# Ignore URL cache
+url/
+# Ignore compiled files
+eln-cache/
