@@ -10,11 +10,11 @@ cleanup() {
 trap cleanup EXIT
 
 
-
-feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
+feh --bg-scale ~/.config/backgrounds/kid_in_town.jpg &
+# feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
 # feh --bg-scale ~/.config/backgrounds/tree-cold-mountain-art.jpg &
-~/.config/suckless/dwm/scripts/status-bar.sh &
-~/.config/suckless/dwm/scripts/clipwatch.sh &
+~/.config/scripts/status-bar.sh &
+~/.config/scripts/clipwatch.sh &
 # slstatus &
 # dwmblocks &
 xautolock -time 15 -locker "slock & systemctl suspend" &
@@ -23,7 +23,7 @@ dunst &
 numlockx &
 flameshot &
 # picom & ##picom is managed by restored_state.sh
-./.config/suckless/dwm/scripts/display_control/restore_state.sh
+./.config/scripts/display_control/restore_state.sh
 amixer set Headphone 30% unmute &
 # st -n win1tmux -e zsh -ic tmux &  
 st -c StWinTmux -e zsh -ic tmux &
@@ -34,7 +34,7 @@ zen-browser &
 emacs --daemon &
 opentabletdriver-daemon &
 # amixer -c 1 -q set Headphone 60% unmute
-buckle -g 40 &
+# buckle -g 40 &
 # setxkbmap -option ctrl:nocaps
 # xcape -e 'Control_L=Escape'
 

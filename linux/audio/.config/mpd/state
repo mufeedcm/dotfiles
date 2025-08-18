@@ -1,8 +1,8 @@
-sw_volume: 100
+sw_volume: 84
 audio_device_state:1:PipeWire-Pulse
-state: play
-current: 1
-time: 120.286
+state: pause
+current: 3
+time: 297.314
 random: 0
 repeat: 0
 single: 0
@@ -15,4 +15,5 @@ playlist_begin
 0:surah-ambiya-haithm-aldokhin.mp3
 1:surah-muminun-yaseer-al-dasari.mp3
 2:surah-taha-haithm-aldokhin.mp3
+3:{قالوا ياأبانا ما لك لا تأمنا على يوسف}تلاوة قديمة تفوق الخيال للشيخ د.سعود الشريم ｜ سورة يوسف كاملة [LL66MO2G4oQ].mp3
 playlist_end
