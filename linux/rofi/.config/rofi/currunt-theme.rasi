@@ -1,14 +1,18 @@
 * {
-    bg-col: #1a1b26;
-    bg-col-light: #292e42;
-    border-col: #414868;
-    selected-col: #7aa2f7;
-    blue: #7aa2f7;
-    fg-col: #c0caf5;
-    fg-col2: #f7768e;
-    grey: #565f89;
-    width: 600;
-    font: "Meslo LGM Nerd Font 10";
+ 
+    // Raycast-like base colors
+    window-width: 700px;
+    window-height: 400px;
+    window-border: 1.75px;
+    window-border-color: #4A4A4C;
+    window-border-radius: 12px;
+    window-bg-color: rgba(26, 27, 38, 0.65);
+
+    fg-col: #cdd6f4;
+    selected-col: #89b4fa;
+    grey: #6c7086;
+    font: "Meslo LGM Nerd Font 11";
+    // font: "Inter Medium 14px";
 }
 
 element-text, element-icon, mode-switcher {
@@ -17,98 +21,86 @@ element-text, element-icon, mode-switcher {
 }
 
 window {
-    height: 560px;
-    border: 3px;
-    border-color: @border-col;
-    background-color: @bg-col;
+    width: @window-width;
+    height: @window-height;
+    border: @window-border;
+    border-color: @window-border-color;
+    border-radius: @window-border-radius;
+    background-color: @window-bg-color;
 }
 
 mainbox {
-    background-color: @bg-col;
+    children: [inputbar, listview];
+    // children: [inputbar, listview, mode-switcher];
+    background-color: transparent;
 }
 
 inputbar {
     children: [entry];
-    background-color: @bg-col-light;
-    border-radius: 5px;
-    padding: 2px;
-}
-
-prompt {
-    background-color: @blue;
-    padding: 6px;
-    text-color: @bg-col;
-    border-radius: 3px;
-    margin: 20px 0px 0px 20px;
-}
-
-textbox-prompt-colon {
-    expand: false;
-    str: ":";
+    background-color: transparent;   // no box behind, Raycast style
+    padding: 12px;
+    margin: 12px 12px 6px 12px;
 }
 
 entry {
-    padding: 6px;
-    margin: 20px 0px 0px 10px;
+    padding: 12px;
     text-color: @fg-col;
-    background-color: @bg-col-light;
+    background-color: transparent;
+    placeholder-color: rgba(255, 255, 255, 0.3);
+    border: 0 0 2px 0;   // subtle underline
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 listview {
     border: 0px;
-    padding: 6px 0px 0px;
-    margin: 10px 10px 0px 20px;
+    padding: 10px;
+    // margin: 8px 12px;
+   margin: 8px 12px 4px 12px; 
     columns: 1;
-    lines: 10;
-    background-color: @bg-col;
+    lines: 8;
+    background-color: transparent;
+    spacing: 6px;
 }
 
 element {
-    border-radius: 6px;
-    padding: 8px;
-    background-color: @bg-col;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: transparent;
     text-color: @fg-col;
 }
 
 element-icon {
-    size: 25px;
+    size: 28px;
+    background-color: transparent;
 }
+
 element-text {
     vertical-align: 0.5;
+    font: "Inter Medium 14px";
+    text-color: @fg-col;
+    background-color: transparent;   // ✅ prevent bg on text itself
 }
 
 element selected {
-    background-color: @selected-col;
-    text-color: #1a1b26;
+    background-color: rgba(255, 255, 255, 0.15);  // ✅ row highlight only
+    text-color: white;                            // ✅ clean text
 }
 
 mode-switcher {
-    spacing: 0;
+    spacing: 6px;
+    margin: 6px 12px 12px 12px;
 }
 
 button {
-    padding: 10px;
-    background-color: @bg-col-light;
+    padding: 8px 14px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
     text-color: @grey;
     vertical-align: 0.5;
     horizontal-align: 0.5;
 }
 
 button selected {
-    background-color: @bg-col;
-    text-color: @blue;
-}
-
-message {
-    background-color: @bg-col-light;
-    margin: 2px;
-    padding: 2px;
-    border-radius: 5px;
-}
-
-textbox {
-    padding: 6px;
-    margin: 20px 0px 0px 20px;
-    text-color: @blue;
-    background-color: @bg-col-light;
+    background-color: rgba(255, 255, 255, 0.12);
+    text-color: @selected-col;
 }

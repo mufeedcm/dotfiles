@@ -1,19 +1,22 @@
 configuration {
-    modi: "combi";
-    combi-modi: "drun,run,window";
-    icon-theme: "Papirus-Dark";
+    icon-theme: "Papirus";
     show-icons: true;
     terminal: "st";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
+
+
+    modi: "combi,extend";
+    combi-modi: "drun,run,window";
+
     display-combi: "  All ";
     display-drun: "";
-    display-run: " ";
+    display-run: "   ";
     display-window: "   ";
+    display-script: "  Search ";
     sidebar-mode: false;
 }
 
 @theme "currunt-theme"
-

@@ -8,7 +8,8 @@ sleep 1  # Give it a moment to populate list
 networks=$(nmcli -t -f SSID dev wifi | awk 'NF' | awk '!seen[$0]++')
 
 # Show dmenu prompt
-chosen_ssid=$(echo -e "$networks" | dmenu -i -p "Connect Wi-Fi:")
+# chosen_ssid=$(echo -e "$networks" | dmenu -i -p "Connect Wi-Fi:")
+chosen_ssid=$(echo -e "$networks" | rofi -dmenu -i -p "Connect Wi-Fi:" -lines 15)
 
 # Exit if nothing selected
 [ -z "$chosen_ssid" ] && exit 0
@@ -26,7 +27,8 @@ if [ -n "$saved" ]; then
     fi
 else
     # Prompt for password and try to connect
-    password=$(dmenu -P -p "Password for $chosen_ssid")
+    # password=$(dmenu -P -p "Password for $chosen_ssid")
+password=$(rofi -dmenu -password -p "Password for $chosen_ssid")
     [ -z "$password" ] && notify-send "Wi-Fi" "No password entered" && exit 1
 
     if nmcli dev wifi connect "$chosen_ssid" password "$password"; then
