@@ -11,12 +11,19 @@ configuration {
     modi: "combi,extend";
     combi-modi: "drun,run,window";
 
-    display-combi: "  All ";
-    display-drun: "";
-    display-run: "   ";
-    display-window: "   ";
+    show-icons:                 true;
+    display-combi:               "";
+    // display-drun:               "";
+    display-drun:               "";
+    display-run:                "";
+    // display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
     display-script: "  Search ";
+    display-extend: "";
     sidebar-mode: false;
 }
 
-@theme "currunt-theme"
+@theme "list-theme"
+// @theme "currunt-theme"

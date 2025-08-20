@@ -9,7 +9,7 @@ networks=$(nmcli -t -f SSID dev wifi | awk 'NF' | awk '!seen[$0]++')
 
 # Show dmenu prompt
 # chosen_ssid=$(echo -e "$networks" | dmenu -i -p "Connect Wi-Fi:")
-chosen_ssid=$(echo -e "$networks" | rofi -dmenu -i -p "Connect Wi-Fi:" -lines 15)
+chosen_ssid=$(echo -e "$networks" | rofi -dmenu -i -p "Connect Wi-Fi:" )
 
 # Exit if nothing selected
 [ -z "$chosen_ssid" ] && exit 0
