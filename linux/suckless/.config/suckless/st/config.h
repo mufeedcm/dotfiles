@@ -6,8 +6,8 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-static char *font =
-    "MesloLGM Nerd Font:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Iosevka:pixelsize=16:antialias=true:autohint=true";
+// "MesloLGM Nerd Font:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = {
     "MesloLGM Nerd Font:pixelsize=14:antialias=true:autohint=true",
     "NotoColorEmoji:pixelsize=12:antialias=true:autohint=true"};
