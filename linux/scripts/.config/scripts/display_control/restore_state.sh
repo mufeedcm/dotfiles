@@ -32,7 +32,7 @@ if [ -f "$GRAYSCALE_FILE" ]; then
     pkill -x picom
     sleep 1
     # Apply grayscale shader (picom with glx backend)
-    ~/.config/suckless/dwm/scripts/display_control/grayscale_ctl.sh --apply
+    ~/.config/scripts/display_control/grayscale_ctl.sh --apply
 else
     # Start regular picom
     # picom --config ~/.config/picom/picom.conf -b

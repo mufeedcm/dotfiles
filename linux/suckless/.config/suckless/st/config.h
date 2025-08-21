@@ -6,7 +6,9 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-static char *font = "Iosevka:pixelsize=16:antialias=true:autohint=true";
+static char *font =
+    "JetBrains Mono Nerd Font:pixelsize=14:antialias=true:autohint=true";
+// "Iosevka:pixelsize=16:antialias=true:autohint=true";
 // "MesloLGM Nerd Font:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = {
     "MesloLGM Nerd Font:pixelsize=14:antialias=true:autohint=true",

@@ -1,5 +1,4 @@
 #!/bin/bash
-# ~/.config/suckless/dwm/scripts/brightness_ctl.sh
 
 # BRIGHTNESS_FILE="/tmp/.brightness_level"
 BRIGHTNESS_FILE="$HOME/.cache/display_control/brightness_ctl"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create a file to store PIDs
-PID_FILE="$HOME/.config/suckless/dwm/start_pids.txt"
+PID_FILE="$HOME/.config/start_pids.txt"
 > "$PID_FILE"  # Clear previous file contents
 
 # Start applications and save their PIDs
@@ -14,7 +14,7 @@ xsetroot -solid "#000000"  # Set a black background for fake transparency
 picom -b &  # Start picom in the background
 echo $! >> "$PID_FILE"
 
-~/.config/suckless/dwm/scripts/status-bar.sh &
+~/.config/scripts/status-bar.sh &
 echo $! >> "$PID_FILE"
 
 xautolock -time 5 -locker "slock & systemctl suspend" &
@@ -52,7 +52,7 @@ exit 0
 #
 #
 # # Create a file to store PIDs
-# PID_FILE="$HOME/.config/suckless/dwm/start_pids.txt"
+# PID_FILE="$HOME/.config/start_pids.txt"
 # > "$PID_FILE"  # Clear previous file contents
 #
 # # Start applications and save their PIDs
@@ -66,7 +66,7 @@ exit 0
 # picom -b &  # Start picom in the background
 # echo $! >> "$PID_FILE"
 #
-# ~/.config/suckless/dwm/scripts/status-bar.sh &
+# ~/.config/scripts/status-bar.sh &
 # echo $! >> "$PID_FILE"
 #
 # xautolock -time 5 -locker "slock & systemctl suspend" &

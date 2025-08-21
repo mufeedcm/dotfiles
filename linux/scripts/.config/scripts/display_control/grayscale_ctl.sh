@@ -1,5 +1,4 @@
 #!/bin/bash
-# ~/.config/suckless/dwm/scripts/display_control/grayscale_ctl.sh
 
 STATE_FILE="$HOME/.cache/display_control/grayscale_ctl"
 compositor="picom"

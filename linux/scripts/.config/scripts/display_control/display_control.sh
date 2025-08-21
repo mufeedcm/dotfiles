@@ -1,10 +1,10 @@
 #!/bin/bash
-# ~/.config/suckless/dwm/scripts/display_control.sh
 
 # MODE_FILE="/tmp/.dwm_control_mode"
 MODE_FILE="$HOME/.cache/display_control/display_control"
 
-choice=$(printf "brightness\nwarmness\ngrayscale" | dmenu -i -p "Adjust:")
+# choice=$(printf "brightness\nwarmness\ngrayscale" | dmenu -i -p "Adjust:")
+choice=$(printf "brightness\nwarmness\ngrayscale" | rofi -dmenu -i -p "Adjust:" -lines 3)
 
 case "$choice" in
     "brightness")
@@ -16,7 +16,7 @@ case "$choice" in
         notify-send "🌅 Warmness mode active"
         ;;
     "grayscale")
-        ~/.config/suckless/dwm/scripts/display_control/grayscale_ctl.sh
+        ~/.config/scripts/display_control/grayscale_ctl.sh
         ;;
     # "grayscale")
     #     echo "grayscale" > "$MODE_FILE"

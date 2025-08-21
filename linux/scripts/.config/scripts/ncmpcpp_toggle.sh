@@ -17,7 +17,7 @@ if pgrep -f "st -c ncmpcpp" > /dev/null; then
     pkill -f "st -c ncmpcpp"
 else
     # Launch ncmpcpp in st
-    st -c ncmpcpp -g 60x25+1425+25 -e ncmpcpp &
+    st -c ncmpcpp -g 60x25+1418+40 -e ncmpcpp &
 
     # Save the PID of the last launched st instance
     ST_PID=$!

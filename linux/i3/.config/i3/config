@@ -1,7 +1,7 @@
 # General settings
 set $mod Mod1
 set $term st
-font pango:Meslo LGM Nerd Font 10
+font pango:JetBrains Mono Nerd Font 10
 
 # Gaps and borders
 # gaps inner 10
@@ -90,7 +90,7 @@ bindsym $mod+Shift+r exec --no-startup-id ~/.config/scripts/confirm.sh 'Reboot' 
 bindsym $mod+w exec --no-startup-id ~/.config/scripts/wifi_menu.sh
 bindsym $mod+o exec --no-startup-id ~/.config/scripts/ncmpcpp_toggle.sh
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/scripts/books_list.sh
-bindsym $mod+Shift+v exec --no-startup-id ~/.config/scripts/clipmenu.sh
+bindsym $mod+Shift+v exec --no-startup-id ~/.config/scripts/clipmenu.sh sel
 bindsym $mod+n exec --no-startup-id ~/.config/scripts/emacs_toggle.sh
 # Display controls
 bindsym $mod+Shift+h exec --no-startup-id ~/.config/scripts/display_control/display_control.sh
@@ -149,7 +149,6 @@ exec --no-startup-id QT_QPA_PLATFORMTHEME=qt5ct
 assign [class="zen"] $ws2
 for_window [instance="StWinTmux"] move container to workspace number $ws1
 for_window [class="^ncmpcpp$"] floating enable, move position 1418 40, resize set 500 500
-# for_window [title="^scratchpad-emacs$"] floating enable, resize set 1200 800, move position center
 
 
 set $bg_dark       #1a1b26

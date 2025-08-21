@@ -21,8 +21,10 @@ add_clipboard() {
 # Select from history and restore
 select_from_history() {
   # CHOICE=$(tac "$HISTFILE" | dmenu -b -l 10 -i -p "Clipboard history:")
-CHOICE=$(tac "$HISTFILE" | sed "s/$PLACEHOLDER/ /g" | cut -c1-80 | dmenu -b -l 10 -i -p "Clipboard history:")
+# CHOICE=$(tac "$HISTFILE" | sed "s/$PLACEHOLDER/ /g" | cut -c1-80 | dmenu -b -l 10 -i -p "Clipboard history:")
+CHOICE=$(tac "$HISTFILE" | sed "s/$PLACEHOLDER/ /g" | cut -c1-80 | rofi -dmenu -p "Clipboard history:" -lines 10 -bw 2 -scroll-method 0)
   [ -z "$CHOICE" ] && exit 0
+
 
   echo "$CHOICE" | sed "s/$PLACEHOLDER/\n/g" | xclip -i -selection clipboard
   # notify-send "📋 Text copied to clipboard"

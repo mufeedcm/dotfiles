@@ -1,5 +1,4 @@
 #!/bin/bash
-# ~/.config/suckless/dwm/scripts/warmness_ctl.sh
 
 # LEVEL_FILE="/tmp/.warmness_kelvin"
 LEVEL_FILE="$HOME/.cache/display_control/warmness_ctl"
