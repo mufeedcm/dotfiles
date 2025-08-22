@@ -1,28 +1,29 @@
 configuration {
+    /* General */
     icon-theme: "Papirus-Dark";
     show-icons: true;
     terminal: "st";
-    drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
+    sidebar-mode: false;
 
+    /* Modes */
+    modi: "combi";
+    combi-modi: "drun,extend,run,window";
 
-    modi: "combi,extend";
-    combi-modi: "drun,run,window";
+    /* Display formatting */
+    drun-display-format: "{name}";
+    window-format: "{w} · {c} · {t}";
+    combi-display-format: "{text}";
 
-    show-icons:                 true;
-    display-combi:               "";
-    // display-drun:               "";
-    display-drun:               "";
-    display-run:                "";
-    // display-filebrowser:        "";
-    display-window:             "";
-	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
+    /* Labels / Icons */
+    display-combi: "";
+    display-drun: "";
+    display-run: " ";
+    display-window: "";
     display-script: "  Search ";
     display-extend: "";
-    sidebar-mode: false;
 }
 
 @theme "list-theme"

@@ -77,7 +77,8 @@ bindsym Print exec flameshot gui
 
 # Launch programs
 bindsym $mod+Shift+Return exec $term
-bindsym $mod+p exec rofi -show combi -combi-modi
+bindsym $mod+space exec rofi -show combi -combi-modi
+bindsym $mod+p exec notify-send "⚠️ Wrong key!" "Use Mod+Space instead."
 
 # System controls
 # bindsym $mod+Shift+s exec i3lock --nofork -tiling --image='/home/mufeedcm/.config/backgrounds/kid_in_town.jpg' & systemctl suspend
@@ -133,7 +134,7 @@ exec --no-startup-id flameshot
 # exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --daemon
 # exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec --no-startup-id ~/.config/scripts/display_control/restore_state.sh
-# exec_always --no-startup-id autotiling
+exec_always --no-startup-id autotiling
 exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --tiling --image='/home/mufeedcm/.config/backgrounds/mistbg_blurred.png'
 exec --no-startup-id xautolock -time 15 -locker "slock & systemctl suspend"
