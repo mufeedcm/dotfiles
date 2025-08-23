@@ -125,7 +125,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Start essential applications
-exec_always feh --bg-scale ~/.config/backgrounds/kid_in_town.jpg 
+exec_always feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg 
+# exec_always feh --bg-scale ~/.config/backgrounds/kid_in_town.jpg 
 exec_always --no-startup-id killall polybar; ~/.config/polybar/launch_polybar.sh --reload
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
@@ -144,7 +145,7 @@ exec --no-startup-id zen-browser
 # exec --no-startup-id emacs --daemon
 exec --no-startup-id opentabletdriver-daemon
 exec --no-startup-id ~/.config/scripts/clipwatch.sh &
-exec_always --no-startup-id bash -c 'pgrep -x buckle > /dev/null || buckle -g 40 &'
+# exec_always --no-startup-id bash -c 'pgrep -x buckle > /dev/null || buckle -g 40 &'
 exec --no-startup-id QT_QPA_PLATFORMTHEME=qt5ct
 
 assign [class="zen"] $ws2

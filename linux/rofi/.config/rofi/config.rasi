@@ -18,8 +18,10 @@ configuration {
     combi-display-format: "{text}";
 
     /* Labels / Icons */
-    display-combi: "";
+    display-combi: "󰣇";
+    // display-combi: "";
     display-drun: "";
+
     display-run: " ";
     display-window: "";
     display-script: "  Search ";

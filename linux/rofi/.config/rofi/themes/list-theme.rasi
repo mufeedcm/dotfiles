@@ -99,7 +99,7 @@ prompt {
     text-color:                  inherit;
 }
 textbox-prompt-colon {
-    enabled:                     true;
+    enabled:                     false;
     padding:                     5px 5px;
     expand:                      false;
     // str:                         "";
@@ -236,7 +236,7 @@ element-text {
 
 /*****----- Mode Switcher -----*****/
 mode-switcher{
-    enabled:                     true;
+    enabled:                     false;
     spacing:                     10px;
     margin:                      0px;
     // padding:                     0px;
