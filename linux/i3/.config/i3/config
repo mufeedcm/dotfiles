@@ -141,6 +141,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xautolock -time 15 -locker "slock & systemctl suspend"
 exec --no-startup-id amixer set Headphone 30% unmute 
 exec --no-startup-id st -c StWinTmux -e zsh -ic tmux
+exec --no-startup-id beeper
 exec --no-startup-id zen-browser
 # exec --no-startup-id emacs --daemon
 exec --no-startup-id opentabletdriver-daemon
@@ -149,6 +150,7 @@ exec --no-startup-id ~/.config/scripts/clipwatch.sh &
 exec --no-startup-id QT_QPA_PLATFORMTHEME=qt5ct
 
 assign [class="zen"] $ws2
+assign [class="Beeper"] $ws9
 for_window [instance="StWinTmux"] move container to workspace number $ws1
 for_window [class="^ncmpcpp$"] floating enable, move position 1418 40, resize set 500 500
 
