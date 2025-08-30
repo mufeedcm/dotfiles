@@ -36,6 +36,7 @@ numlockx &
 flameshot &
 # picom & ##picom is managed by restored_state.sh
 ~/.config/scripts/display_control/restore_state.sh
+# ~/.config/polybar/launch_polybar.sh
 amixer set Headphone 30% unmute &
 # st -n win1tmux -e zsh -ic tmux &  
 st -c StWinTmux -e zsh -ic tmux &
