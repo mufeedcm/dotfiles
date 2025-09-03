@@ -44,7 +44,7 @@ st -c StWinTmux -e zsh -ic tmux &
 zen-browser &
 # beeper &  
 # emacs &
-emacs --daemon &
+# emacs --daemon &
 opentabletdriver-daemon &
 # amixer -c 1 -q set Headphone 60% unmute
 # buckle -g 40 &
