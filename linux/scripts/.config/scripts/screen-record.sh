@@ -12,13 +12,17 @@ record() {
 
   echo $! > /tmp/recpid
 
-  notify-send -t 500 -h string:bgcolor:#a3be8c "Screen recording started"
+  notify-send -t 500 \
+    -h string:bgcolor:#2e3440 \
+    "Screen recording started"
 }
 
 end() {
   kill -15 "$(cat /tmp/recpid)" && rm -f /tmp/recpid
 
-  notify-send -t 500 -h string:bgcolor:#bf616a "Screen recording stopped"
+  notify-send -t 500 \
+    -h string:bgcolor:#3b4252 \
+    "Screen recording stopped"
 }
 
 ([[ -f /tmp/recpid ]] && end && exit 0) || record

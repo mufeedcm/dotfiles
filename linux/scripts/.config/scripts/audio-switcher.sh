@@ -51,3 +51,6 @@ if [[ "$RECHECK_PORT" != "$TARGET_PORT" ]]; then
         pactl move-sink-input "$input" "$SINK"
     done
 fi
+
+
+

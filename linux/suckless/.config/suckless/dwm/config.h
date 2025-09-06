@@ -164,7 +164,9 @@ static const Key keys[] = {
     {MODKEY,                       XK_s,          spawn,          SHCMD("~/.config/scripts/audio-switcher.sh toggle")},  
 
     //display controls
-    { TERMMOD,                     XK_h,         spawn,          SHCMD("~/.config/scripts/display_control/display_control.sh") },
+    { TERMMOD,                     XK_h,          spawn,          SHCMD("~/.config/scripts/display_control/display_control.sh") },
+    { TERMMOD,                     XK_g,          spawn,          SHCMD("~/.config/scripts/screen-record.sh") },
+    { MODKEY,                      XK_l,          spawn,          SHCMD("network-theory") },
     { MODKEY,                      XK_comma,      spawn,          SHCMD("~/.config/scripts/display_control/display_adjust.sh down") },
     { MODKEY,                      XK_period,     spawn,          SHCMD("~/.config/scripts/display_control/display_adjust.sh up") },
 
