@@ -3,9 +3,9 @@ volume() {
     level=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | head -n 1)
 
     if [ "$muted" = "yes" ]; then
-        echo "🔇"
+        echo "Muted 🔇"
     else
-        echo "🔊 $level"
+        echo "  $level"
     fi
 }
 
@@ -14,7 +14,7 @@ wifi (){
     echo " No Wi-Fi "
   else 
     ssid=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
-    echo "   $ssid"
+    echo "  $ssid"
   fi
 }
 
@@ -41,10 +41,14 @@ dayanddate(){
 timedate(){
   TZ="Asia/Kolkata" date '+%I:%M:%S %p'
 }
+datetime(){
+  TZ="Asia/Kolkata" date '+%a %b %d %I:%M %p'
+}
 
 while :; do 
   # xsetroot -name "$(dayanddate)"";""|  $(cpu_usage)  |""  $(ram_usage)  |""  $(volume)  |""  $(wifi)  |""  $(timedate)  "
   # xsetroot -name "  $(dayanddate)  ""|  $(volume)  |""  $(wifi)  |""  $(timedate)  "
-  xsetroot -name "|  $(volume)  ""|  $(wifi)  ""|  $(dayanddate)  ""|  $(timedate)  "
+  # xsetroot -name "|  $(volume)  ""|  $(wifi)  ""|  $(dayanddate)  ""|  $(timedate)  "
+  xsetroot -name "|  $(volume)  ""|  $(wifi)  ""|  $(datetime)  "
   sleep 1
 done

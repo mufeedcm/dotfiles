@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 3; /* border pixel of windows */
+static const unsigned int borderpx = 1; /* border pixel of windows */
 static const unsigned int gappx = 6;    /* gaps between windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
@@ -11,16 +11,33 @@ static const char *fonts[] = {"Meslo LGM Nerd Font:size=10"};
 static const char dmenufont[] = "Meslo LGM Nerd Font:size=10";
 /*static const char dmenufont[] = "monospace:size=10";*/
 
-static char normbgcolor[] = "#222222";
-static char normbordercolor[] = "#444444";
-static char normfgcolor[] = "#bbbbbb";
-static char selfgcolor[] = "#eeeeee";
-static char selbordercolor[] = "#005577";
-static char selbgcolor[] = "#005577";
+static char col_black[] = "#000000";
+static char col_fg[] = "#D6CFC4";
+static char col_fg_light[] = "#E6E3DE";
+static char col_grey[] = "#575757";
+static char col_grey_light[] = "#9D9A94";
+static char col_blue[] = "#579DD4";
+static char col_blue_dark[] = "#2A404F";
+static char col_red[] = "#E16464";
+static char col_red_dark[] = "#B55353";
+static char col_green[] = "#72BA62";
+static char col_orange[] = "#D19F66";
+static char col_yellow[] = "#F7E18D";
+static char col_purple[] = "#9266DA";
+static char col_aqua[] = "#00A596";
+static char col_pink[] = "#D159B6";
+
+/* DWM color schemes */
 static char *colors[][3] = {
-    /*               fg           bg           border   */
-    [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
-    [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
+    /*               fg              bg           border */
+    [SchemeNorm] = {col_fg, col_black, col_grey}, // Normal windows
+    // [SchemeNorm] = {col_fg, col_black, col_black},       // Normal windows
+    [SchemeSel] = {col_fg_light, col_black, col_blue},  // Selected window
+    [SchemeStatus] = {col_green, col_black, "#000000"}, // Status bar right
+    [SchemeTagsSel] = {col_black, col_blue, "#000000"}, // Left selected tag
+    [SchemeTagsNorm] = {col_fg, col_black, "#000000"},  // Left unselected tags
+    [SchemeInfoSel] = {col_blue, col_black, "#000000"}, // Center info selected
+    [SchemeInfoNorm] = {col_fg, col_black, "#000000"},  // Center info normal
 };
 
 /* tagging */
@@ -107,12 +124,21 @@ static const char *ttyclockcmd[] = {
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-    {"normbgcolor", STRING, &normbgcolor},
-    {"normbordercolor", STRING, &normbordercolor},
-    {"normfgcolor", STRING, &normfgcolor},
-    {"selbgcolor", STRING, &selbgcolor},
-    {"selbordercolor", STRING, &selbordercolor},
-    {"selfgcolor", STRING, &selfgcolor},
+    {"black", STRING, &col_black},
+    {"fg", STRING, &col_fg},
+    {"fg_light", STRING, &col_fg_light},
+    {"grey", STRING, &col_grey},
+    {"grey_light", STRING, &col_grey_light},
+    {"blue", STRING, &col_blue},
+    {"blue_dark", STRING, &col_blue_dark},
+    {"red", STRING, &col_red},
+    {"red_dark", STRING, &col_red_dark},
+    {"green", STRING, &col_green},
+    {"orange", STRING, &col_orange},
+    {"yellow", STRING, &col_yellow},
+    {"purple", STRING, &col_purple},
+    {"aqua", STRING, &col_aqua},
+    {"pink", STRING, &col_pink},
 };
 
 /* clang-format off */

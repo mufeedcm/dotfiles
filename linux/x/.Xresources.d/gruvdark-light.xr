@@ -1,0 +1,44 @@
+dwm.black:       #F7F5EA
+dwm.fg:          #111111
+dwm.fg_light:    #000000
+dwm.grey:        #707070
+dwm.grey_light:  #8D8A85
+dwm.blue:        #1E5A8B
+dwm.blue_dark:   #144266
+dwm.red:         #9F0202
+dwm.red_dark:    #7A0101
+dwm.green:       #006C00
+dwm.orange:      #AE5F05
+dwm.yellow:      #F7E18D
+dwm.purple:      #5D4A8A
+dwm.aqua:        #008B7F
+dwm.pink:        #910E79
+
+st.color0:  #F7F5EA
+st.color1:  #9F0202
+st.color2:  #006C00
+st.color3:  #AE5F05
+st.color4:  #1E5A8B
+st.color5:  #5D4A8A
+st.color6:  #008B7F
+st.color7:  #111111
+st.color8:  #8D8A85
+st.color9:  #FF5F5F
+st.color10: #7EFF87
+st.color11: #FFFFAF
+st.color12: #87AFFF
+st.color13: #FF87FF
+st.color14: #87FFFF
+st.color15: #000000
+st.background:  #F7F5EA
+st.foreground:  #111111
+st.cursorColor: #212121
+
+dmenu.background:     #F7F5EA
+dmenu.foreground:     #111111
+dmenu.selbackground:  #E5E5DA
+dmenu.selforeground:  #000000
+
+slock.color0:  #F7F5EA
+slock.color1:  #111111
+slock.color4:  #8D8A85

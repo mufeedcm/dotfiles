@@ -1,5 +1,38 @@
---- dwm.c
-+++ dwm.c
+From 647a2a56cf7cab6dea868f9800671770940ce3c3 Mon Sep 17 00:00:00 2001
+From: Alessandro Sisto <alessandro.sisto@studioform.net>
+Date: Sun, 5 Jun 2022 12:03:43 +0200
+Subject: [PATCH] colorbar
+
+---
+ config.def.h |  6 +++++-
+ dwm.c        | 12 ++++++------
+ 2 files changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index a2ac963..56bc324 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -16,6 +16,11 @@ static const char *colors[][3]      = {
+ 	/*               fg         bg         border   */
+ 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+ 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
++	[SchemeStatus]  = { col_gray3, col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
++	[SchemeTagsSel]  = { col_gray4, col_cyan,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
++	[SchemeTagsNorm]  = { col_gray3, col_gray1,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
++	[SchemeInfoSel]  = { col_gray4, col_cyan,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
++	[SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+ };
+ 
+ /* tagging */
+@@ -113,4 +118,3 @@ static Button buttons[] = {
+ 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+ 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+ };
+-
+diff --git a/dwm.c b/dwm.c
+index a96f33c..0eaa4cd 100644
+--- a/dwm.c
++++ b/dwm.c
 @@ -59,7 +59,7 @@
  
  /* enums */
@@ -48,3 +81,6 @@
  			drw_rect(drw, x, 0, w, bh, 1, 1);
  		}
  	}
+-- 
+2.36.1
+

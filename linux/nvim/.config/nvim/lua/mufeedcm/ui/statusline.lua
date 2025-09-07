@@ -108,7 +108,7 @@ end
 
 -- File Type
 local function filetype()
-	return string.format(" %s ", vim.bo.filetype):upper()
+	return string.format(" %s ", vim.bo.filetype):lower()
 end
 
 -- Line Info

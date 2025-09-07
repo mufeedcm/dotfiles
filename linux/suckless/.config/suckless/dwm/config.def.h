@@ -21,6 +21,15 @@ static char *colors[][3] = {
     /*               fg           bg           border   */
     [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
     [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
+    // statusbar
+    [SchemeStatus] = {col_gray2, col_gray1, "#000000"}, // Statusbar right
+    [SchemeTagsSel] = {col_gray4, col_cyan, "#000000"}, // Tagbar left selected
+    [SchemeTagsNorm] = {col_gray3, col_gray1,
+                        "#000000"}, // Tagbar left unselected
+    [SchemeInfoSel] = {col_gray4, col_cyan,
+                       "#000000"}, // infobar middle  selected
+    [SchemeInfoNorm] = {col_gray3, col_gray1,
+                        "#000000"}, // infobar middle  unselected
 };
 
 /* tagging */
@@ -47,7 +56,8 @@ static const Rule rules[] = {
     {"zen", NULL, NULL, 1 << 1, 0, -1},
     {"Emacs", NULL, scratchpadname, 0, 1, -1},
     {"ncmpcpp", NULL, NULL, 0, 1, -1},
-    {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
+    // {"nmtui", NULL, NULL, 0, 1, -1},
+    // {"Beeper", NULL, NULL, 1 << 8, 0, -1}, // Tag 9
     /*{"firefox", NULL, "Picture-in-Picture", 1, 1, -1},*/
     {"zen", NULL, "Toolkit", 1, 1, -1},
     {"ttyclock", NULL, NULL, 0, 1, -1},
@@ -88,7 +98,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = {"dmenu_run", NULL};
+// static const char *dmenucmd[] = {"dmenu_run", NULL};
+// static const char *dmenucmd[] = {"rofi", "-show", "drun", NULL};
+static const char *dmenucmd[] = {"rofi", "-show", "combi", "-combi-modi", NULL};
 /*static const char *dmenucmd[] = {*/
 /*    "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb", col_gray1,*/
 /*    "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};*/
@@ -117,8 +129,8 @@ static const Key keys[] = {
     /* modifier                     key             function        argument */
     
     // Applications
-    /*{MODKEY,                       XK_space,      spawn,          {.v = dmenucmd}},*/
-    {MODKEY,                       XK_p,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/dmenu_launch.sh")},
+    {MODKEY,                       XK_p,      spawn,          {.v = dmenucmd}},
+    // {MODKEY,                       XK_p,          spawn,          SHCMD("~/.config/scripts/rofi_launch.sh")},
     {TERMMOD,                      XK_Return,     spawn,          {.v = termcmd}},
     {TERMMOD,                      XK_grave,      spawn,          {.v = (const char *[]){"st", "-e", "htop", NULL}}},
     /*{MODKEY,                      XK_p,          spawn,          SHCMD("rofi -show drun")},*/
@@ -132,29 +144,40 @@ static const Key keys[] = {
     {MODKEY,                       XK_F7,         spawn,          SHCMD("dunstctl history-pop")},
     {MODKEY,                       XK_F8,         spawn,          SHCMD("dunstctl context")},
 
-    {TERMMOD,                      XK_s,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Sleep' 'mpc pause && slock & systemctl suspend'")},
-    {TERMMOD,                      XK_l,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Exit Dwm' 'pkill dwm'")},
-    {TERMMOD,                      XK_u,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Shutdown' 'systemctl poweroff'")},
-    {TERMMOD,                      XK_r,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/confirm.sh 'Reboot' 'systemctl reboot'")},
+    {TERMMOD,                      XK_s,          spawn,          SHCMD("~/.config/scripts/confirm.sh 'Sleep' 'mpc pause && slock & systemctl suspend'")},
+    {TERMMOD,                      XK_l,          spawn,          SHCMD("~/.config/scripts/confirm.sh 'Exit Dwm' 'pkill dwm'")},
+    {TERMMOD,                      XK_u,          spawn,          SHCMD("~/.config/scripts/confirm.sh 'Shutdown' 'systemctl poweroff'")},
+    {TERMMOD,                      XK_r,          spawn,          SHCMD("~/.config/scripts/confirm.sh 'Reboot' 'systemctl reboot'")},
 
     // Custom Scripts
     { MODKEY,                     XK_n,          togglescratch,   {.v = scratchpadcmd } },
-    { MODKEY,                     XK_o,          spawn,           SHCMD("~/.config/suckless/dwm/scripts/ncmpcpp_toggle.sh") },
+    { MODKEY,                     XK_o,          spawn,           SHCMD("~/.config/scripts/ncmpcpp_toggle.sh") },
+    { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/scripts/wifi_menu.sh") },
+    { TERMMOD,                    XK_b,          spawn,           SHCMD("~/.config/scripts/books_list.sh") },
+    { TERMMOD,                    XK_v,          spawn,           SHCMD("~/.config/scripts/clipmenu.sh sel") },
+    // { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/scripts/nmtui_toggle.sh") },
     { MODKEY,                     XK_F12,        spawn,           {.v = ttyclockcmd } },
-    /*{TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/suckless/dwm/scripts/open_todo.sh")},*/
-    /*{TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/wifi_menu.sh")},*/
+    /*{TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/scripts/open_todo.sh")},*/
+    /*{TERMMOD,                      XK_w,          spawn,          SHCMD("~/.config/scripts/wifi_menu.sh")},*/
     /*{MODKEY,                       XK_Print,      spawn,          SHCMD("flameshot gui -d 5000")},*/
-    /*{TERMMOD,                      XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts.sh")},*/
-    /*{MODKEY,                       XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts_txt.sh")},*/
-    /*{TERMMOD,                      XK_p,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/power_menu.sh")},*/
-    /*{TERMMOD,                      XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts.sh")},*/
-    /*{MODKEY,                       XK_slash,      spawn,          SHCMD("~/.config/suckless/dwm/scripts/show_shortcuts_txt.sh")},*/
+    /*{TERMMOD,                      XK_slash,      spawn,          SHCMD("~/.config/scripts/show_shortcuts.sh")},*/
+    /*{MODKEY,                       XK_slash,      spawn,          SHCMD("~/.config/scripts/show_shortcuts_txt.sh")},*/
+    /*{TERMMOD,                      XK_p,          spawn,          SHCMD("~/.config/scripts/power_menu.sh")},*/
+    /*{TERMMOD,                      XK_slash,      spawn,          SHCMD("~/.config/scripts/show_shortcuts.sh")},*/
+    /*{MODKEY,                       XK_slash,      spawn,          SHCMD("~/.config/scripts/show_shortcuts_txt.sh")},*/
 
     // Volume Controls
-    {TERMMOD,                      XK_k,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh up")},
-    {TERMMOD,                      XK_j,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh down")},
-    {TERMMOD,                      XK_m,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/volume_bar.sh toggle")},
-    {TERMMOD,                      XK_a,          spawn,          SHCMD("~/.config/suckless/dwm/scripts/audio-switcher.sh toggle")},  
+    {TERMMOD,                      XK_k,          spawn,          SHCMD("~/.config/scripts/volume_bar.sh up")},
+    {TERMMOD,                      XK_j,          spawn,          SHCMD("~/.config/scripts/volume_bar.sh down")},
+    {TERMMOD,                      XK_m,          spawn,          SHCMD("~/.config/scripts/volume_bar.sh toggle")},
+    {MODKEY,                       XK_s,          spawn,          SHCMD("~/.config/scripts/audio-switcher.sh toggle")},  
+
+    //display controls
+    { TERMMOD,                     XK_h,          spawn,          SHCMD("~/.config/scripts/display_control/display_control.sh") },
+    { TERMMOD,                     XK_g,          spawn,          SHCMD("~/.config/scripts/screen-record.sh") },
+    { MODKEY,                      XK_l,          spawn,          SHCMD("network-theory") },
+    { MODKEY,                      XK_comma,      spawn,          SHCMD("~/.config/scripts/display_control/display_adjust.sh down") },
+    { MODKEY,                      XK_period,     spawn,          SHCMD("~/.config/scripts/display_control/display_adjust.sh up") },
 
 
     // Miscellaneous
@@ -205,9 +228,12 @@ static const Button buttons[] = {
     {ClkLtSymbol, 0, Button3, setlayout, {.v = &layouts[2]}},
     {ClkWinTitle, 0, Button2, zoom, {0}},
     {ClkStatusText, 0, Button2, spawn, {.v = termcmd}},
-    {ClkClientWin, MODKEY, Button1, movemouse, {0}},
-    {ClkClientWin, MODKEY, Button2, togglefloating, {0}},
-    {ClkClientWin, MODKEY, Button3, resizemouse, {0}},
+    // {ClkClientWin, MODKEY, Button1, movemouse, {0}},
+    // {ClkClientWin, MODKEY, Button2, togglefloating, {0}},
+    // {ClkClientWin, MODKEY, Button3, resizemouse, {0}},
+    {ClkClientWin, Mod4Mask, Button1, movemouse, {0}},
+    {ClkClientWin, Mod4Mask, Button2, togglefloating, {0}},
+    {ClkClientWin, Mod4Mask, Button3, resizemouse, {0}},
     {ClkTagBar, 0, Button1, view, {0}},
     {ClkTagBar, 0, Button3, toggleview, {0}},
     {ClkTagBar, MODKEY, Button1, tag, {0}},
