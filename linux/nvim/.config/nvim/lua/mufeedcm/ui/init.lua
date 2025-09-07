@@ -1,0 +1,1 @@
+require("mufeedcm.ui.statusline")

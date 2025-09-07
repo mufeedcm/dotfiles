@@ -11,24 +11,58 @@ return {
 	-- 	end,
 	-- },
 	--
-
+	--
+	-- {
+	-- 	"RRethy/base16-nvim",
+	-- 	enabled = true,
+	-- 	priority = 1000,
+	-- },
+	--
 	{
-		"ellisonleao/gruvbox.nvim",
-		enabled = true,
+		"darianmorat/gruvdark.nvim",
+		lazy = false,
 		priority = 1000,
 		opts = {
-			contrast = "hard", -- optional, for more punchy colors
-			transparent_mode = false,
+			transparent = false,
+			colors = {
+				bg0 = "#000000",
+				bg1 = "#1a1a1a",
+				bg2 = "#202020",
+				bg3 = "#262626",
+			},
+			-- highlights = {
+			-- 	Normal = { bg = "#000000" },
+			-- 	NormalNC = { bg = "#000000" },
+			-- 	NormalFloat = { bg = "#000000" },
+			-- 	SignColumn = { bg = "#000000" },
+			-- 	EndOfBuffer = { fg = "#000000" },
+			-- 	Visual = { bg = "#333333" },
+			-- },
 		},
-		config = function()
+		config = function(_, opts)
+			require("gruvdark").setup(opts)
+			vim.cmd.colorscheme("gruvdark")
 			vim.o.background = "dark"
-			vim.cmd.colorscheme("gruvbox")
-
-			-- Set background to pure black
-			vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
-			vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000" })
 		end,
 	},
+
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	enabled = true,
+	-- 	priority = 1000,
+	-- 	opts = {
+	-- 		contrast = "hard", -- optional, for more punchy colors
+	-- 		transparent_mode = false,
+	-- 	},
+	-- 	config = function()
+	-- 		vim.o.background = "dark"
+	-- 		vim.cmd.colorscheme("gruvbox")
+	--
+	-- 		-- Set background to pure black
+	-- 		vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+	-- 		vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000" })
+	-- 	end,
+	-- },
 
 	-- return {
 	-- 	"AlexvZyl/nordic.nvim",

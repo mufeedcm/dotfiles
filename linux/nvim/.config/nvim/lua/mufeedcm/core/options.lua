@@ -4,7 +4,7 @@ local opt = vim.opt
 opt.encoding = "utf-8"
 opt.number = true -- add line numbers
 opt.relativenumber = true -- add relative line numbers
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
+vim.api.nvim_set_hl(1, "FloatBorder", { bg = "NONE" })
 -- Tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs
 opt.shiftwidth = 2 -- 2 spaces for indent with
@@ -31,7 +31,7 @@ end, {})
 
 vim.filetype.add({ extension = { mdx = "markdown" } })
 
--- opt.termguicolors = false
+opt.termguicolors = true
 -- Enable mouse mode, can be useful for resizing splits.
 opt.mouse = "a"
 -- Don't show the mode, since it's already in the status line

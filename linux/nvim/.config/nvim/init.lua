@@ -1,5 +1,6 @@
 require("mufeedcm.core")
 require("mufeedcm.lazy")
+require("mufeedcm.ui")
 
 -- Add the ftplugin directory to runtime path
 vim.opt.rtp:append(vim.fn.stdpath("config") .. "/lua/mufeedcm/")

@@ -118,11 +118,6 @@ alias sourcezshrc='source /home/mufeedcm/.zshrc'
 alias azantimes="/home/mufeedcm/azantimes/azantime.sh"
 
 # === Functions ===
-# Quran Player
-quran() {
-  volume=${1:-50}  # Default volume if not provided
-  mpv --volume=$volume /home/mufeedcm/Music/surah_muhammed.m4a
-}
 
 shizhuku(){
   echo "Finding devices"
