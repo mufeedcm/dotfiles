@@ -1,14 +1,17 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 1; /* border pixel of windows */
+static const unsigned int borderpx = 2; /* border pixel of windows */
 static const unsigned int gappx = 6;    /* gaps between windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
-static const char *fonts[] = {"Meslo LGM Nerd Font:size=10"};
+
+// static const char *fonts[] = {"Meslo LGM Nerd Font:size=10"};
+static const char *fonts[] = {"JetBrains Mono Nerd Font:size=10"};
 /*static const char *fonts[] = {"monospace:size=10"};*/
-static const char dmenufont[] = "Meslo LGM Nerd Font:size=10";
+// static const char dmenufont[] = "Meslo LGM Nerd Font:size=10";
+static const char dmenufont[] = "JetBrains Mono Nerd Font:size=10";
 /*static const char dmenufont[] = "monospace:size=10";*/
 
 static char col_black[] = "#000000";
@@ -33,7 +36,7 @@ static char *colors[][3] = {
     [SchemeNorm] = {col_fg, col_black, col_grey}, // Normal windows
     // [SchemeNorm] = {col_fg, col_black, col_black},       // Normal windows
     [SchemeSel] = {col_fg_light, col_black, col_blue},  // Selected window
-    [SchemeStatus] = {col_green, col_black, "#000000"}, // Status bar right
+    [SchemeStatus] = {col_blue, col_black, "#000000"},  // Status bar right
     [SchemeTagsSel] = {col_black, col_blue, "#000000"}, // Left selected tag
     [SchemeTagsNorm] = {col_fg, col_black, "#000000"},  // Left unselected tags
     [SchemeInfoSel] = {col_blue, col_black, "#000000"}, // Center info selected
