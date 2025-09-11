@@ -8,10 +8,10 @@ static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 
 // static const char *fonts[] = {"Meslo LGM Nerd Font:size=10"};
-static const char *fonts[] = {"JetBrains Mono Nerd Font:size=10"};
+static const char *fonts[] = {"JetBrains Mono Nerd Font:size=11"};
 /*static const char *fonts[] = {"monospace:size=10"};*/
 // static const char dmenufont[] = "Meslo LGM Nerd Font:size=10";
-static const char dmenufont[] = "JetBrains Mono Nerd Font:size=10";
+static const char dmenufont[] = "JetBrains Mono Nerd Font:size=11";
 /*static const char dmenufont[] = "monospace:size=10";*/
 
 static char col_black[] = "#000000";
@@ -35,12 +35,13 @@ static char *colors[][3] = {
     /*               fg              bg           border */
     [SchemeNorm] = {col_fg, col_black, col_grey}, // Normal windows
     // [SchemeNorm] = {col_fg, col_black, col_black},       // Normal windows
-    [SchemeSel] = {col_fg_light, col_black, col_blue},  // Selected window
-    [SchemeStatus] = {col_blue, col_black, "#000000"},  // Status bar right
-    [SchemeTagsSel] = {col_black, col_blue, "#000000"}, // Left selected tag
-    [SchemeTagsNorm] = {col_fg, col_black, "#000000"},  // Left unselected tags
-    [SchemeInfoSel] = {col_blue, col_black, "#000000"}, // Center info selected
-    [SchemeInfoNorm] = {col_fg, col_black, "#000000"},  // Center info normal
+    [SchemeSel] = {col_fg_light, col_black, col_yellow},  // Selected window
+    [SchemeStatus] = {col_yellow, col_black, "#000000"},  // Status bar right
+    [SchemeTagsSel] = {col_black, col_yellow, "#000000"}, // Left selected tag
+    [SchemeTagsNorm] = {col_fg, col_black, "#000000"}, // Left unselected tags
+    [SchemeInfoSel] = {col_yellow, col_black,
+                       "#000000"},                     // Center info selected
+    [SchemeInfoNorm] = {col_fg, col_black, "#000000"}, // Center info normal
 };
 
 /* tagging */
@@ -175,6 +176,7 @@ static const Key keys[] = {
     { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/scripts/wifi_menu.sh") },
     { TERMMOD,                    XK_b,          spawn,           SHCMD("~/.config/scripts/books_list.sh") },
     { TERMMOD,                    XK_v,          spawn,           SHCMD("~/.config/scripts/clipmenu.sh sel") },
+    { TERMMOD,                    XK_n,          spawn,           SHCMD("~/.config/scripts/time.sh") },
     // { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/scripts/nmtui_toggle.sh") },
     { MODKEY,                     XK_F12,        spawn,           {.v = ttyclockcmd } },
     /*{TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/scripts/open_todo.sh")},*/

@@ -45,10 +45,54 @@ datetime(){
   TZ="Asia/Kolkata" date '+%a %b %d %I:%M %p'
 }
 
+task() {
+  # if timew missing
+  if ! command -v timew >/dev/null 2>&1; then
+    echo " timew?"
+    return
+  fi
+
+  # returns '1' if active, otherwise '0' (timew get dom.active 1)
+  active=$(timew get dom.active 1 2>/dev/null || echo 0)
+  if [[ "$active" != "1" ]]; then
+    echo " Idle"
+    return
+  fi
+
+  # Prefer jq parsing if available (robust), otherwise fallback
+  if command -v jq >/dev/null 2>&1; then
+    tag=$(timew get dom.active.json 2>/dev/null | jq -r '.tags[0] // empty')
+  else
+    tag=$(timew get dom.active.tags 2>/dev/null | tr '\n' ' ' | awk '{print $1}')
+  fi
+  [ -z "$tag" ] && tag="?"
+
+  # compute elapsed from start timestamp (robust vs ISO-duration parsing)
+  start=$(timew get dom.active.start 2>/dev/null || true)
+  elapsed_fmt=""
+  if [[ -n "$start" ]]; then
+    # date -d handles ISO-8601 timestamps like "2025-09-09T12:34:56"
+    start_epoch=$(date -d "$start" +%s 2>/dev/null || echo 0)
+    if [[ "$start_epoch" -ne 0 ]]; then
+      now_epoch=$(date +%s)
+      elapsed=$(( now_epoch - start_epoch ))
+      h=$(( elapsed / 3600 ))
+      m=$(( (elapsed % 3600) / 60 ))
+      if [[ "$h" -gt 0 ]]; then
+        elapsed_fmt=$(printf "%d:%02d" "$h" "$m")
+      else
+        elapsed_fmt=$(printf "%dm" "$m")
+      fi
+    fi
+  fi
+
+  printf " %s %s" "$tag" "${elapsed_fmt}"
+}
+
 while :; do 
   # xsetroot -name "$(dayanddate)"";""|  $(cpu_usage)  |""  $(ram_usage)  |""  $(volume)  |""  $(wifi)  |""  $(timedate)  "
   # xsetroot -name "  $(dayanddate)  ""|  $(volume)  |""  $(wifi)  |""  $(timedate)  "
   # xsetroot -name "|  $(volume)  ""|  $(wifi)  ""|  $(dayanddate)  ""|  $(timedate)  "
-  xsetroot -name "|  $(volume)  ""|  $(wifi)  ""|  $(datetime)  "
+  xsetroot -name "|  $(task)  ""|  $(volume)  ""|  $(wifi)  ""|  $(datetime)  "
   sleep 1
 done
