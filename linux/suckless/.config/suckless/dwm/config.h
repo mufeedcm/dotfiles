@@ -175,7 +175,7 @@ static const Key keys[] = {
     { MODKEY,                     XK_o,          spawn,           SHCMD("~/.config/scripts/ncmpcpp_toggle.sh") },
     { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/scripts/wifi_menu.sh") },
     { TERMMOD,                    XK_b,          spawn,           SHCMD("~/.config/scripts/books_list.sh") },
-    { TERMMOD,                    XK_v,          spawn,           SHCMD("~/.config/scripts/clipmenu.sh sel") },
+    { TERMMOD,                    XK_v,          spawn,           SHCMD("~/.config/scripts/clipmenu.sh") },
     { TERMMOD,                    XK_n,          spawn,           SHCMD("~/.config/scripts/time.sh") },
     // { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/scripts/nmtui_toggle.sh") },
     { MODKEY,                     XK_F12,        spawn,           {.v = ttyclockcmd } },

@@ -26,7 +26,8 @@ feh --bg-scale ~/.config/backgrounds/kid_in_town.jpg &
 # feh --bg-scale ~/.config/backgrounds/cold_mist_nature.jpg &
 # feh --bg-scale ~/.config/backgrounds/tree-cold-mountain-art.jpg &
 ~/.config/scripts/status-bar.sh &
-~/.config/scripts/clipwatch.sh &
+# ~/.config/scripts/clipwatch.sh &
+greenclip daemon &
 # slstatus &
 # dwmblocks &
 xautolock -time 15 -locker "slock & systemctl suspend" &

@@ -47,7 +47,7 @@ return {
 		vim.keymap.set(
 			"n",
 			"<Leader>L",
-			'<Cmd>lua require("luasnip.loaders.from_lua").load({paths = { "~/.config/nvim/lua/mufeedcm/plugins/LuaSnip/" }})<CR>'
+			'<Cmd>lua require("luasnip.loaders.from_lua").load({paths = { "~/.config/nvim/lua/plugins/LuaSnip/" }})<CR>'
 		)
 
 		-- Keymap for jumping to the next snippet placeholder or expanding snippets
