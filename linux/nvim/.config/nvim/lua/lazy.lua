@@ -18,7 +18,7 @@ end
 lazy.setup({
   spec = {
     { import = "plugins" },
-    { import = "plugins.lspconfig" }, 
+    { import = "plugins.lsp" }, 
   },
   change_detection = {
     notify = false,
