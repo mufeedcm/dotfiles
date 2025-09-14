@@ -1,8 +1,8 @@
 sw_volume: 70
 audio_device_state:1:PipeWire-Pulse
 state: play
-current: 1
-time: 120.24000000000001
+current: 3
+time: 119.902
 random: 0
 repeat: 0
 single: 0

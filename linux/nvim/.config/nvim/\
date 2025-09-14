@@ -16,6 +16,7 @@
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
 
+      -- Allows extra capabilities provided by blink.cmp
       -- 'saghen/blink.cmp',
 			"hrsh7th/cmp-nvim-lsp",
     },
