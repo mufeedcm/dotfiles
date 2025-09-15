@@ -83,29 +83,12 @@ return {
       default = { "lsp", "path", "snippets", "buffer", "lazydev" },
       providers = {
         lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
-        -- tailwind = {
-          -- 	module = "tailwindcss-colorizer-cmp.blink",
-          -- 	score_offset = 1000,
-          -- 	opts = {
-            -- 		get_filetype = function()
-              -- 			local allowed = {
-                -- 				"html",
-                -- 				"css",
-                -- 				"javascript",
-                -- 				"javascriptreact",
-                -- 				"typescriptreact",
-                -- 			}
-                -- 			local ft = vim.bo.filetype
-                -- 			return vim.tbl_contains(allowed, ft) and ft or nil
-                -- 		end,
-                -- 	},
-                -- },
-              },
-            },
+      },
+    },
 
-            snippets = { preset = "luasnip" },
+    snippets = { preset = "luasnip" },
 
-            fuzzy = { implementation = "lua" },
-            signature = { enabled = true },
-          },
-        }
+    fuzzy = { implementation = "lua" },
+    signature = { enabled = true },
+  },
+}
