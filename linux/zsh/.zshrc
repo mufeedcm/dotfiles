@@ -13,6 +13,7 @@ export RANGER_LOAD_DEFAULT_RC=false
 export VISUAL=nvim
 export GTK_MODULES=gail:atk-bridge
 export AT_SPI_BUS=at-spi-bus-launcher
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 

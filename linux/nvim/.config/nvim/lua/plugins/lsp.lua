@@ -128,6 +128,7 @@ return {
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local servers = {
 				html = {},
+        emmet_language_server = {},
 				cssls = {},
 				svelte = {},
 				tailwindcss = {
