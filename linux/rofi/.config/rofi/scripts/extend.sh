@@ -7,6 +7,7 @@ if [[ -z "$1" ]]; then
     echo -en "audio switcher\0icon\x1faudio-headphones\n"
     echo -en "caffeine mode\0icon\x1fpreferences-desktop-screensaver\n"
     echo -en "dnd mode\0icon\x1fpreferences-desktop-notification-bell\n"
+    echo -en "video capture\0icon\x1fvideo\n"
 
 else
     # Run the selected script in background
@@ -17,6 +18,7 @@ else
         "audio switcher") ~/.config/scripts/audio-switcher.sh > /dev/null 2>&1 & ;;
         "caffeine mode") ~/.config/scripts/toggle_caffeine.sh > /dev/null 2>&1 & ;;
         "dnd mode") ~/.config/scripts/toggle_dnd.sh > /dev/null 2>&1 & ;;
+        "video capture") ~/.config/scripts/video_capture.sh > /dev/null 2>&1 & ;;
         *) exit 0 ;;
     esac
 fi
