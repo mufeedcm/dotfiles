@@ -175,8 +175,8 @@ static const Key keys[] = {
     { MODKEY,                     XK_o,          spawn,           SHCMD("~/.config/scripts/ncmpcpp_toggle.sh") },
     { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/scripts/wifi_menu.sh") },
     { TERMMOD,                    XK_b,          spawn,           SHCMD("~/.config/scripts/books_list.sh") },
-    { TERMMOD,                    XK_v,          spawn,           SHCMD("~/.config/scripts/clipmenu.sh") },
-    { TERMMOD,                    XK_n,          spawn,           SHCMD("~/.config/scripts/time.sh") },
+    // { TERMMOD,                    XK_v,          spawn,           SHCMD("~/.config/scripts/clipmenu.sh") },
+    { TERMMOD,                    XK_n,          spawn,           SHCMD("~/.config/scripts/time_manager.sh") },
     // { MODKEY,                     XK_w,          spawn,           SHCMD("~/.config/scripts/nmtui_toggle.sh") },
     { MODKEY,                     XK_F12,        spawn,           {.v = ttyclockcmd } },
     /*{TERMMOD,                      XK_t,          spawn,          SHCMD("/bin/sh -c ~/.config/scripts/open_todo.sh")},*/
@@ -195,11 +195,11 @@ static const Key keys[] = {
     {MODKEY,                       XK_s,          spawn,          SHCMD("~/.config/scripts/audio-switcher.sh toggle")},  
 
     //display controls
-    { TERMMOD,                     XK_h,          spawn,          SHCMD("~/.config/scripts/display_control/display_control.sh") },
-    { TERMMOD,                     XK_g,          spawn,          SHCMD("~/.config/scripts/screen-record.sh") },
-    // { MODKEY,                      XK_l,          spawn,          SHCMD("network-theory") },
-    { MODKEY,                      XK_comma,      spawn,          SHCMD("~/.config/scripts/display_control/display_adjust.sh down") },
-    { MODKEY,                      XK_period,     spawn,          SHCMD("~/.config/scripts/display_control/display_adjust.sh up") },
+    // { TERMMOD,                     XK_h,          spawn,          SHCMD("~/.config/scripts/display_control/display_control.sh") },
+    // { TERMMOD,                     XK_g,          spawn,          SHCMD("~/.config/scripts/screen-record.sh") },
+    // // { MODKEY,                      XK_l,          spawn,          SHCMD("network-theory") },
+    // { MODKEY,                      XK_comma,      spawn,          SHCMD("~/.config/scripts/display_control/display_adjust.sh down") },
+    // { MODKEY,                      XK_period,     spawn,          SHCMD("~/.config/scripts/display_control/display_adjust.sh up") },
 
 
     // Miscellaneous

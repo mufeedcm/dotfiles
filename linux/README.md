@@ -11,10 +11,10 @@
 | **Memory**              | Adata DDR4 2400 8GB                             |
 | **HDD**                 | -                                               |
 | **SSD**                 | Maxtor Z1 240GB SATA 6Gb/s                      |
-<!--| **Graphics Driver**     | ![Graphics Driver](./graphics_driver.jpg)       |-->
+<!--| **Graphics Driver**     | ![Graphics Driver](./assets/graphics_driver.jpg)       |-->
 
 ---
-![neofetch](./neofetch.png)
+![neofetch](./assets/neofetch.png)
 ---
 
 ## Installation.
