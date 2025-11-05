@@ -1,0 +1,198 @@
+/* Colors */
+@define-color background            #282828;
+@define-color background-alt        #3c3836;
+@define-color background-alt-darker #32302f;
+@define-color accent-normal         #b8bb26;
+@define-color accent-error          #fb4934;
+@define-color bordercolor           #fabd2f;
+@define-color fontcolor             #ebdbb2;
+@define-color fontaltcolor          #1d2021;
+
+/* Config */
+* {
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 15px;
+}
+
+/* Remove scrollbars */
+scrollbar, scrollbar * {
+  all: unset;
+  background: none;
+}
+
+/* Notification */
+.notification {
+  background: @background;
+  color: @fontcolor;
+  border: 2px solid @bordercolor;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 6px;
+}
+
+.body {
+  color: @fontcolor;
+  margin: 2px 0;
+}
+
+.summary {
+  font-weight: 600;
+  color: @accent-normal;
+  margin-bottom: 4px;
+}
+
+.time {
+  color: @fontcolor;
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+.close-button {
+  background-color: @accent-error;
+  color: @fontaltcolor;
+  border-radius: 5px;
+  padding: 3px 8px;
+  margin: 3px;
+}
+
+/* Hover states */
+.notification-default-action:hover,
+.notification-action:hover {
+  background: @background-alt;
+}
+
+/* Progress bars */
+.notification.low progress,
+.notification.normal progress {
+  background-color: @accent-normal;
+}
+.notification.critical progress {
+  background-color: @accent-error;
+}
+
+/* Control Center */
+.control-center {
+  background-color: @background;
+  color: @fontcolor;
+  border: 2px solid @bordercolor;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 6px;
+}
+
+/* Groups */
+.notification-group {
+  background-color: transparent;
+  margin: 4px 0;
+}
+
+.notification-group-icon,
+.notification-group-headers {
+  color: @fontcolor;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: @accent-normal;
+  color: @fontaltcolor;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 3px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: @accent-error;
+}
+
+/* Widget title */
+.widget-title {
+  color: @fontcolor;
+  margin: 4px 0;
+}
+.widget-title > button {
+  color: @fontcolor;
+  background: @background-alt-darker;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.widget-title > button:hover {
+  background: @accent-error;
+  color: @fontaltcolor;
+}
+
+/* Buttons grid */
+button {
+  border: 0;
+  background: @background-alt;
+  min-width: 35px;
+  padding: 8px;
+}
+.widget-buttons-grid {
+  background: @background-alt-darker;
+  padding: 8px;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  color: @fontcolor;
+  margin: 6px;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: alpha(@fontcolor, 0.25);
+}
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: @accent-normal;
+  color: @fontaltcolor;
+}
+
+/* DND widget */
+.widget-dnd {
+  background: transparent;
+  color: @fontcolor;
+  font-size: 15px;
+  margin: 6px;
+}
+.widget-dnd > switch {
+  background: @background-alt;
+  border-radius: 5px;
+  padding: 4px;
+}
+.widget-dnd > switch:checked {
+  background: @accent-error;
+}
+
+/* Volume & Backlight */
+.widget-volume,
+.widget-backlight {
+  background: @background-alt-darker;
+  color: @fontcolor;
+  font-size: 16px;
+  padding: 8px 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+}
+
+/* Music player */
+.widget-mpris {
+  background: transparent;
+  margin: 6px;
+}
+.widget-mpris button {
+  background: transparent;
+  border-radius: 5px;
+  padding: 4px 6px;
+}
+.widget-mpris button:hover {
+  background: @accent-normal;
+  color: @fontaltcolor;
+}
+
+/* Sliders */
+trough slider {
+  background: @fontcolor;
+}
+trough slider:hover {
+  background: @accent-normal;
+}
+trough highlight {
+  background: @accent-normal;
+}
