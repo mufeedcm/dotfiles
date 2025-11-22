@@ -8,12 +8,18 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH="$PATH:/home/mufeedcm/.local/bin" # Added by `pipx`
+export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim
 export RANGER_LOAD_DEFAULT_RC=false
 export VISUAL=nvim
 export GTK_MODULES=gail:atk-bridge
 export AT_SPI_BUS=at-spi-bus-launcher
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+
+# for wezterm
+setopt COMBINING_CHARS
+bindkey -M vicmd "^C"    undefined-key
+bindkey -M vicmd "^[[1;6C" undefined-key
 
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -52,6 +58,11 @@ PROMPT='
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+#tmux 
+if [ -z "$TMUX" ] && [ -n "$PS1" ]; then
+    tmux new -s "auto_$PPID"
+fi
+
 
 source /home/mufeedcm/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/mufeedcm/.zsh/plugins/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
@@ -89,6 +100,11 @@ zvm_after_lazy_keybindings() {
 # == auto ==
 # figlet mufeedcm
 # fastfetch
+jumptofolder() {
+    cd "$(find -L ~ -type d -maxdepth 5 2>/dev/null \
+        | fzf --prompt='open > ' --height=40% --reverse)" 2>/dev/null
+}
+jumptofolder
 
 # === Aliases ===
 # Common Aliases
@@ -96,6 +112,7 @@ alias rag='ranger'
 alias sp='pacman'
 alias ls='ls --color=auto'
 alias lsa='ls -a --color=auto'
+alias jp='jumptofolder'
 alias la='ls -lahr --color=auto'
 alias grep='grep --color=auto'
 alias cls='clear'
@@ -213,3 +230,4 @@ esac
 
 # opencode
 export PATH=/home/mufeedcm/.opencode/bin:$PATH
+

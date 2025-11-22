@@ -1,32 +1,32 @@
-#!/bin/sh
+#!/bin/bash
 
-# Check if ncmpcpp is running
-# if pgrep -f "st -c ncmpcpp" > /dev/null; then
-#     # If running, kill it
-#     pkill -f "st -c ncmpcpp"
-# else
-#     # If not running, launch it
-#     st -c ncmpcpp -g 60x25+1425+25 -e ncmpcpp &
-# fi
+if [ "$XDG_SESSION_TYPE" = "x11" ]; then
+    if pgrep -f "st -c ncmpcpp" > /dev/null; then
+        pkill -f "st -c ncmpcpp"
+    else
+        st -c ncmpcpp -g 60x25+1418+40 -e ncmpcpp &
+        ST_PID=$!
+        (
+            sleep 4
+            if ps -p $ST_PID > /dev/null; then
+                kill $ST_PID 2>/dev/null
+            fi
+        ) &
+    fi
 
-
-
-# Check if ncmpcpp is already running
-if pgrep -f "st -c ncmpcpp" > /dev/null; then
-    # If running, kill it
-    pkill -f "st -c ncmpcpp"
+elif [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    if pgrep -f "wezterm.*--class ncmpcpp" > /dev/null; then
+        pkill -f "wezterm.*--class ncmpcpp"
+    else
+        wezterm start --class ncmpcpp -- ncmpcpp &
+        WEZTERM_PID=$!
+        (
+            sleep 4
+            if ps -p $WEZTERM_PID > /dev/null; then
+                kill $WEZTERM_PID 2>/dev/null
+            fi
+        ) &
+    fi
 else
-    # Launch ncmpcpp in st
-    st -c ncmpcpp -g 60x25+1418+40 -e ncmpcpp &
-
-    # Save the PID of the last launched st instance
-    ST_PID=$!
-
-    # Start a timeout: kill it after 4s if still running
-    (
-        sleep 3
-        if ps -p $ST_PID > /dev/null; then
-            kill $ST_PID 2>/dev/null
-        fi
-    ) &
+    notify-send "Unknown session type" "Couldn't determine if Wayland or X11"
 fi
