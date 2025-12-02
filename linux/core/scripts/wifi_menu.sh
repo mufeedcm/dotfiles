@@ -21,9 +21,9 @@ if [ -n "$saved" ]; then
     # Try to connect to the saved network
     if nmcli con up id "$chosen_ssid"; then
         nmcli connection modify "$chosen_ssid" connection.autoconnect yes
-        notify-send "Wi-Fi" "Connected to $chosen_ssid"
+        # notify-send "Wi-Fi" "Connected to $chosen_ssid"
     else
-        notify-send "Wi-Fi" "Failed to connect to saved network"
+        # notify-send "Wi-Fi" "Failed to connect to saved network"
     fi
 else
     # Prompt for password and try to connect
