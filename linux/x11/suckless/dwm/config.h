@@ -215,7 +215,7 @@ static const Key keys[] = {
     
     {MODKEY,                       XK_i,         incnmaster,      {.i = +1}},
     {MODKEY,                       XK_d,         incnmaster,      {.i = -1}},
-    {TERMMOD,                      XK_c,         killclient,      {0}},
+    {TERMMOD,                      XK_x,         killclient,      {0}},
     {MODKEY,                       XK_t,         setlayout,       {.v = &layouts[0]}},
     {MODKEY,                       XK_f,         setlayout,       {.v = &layouts[1]}},
     {MODKEY,                       XK_m,         setlayout,       {.v = &layouts[2]}},
