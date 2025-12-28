@@ -28,6 +28,7 @@
         // "battery#bat2",
         "clock",
         "tray",
+        "custom/caffeine",
         "custom/notification"
     ],
     // Modules configuration
@@ -155,6 +156,14 @@
       "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
+    "custom/caffeine": {
+      "exec": "~/.config/waybar/helper.sh caffeine",
+      "interval": 1,
+      "tooltip": true,
+      "tooltip-format": "caffeine mode",
+      "on-click": "$HOME/.config/scripts/toggle_caffeine.sh"
+    },
+
     "custom/notification": {
       "format": " ",
       "tooltip": true,
