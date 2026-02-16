@@ -27,6 +27,15 @@ if [ ! -f "$FULL_PATH" ]; then
     exit 1
 fi
 
-# Open with zathura (with notify)
-zathura "$FULL_PATH" & disown
-# notify-send "openbook" "Opening: $SELECTED"
+case "${FULL_PATH,,}" in
+    *.epub)
+        koreader "$FULL_PATH" & disown
+        ;;
+    *.pdf|*.djvu)
+        zathura "$FULL_PATH" & disown
+        ;;
+    *)
+        notify-send "openbook" "Unsupported file type"
+        exit 1
+        ;;
+esac
