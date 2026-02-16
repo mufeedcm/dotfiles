@@ -2,11 +2,15 @@ configuration {
     /* General */
     icon-theme: "Papirus-Dark";
     show-icons: true;
-    terminal: "st";
+    terminal: "wezterm";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
     sidebar-mode: false;
+
+    /* using mouse to close */
+    kb-cancel: "Escape,MousePrimary";
+    hover-select: true;
 
     /* Modes */
     modi: "combi";
