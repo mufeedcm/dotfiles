@@ -1,12 +1,12 @@
 /* Colors */
-@define-color background            #282828;
-@define-color background-alt        #3c3836;
-@define-color background-alt-darker #32302f;
-@define-color accent-normal         #b8bb26;
-@define-color accent-error          #fb4934;
-@define-color bordercolor           #fabd2f;
-@define-color fontcolor             #ebdbb2;
-@define-color fontaltcolor          #1d2021;
+@define-color background            #1A1817;
+@define-color background-alt        #211E1C;
+@define-color background-alt-darker #1E1B19;
+@define-color accent-normal         #FFFFFF;
+@define-color accent-error          #FFFFFF;
+@define-color bordercolor           #FFFFFF;
+@define-color fontcolor             #FFFFFF;
+@define-color fontaltcolor          #1A1817;
 
 /* Config */
 * {

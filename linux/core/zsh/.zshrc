@@ -230,4 +230,8 @@ esac
 
 # opencode
 export PATH=/home/mufeedcm/.opencode/bin:$PATH
-
+source ~/emsdk/emsdk_env.sh
+export JAVA_HOME=/opt/android-studio/jbr
+export PATH=$JAVA_HOME/bin:$PATH
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$ANDROID_HOME/platform-tools:$PATH
