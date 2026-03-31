@@ -23,7 +23,9 @@ config.audible_bell = 'Disabled'
 config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
-config.enable_wayland = false
+if wezterm.target_triple:find("linux") then
+  config.enable_wayland = true
+end
 
 config.color_scheme = nil
 
@@ -62,7 +64,13 @@ config.colors = {
 }
 -- config.disable_default_key_bindings = true
 --
--- config.keys = {
+config.keys = {
+    {
+    key = "Space",
+    mods = "CTRL",
+    action = wezterm.action.SendKey { key = "Space", mods = "CTRL" },
+  },
+}
 --   {
 --     key = 'C',
 --     mods = 'ALT',

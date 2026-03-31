@@ -1,0 +1,32 @@
+(defcfg
+  process-unmapped-keys no
+  macos-dev-names-include (
+    "Apple Internal Keyboard / Trackpad"
+  )
+)
+
+(defsrc
+  caps esc tab
+  q    p
+  h    j    k    l
+  lsgt
+)
+
+(defalias
+  capesc (tap-hold 150 150 esc lctl)
+  nav (tap-hold 150 200 tab (layer-while-held nav))
+)
+
+(deflayer base
+  @capesc caps @nav
+  q       p
+  h       j    k    l
+  grv
+)
+
+(deflayer nav
+  _       _    _
+  home    end
+  left    down up   right
+  _
+)
