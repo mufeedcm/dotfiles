@@ -142,7 +142,7 @@
     ;; "on" '(consult-notes :which-key "Find file")
     "ot" `(,(lambda () (interactive) (find-file "~/notes/org/tasks.org")) :which-key "Tasks")
     "on" `(,(lambda () (interactive) (find-file "~/notes/org/notes.org")) :which-key "Notes")
-    "os" `(,(lambda () (interactive) (find-file "~/notes/org/diploma/sem5.org")) :which-key "Semester 5")
+    "os" `(,(lambda () (interactive) (find-file "~/notes/org/diploma/let_exam.org")) :which-key "Let Exam")
     "oe" `(,(lambda () (interactive) (find-file "~/.config/emacs/init.el")) :which-key "Emacs config")
     "of" '(org-open-at-point :which-key "Open Link/File")
 
@@ -188,14 +188,14 @@
         org-log-done 'time
         org-agenda-files '("~/notes/org/tasks.org"
 			   "~/notes/org/notes.org"
-                           "~/notes/org/diploma/sem4.org")
+                           "~/notes/org/diploma/let_exam.org")
         org-archive-location "~/notes/org/archive.org::")
 
   ;; Capture templates
   (setq org-capture-templates
         '(("t" "General Task" entry (file+headline "~/notes/org/tasks.org" "Inbox")
            "* TODO %?\n  %U\n  %i\n  %a")
-          ("d" "Diploma Task" entry (file+headline "~/notes/org/diploma/sem4.org" "Inbox")
+          ("d" "Let Exam Task" entry (file+headline "~/notes/org/diploma/let_exam.org" "Inbox")
            "* TODO %?\n  %U\n  %i\n  %a")))
 
   ;; Auto-saving
