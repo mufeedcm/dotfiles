@@ -24,7 +24,7 @@ config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
 if wezterm.target_triple:find("linux") then
-  config.enable_wayland = true
+  config.enable_wayland = false
 end
 
 config.color_scheme = nil
