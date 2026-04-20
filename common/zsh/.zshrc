@@ -24,6 +24,7 @@ if [[ "$OS" == "Linux" ]]; then
   export JAVA_HOME=/opt/android-studio/jbr
   export ANDROID_HOME=$HOME/Android/Sdk
   export PATH=$ANDROID_HOME/platform-tools:$PATH
+  export PATH="$HOME/code/flutter/bin:$PATH"
 fi
 
 if [[ "$OS" == "Darwin" ]]; then
