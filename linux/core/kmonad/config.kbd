@@ -1,6 +1,7 @@
 (defcfg
   ;; Linux
-  input  (device-file "/dev/input/by-id/usb-SIGMACHIP_HP_Wired_Keyboard-event-kbd")
+  ;;input  (device-file "/dev/input/by-id/usb-SIGMACHIP_HP_Wired_Keyboard-event-kbd")
+  input (device-file "/dev/input/by-path/platform-23510c000.spi-cs-0-event-kbd")
   output (uinput-sink "My KMonad output"
   "sleep 1 && setxkbmap -option compose:ralt")
 
