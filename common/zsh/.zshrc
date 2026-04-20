@@ -26,6 +26,17 @@ if [[ "$OS" == "Linux" ]]; then
   export PATH=$ANDROID_HOME/platform-tools:$PATH
 fi
 
+if [[ "$OS" == "Darwin" ]]; then
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+export PATH="$HOME/dev/flutter/bin:$PATH"
+export PATH="$PATH:$HOME/.pub-cache/bin"
+fi
+
 
 # for wezterm
 setopt COMBINING_CHARS
