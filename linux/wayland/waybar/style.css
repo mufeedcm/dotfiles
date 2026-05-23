@@ -72,3 +72,16 @@ window#waybar {
 #pulseaudio.muted {
   color: #FFFFFF;
 }
+
+
+#battery.warning {
+  color: #f0c674;
+}
+
+#battery.critical {
+  color: #ff5555;
+}
+
+#battery.charging {
+  color: #8ec07c;
+}

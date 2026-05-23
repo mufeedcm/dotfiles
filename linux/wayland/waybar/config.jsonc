@@ -24,8 +24,8 @@
         // "backlight",
         // "keyboard-state",
         // "hyprland/language",
-        // "battery",
-        "battery#bat2",
+        "battery",
+        // "battery#bat2",
         "clock",
         "tray",
         "custom/caffeine",
@@ -156,6 +156,36 @@
       "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
+    "battery": {
+      "states": {
+        "good": 80,
+        "warning": 30,
+        "critical": 15
+      },
+
+      "format": "{icon} {capacity}%",
+
+      "format-charging": "󰂄 {capacity}%",
+      "format-plugged": " {capacity}%",
+
+      "format-icons": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ],
+
+    "tooltip": true,
+    "tooltip-format": "{timeTo} remaining"
+},
+
+
     "custom/caffeine": {
       "exec": "~/.config/waybar/helper.sh caffeine",
       "interval": 1,
