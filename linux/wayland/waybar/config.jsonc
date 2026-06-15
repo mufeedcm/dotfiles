@@ -15,8 +15,8 @@
     "modules-right": [
         // "mpd",
         // "idle_inhibitor",
+        "network",
         "pulseaudio",
-        // "network",
         "power-profiles-daemon",
         // "cpu",
         // "memory",
@@ -108,7 +108,7 @@
       "timezone": "Asia/Kolkata",
       "format": "{:%a %b %d %I:%M %p}",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format-alt": "{:%Y-%m-%d}"
+      // "format-alt": "{:%Y-%m-%d}"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -116,23 +116,19 @@
         "format-wifi": "  {essid}",
         // "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        // "tooltip": true,
-        // "tooltip-format": "Network",
-        // "on-click": "$HOME/.config/scripts/wifi_menu.sh"
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip": true,
+        "tooltip-format": "Network",
+        // "tooltip-format": "{ifname} via {gwaddr} ",
+        "on-click": "$HOME/.config/scripts/wifi_menu.sh"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        // "format": "{volume}% {icon} {format_source}",
         "format": "{icon}  {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}%",
-        "format-source-muted": "",
+        "format-bluetooth": " {icon} {volume}%",
+        "format-muted": "󰝟",
         "format-icons": {
           "headphone": "",
           "hands-free": "",
@@ -142,7 +138,7 @@
           "car": "",
           "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "custom/media": {
       "format": "{icon} {text}",

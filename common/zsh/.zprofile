@@ -13,3 +13,7 @@ if [[ "$OS" == "Linux" ]]; then
     [[ -x "$(command -v start-hyprland)" ]] && exec start-hyprland
   fi
 fi
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/mufeedcm/.local/bin:$PATH"

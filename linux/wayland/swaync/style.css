@@ -3,7 +3,8 @@
 @define-color background-alt        #211E1C;
 @define-color background-alt-darker #1E1B19;
 @define-color accent-normal         #FFFFFF;
-@define-color accent-error          #FFFFFF;
+/* @define-color accent-error          #FFFFFF; */
+@define-color accent-error          #e06c75;
 @define-color bordercolor           #FFFFFF;
 @define-color fontcolor             #FFFFFF;
 @define-color fontaltcolor          #1A1817;
@@ -11,7 +12,8 @@
 /* Config */
 * {
   font-family: "JetBrains Mono Nerd Font";
-  font-size: 15px;
+  font-size: 13px;
+  transition:  150ms;
 }
 
 /* Remove scrollbars */
@@ -43,23 +45,32 @@ scrollbar, scrollbar * {
 
 .time {
   color: @fontcolor;
-  font-size: 13px;
+  font-size: 11px;
   margin-right: 10px;
 }
 
 .close-button {
   background-color: @accent-error;
   color: @fontaltcolor;
-  border-radius: 5px;
-  padding: 3px 8px;
-  margin: 3px;
+  border-radius: 8px;
+  padding: 3px 3px;
 }
+
 
 /* Hover states */
 .notification-default-action:hover,
 .notification-action:hover {
   background: @background-alt;
 }
+
+.notification.critical {
+  border: 2px solid @accent-error;
+}
+
+.notification.critical .summary {
+  color: @accent-error;
+}
+
 
 /* Progress bars */
 .notification.low progress,
@@ -148,7 +159,7 @@ button {
 .widget-dnd {
   background: transparent;
   color: @fontcolor;
-  font-size: 15px;
+  font-size: 13px;
   margin: 6px;
 }
 .widget-dnd > switch {
@@ -165,7 +176,7 @@ button {
 .widget-backlight {
   background: @background-alt-darker;
   color: @fontcolor;
-  font-size: 16px;
+  font-size: 14px;
   padding: 8px 10px;
   margin: 6px 0;
   border-radius: 6px;
@@ -187,6 +198,7 @@ button {
 }
 
 /* Sliders */
+
 trough slider {
   background: @fontcolor;
 }

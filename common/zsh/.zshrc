@@ -20,7 +20,7 @@ if [[ "$OS" == "Linux" ]]; then
   export GTK_MODULES=gail:atk-bridge
   export AT_SPI_BUS=at-spi-bus-launcher
 
-  source ~/emsdk/emsdk_env.sh
+  # source ~/emsdk/emsdk_env.sh
   export JAVA_HOME=/opt/android-studio/jbr
   export ANDROID_HOME=$HOME/Android/Sdk
   export PATH=$ANDROID_HOME/platform-tools:$PATH
@@ -145,3 +145,15 @@ alias conf='cd $HOME/.config'
 alias confnvim='nvim $HOME/.config/nvim/'
 
 alias sourcezshrc='source $HOME/.zshrc'
+
+# pnpm
+export PNPM_HOME="/home/mufeedcm/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/mufeedcm/.local/bin:$PATH"

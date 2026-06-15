@@ -11,6 +11,7 @@ config.font = wezterm.font_with_fallback({
 config.font_size = 11
 config.default_cursor_style = 'BlinkingBlock'
 config.enable_scroll_bar = true
+config.warn_about_missing_glyphs = false
 config.window_background_opacity = 1.0
 config.window_padding = { left = 2, right = 2, top = 2, bottom = 2 }
 
