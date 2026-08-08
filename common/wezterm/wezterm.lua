@@ -8,7 +8,7 @@ config.font = wezterm.font_with_fallback({
   'Noto Color Emoji',
   'Iosevka Nerd Font',
 })
-config.font_size = 9
+config.font_size = 11
 config.default_cursor_style = 'BlinkingBlock'
 config.enable_scroll_bar = true
 config.warn_about_missing_glyphs = false

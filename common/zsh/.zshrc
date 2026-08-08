@@ -25,6 +25,17 @@ if [[ "$OS" == "Linux" ]]; then
   export ANDROID_HOME=$HOME/Android/Sdk
   export PATH=$ANDROID_HOME/platform-tools:$PATH
   export PATH="$HOME/code/flutter/bin:$PATH"
+  export PNPM_HOME="/home/mufeedcm/.local/share/pnpm"
+  #pnpm
+  case ":$PATH:" in
+    *":$PNPM_HOME/bin:"*) ;;
+    *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+  esac
+  # pnpm end
+
+  #antigravity
+  export PATH="/home/mufeedcm/.local/bin:$PATH"
+  export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 if [[ "$OS" == "Darwin" ]]; then
@@ -146,15 +157,3 @@ alias confnvim='nvim $HOME/.config/nvim/'
 
 alias sourcezshrc='source $HOME/.zshrc'
 
-# pnpm
-export PNPM_HOME="/home/mufeedcm/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
-
-
-# Added by Antigravity CLI installer
-export PATH="/home/mufeedcm/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
