@@ -8,12 +8,14 @@ config.font = wezterm.font_with_fallback({
   'Noto Color Emoji',
   'Iosevka Nerd Font',
 })
-config.font_size = 11
+config.font_size = 9
 config.default_cursor_style = 'BlinkingBlock'
 config.enable_scroll_bar = true
 config.warn_about_missing_glyphs = false
 config.window_background_opacity = 1.0
 config.window_padding = { left = 2, right = 2, top = 2, bottom = 2 }
+
+config.adjust_window_size_when_changing_font_size = false
 
 config.initial_cols = 120
 config.initial_rows = 28
@@ -64,22 +66,12 @@ config.colors = {
   },
 }
 -- config.disable_default_key_bindings = true
---
 config.keys = {
-    {
+  {
     key = "Space",
     mods = "CTRL",
-    action = wezterm.action.SendKey { key = "Space", mods = "CTRL" },
+    action = act.SendKey { key = "Space", mods = "CTRL" },
   },
 }
---   {
---     key = 'C',
---     mods = 'ALT',
---     action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection',
---   },
---   {
---     key = 'V',
---     mods = 'ALT',
---     action = act.PasteFrom 'Clipboard' },
---   }
+
 return config

@@ -7,7 +7,7 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
       "custom/arch",
-      "hyprland/workspaces",
+      "niri/workspaces",
     ],
     // "modules-center": [
     //   "hyprland/window"
@@ -39,11 +39,11 @@
       "tooltip-format": "Apps",
       "on-click": "rofi -show combi -combi-modi"
     },
-    "hyprland/workspaces": {
+    "niri/workspaces": {
       "disable-scroll": true,
       "all-outputs": true,
       "warp-on-scroll": false,
-      "format": "{name}",
+      "format": "{value}",
          // "format": "{name}: {icon}",
          "format-icons": {
            "urgent": "",

@@ -95,7 +95,7 @@ source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [[ "$OS" == "Darwin" ]]; then
   alias cbprint='pbpaste'
 elif [[ "$OS" == "Linux" ]]; then
-  alias cbprint='xclip -o -selection clipboard'
+  alias cbprint='wl-paste --no-newline'
 fi
 
 zvm_vi_yank () {
@@ -103,7 +103,7 @@ zvm_vi_yank () {
   if [[ "$OS" == "Darwin" ]]; then
     printf %s "${CUTBUFFER}" | pbcopy
   elif [[ "$OS" == "Linux" ]]; then
-    printf %s "${CUTBUFFER}" | xclip -sel c
+    printf %s "${CUTBUFFER}" | wl-copy
   fi
   zvm_exit_visual_mode
 }
@@ -157,3 +157,4 @@ esac
 
 # Added by Antigravity CLI installer
 export PATH="/home/mufeedcm/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"

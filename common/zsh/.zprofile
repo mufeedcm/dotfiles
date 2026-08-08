@@ -9,9 +9,10 @@ export PATH="$HOME/.local/bin:$PATH"
 if [[ "$OS" == "Linux" ]]; then
   alias x='startx'
 
-  if [[ -z "$DISPLAY" ]] && [[ "$(tty)" == "/dev/tty1" ]]; then
-    [[ -x "$(command -v start-hyprland)" ]] && exec start-hyprland
-  fi
+if [[ -z "$DISPLAY" ]] && [[ "${XDG_VTNR:-}" == "1" ]]; then
+    # exec niri-session -l
+    exec "$HOME/.local/bin/niri" --session
+fi
 fi
 
 
