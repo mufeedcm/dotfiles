@@ -83,6 +83,8 @@ esac
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
 
+eval "$(zoxide init zsh)"
+
 
 setopt PROMPT_SUBST
 custom_pwd() {
@@ -147,6 +149,9 @@ jumptofolder() {
   }
 
 # === Aliases ===
+alias open='xdg-open'
+alias op='xdg-open'
+alias cd='z'
 alias ls='ls --color=auto'
 alias la='ls -lahr --color=auto'
 alias jp='jumptofolder'
