@@ -27,6 +27,7 @@ if [[ "$OS" == "Linux" ]]; then
   export PATH="$HOME/code/flutter/bin:$PATH"
   export PNPM_HOME="/home/mufeedcm/.local/share/pnpm"
   #pnpm
+  export PATH=~/.npm-global/bin:$PATH
   case ":$PATH:" in
     *":$PNPM_HOME/bin:"*) ;;
     *) export PATH="$PNPM_HOME/bin:$PATH" ;;
@@ -49,6 +50,7 @@ export PATH="$HOME/dev/flutter/bin:$PATH"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 fi
 
+setopt extendedglob
 
 # for wezterm
 setopt COMBINING_CHARS
@@ -159,6 +161,5 @@ alias grep='grep --color=auto'
 alias cls='clear'
 alias conf='cd $HOME/.config'
 alias confnvim='nvim $HOME/.config/nvim/'
-
 alias sourcezshrc='source $HOME/.zshrc'
 
