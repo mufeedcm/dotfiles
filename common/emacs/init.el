@@ -3,7 +3,7 @@
 ;; (setq visible-bell t)                  ; Visual feedback instead of beeping
 (setq use-dialog-box nil)              ; Disable GUI dialogs
 (setq confirm-kill-emacs #'y-or-n-p)   ; Confirm before exiting
-(setq default-directory "~/notes/org/") ; Default working directory
+(setq default-directory "~/notes/") ; Default working directory
 (setq confirm-nonexistent-file-or-buffer nil)
 
 ;;; UI CONFIGURATION ----------------------------------------------------------
@@ -140,9 +140,9 @@
     "oc" '(org-capture :which-key "Org Capture")
     "ol" '(org-store-link :which-key "Org Store Link")
     ;; "on" '(consult-notes :which-key "Find file")
-    "ot" `(,(lambda () (interactive) (find-file "~/notes/org/tasks.org")) :which-key "Tasks")
-    "on" `(,(lambda () (interactive) (find-file "~/notes/org/notes.org")) :which-key "Notes")
-    "os" `(,(lambda () (interactive) (find-file "~/notes/org/diploma/let_exam.org")) :which-key "Let Exam")
+    "ot" `(,(lambda () (interactive) (find-file "~/notes/tasks.org")) :which-key "Tasks")
+    "on" `(,(lambda () (interactive) (find-file "~/notes/notes.org")) :which-key "Notes")
+    
     "oe" `(,(lambda () (interactive) (find-file "~/.config/emacs/init.el")) :which-key "Emacs config")
     "of" '(org-open-at-point :which-key "Open Link/File")
 
@@ -186,16 +186,13 @@
   ;; Task management
   (setq org-todo-keywords '((sequence "TODO" "|" "DONE"))
         org-log-done 'time
-        org-agenda-files '("~/notes/org/tasks.org"
-			   "~/notes/org/notes.org"
-                           "~/notes/org/diploma/let_exam.org")
-        org-archive-location "~/notes/org/archive.org::")
+        org-agenda-files '("~/notes/tasks.org"
+			   "~/notes/notes.org")
+        org-archive-location "~/notes/archive/archive.org::")
 
   ;; Capture templates
   (setq org-capture-templates
-        '(("t" "General Task" entry (file+headline "~/notes/org/tasks.org" "Inbox")
-           "* TODO %?\n  %U\n  %i\n  %a")
-          ("d" "Let Exam Task" entry (file+headline "~/notes/org/diploma/let_exam.org" "Inbox")
+        '(("t" "General Task" entry (file+headline "~/notes/tasks.org" "Inbox")
            "* TODO %?\n  %U\n  %i\n  %a")))
 
   ;; Auto-saving
@@ -254,7 +251,7 @@
 (defun consult-notes ()
   "Open notes directory"
   (interactive)
-  (find-file "~/notes/org/tasks.org"))
+  (find-file "~/notes/tasks.org"))
 
 ;;; AUTO-GENERATED CUSTOM VARIABLES -------------------------------------------
 (custom-set-variables
