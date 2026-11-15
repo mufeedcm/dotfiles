@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 BAT="/org/freedesktop/UPower/devices/battery_macsmc_battery"
 
 warned_20=0

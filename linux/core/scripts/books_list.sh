@@ -1,5 +1,3 @@
-#!/bin/bash
-
 BOOK_DIR="$HOME/books"
 
 # Ensure the directory exists

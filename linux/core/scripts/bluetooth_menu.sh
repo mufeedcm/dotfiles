@@ -1,5 +1,3 @@
-#!/bin/bash
-
 device_connected() {
     bluetoothctl info "$1" 2>/dev/null | grep -q "Connected: yes"
 }

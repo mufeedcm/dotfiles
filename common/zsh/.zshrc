@@ -104,7 +104,7 @@ PROMPT='
 ❯ '
 
 source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.zsh/plugins/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source $HOME/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [[ "$OS" == "Darwin" ]]; then
@@ -162,4 +162,5 @@ alias cls='clear'
 alias conf='cd $HOME/.config'
 alias confnvim='nvim $HOME/.config/nvim/'
 alias sourcezshrc='source $HOME/.zshrc'
+
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 action="$1"
 
 case "$action" in

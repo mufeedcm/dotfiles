@@ -1,5 +1,3 @@
-#!/bin/bash
-
 PID_CAFFEINE="/tmp/caffeine-mode.pid"
 
 case "$1" in

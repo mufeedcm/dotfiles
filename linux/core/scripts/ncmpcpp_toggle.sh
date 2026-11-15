@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [ "$XDG_SESSION_TYPE" = "x11" ]; then
     if pgrep -f "st -c ncmpcpp" > /dev/null; then
         pkill -f "st -c ncmpcpp"

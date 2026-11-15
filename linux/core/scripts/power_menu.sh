@@ -1,5 +1,3 @@
-#!/bin/bash
-
 options="Sleep\nLogout\nShutdown\nReboot"
 
 # Display the menu using rofi

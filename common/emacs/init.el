@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;;; BASIC SETTINGS ------------------------------------------------------------
 (setq inhibit-startup-message t)       ; Disable startup screen
 ;; (setq visible-bell t)                  ; Visual feedback instead of beeping

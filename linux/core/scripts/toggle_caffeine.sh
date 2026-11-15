@@ -1,5 +1,3 @@
-#!/bin/bash
-
 PIDFILE="/tmp/caffeine-mode.pid"
 
 if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then

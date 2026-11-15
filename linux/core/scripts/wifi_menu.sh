@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 notify-send "Wi-Fi" "Scanning for networks..."
 
 nmcli dev wifi rescan >/dev/null 2>&1
