@@ -20,6 +20,19 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
 
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 100;
+    priority = 10;
+  };
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 100; # Tells the kernel to actively compress idle/cold pages
+    "vm.watermark_boost_factor" = 0;
+    "vm.watermark_scale_factor" = 125;
+    "vm.page-cluster" = 0;
+  };
+
   users.users.mufeedcm = {
    isNormalUser = true;
    extraGroups = [ "wheel" "networkmanager" "video" "input" "uinput" ];
@@ -56,6 +69,10 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  systemd.user.services.mpd = {
+    wantedBy = [ "default.target" ];
+  };
 	
   environment.systemPackages = with pkgs; [ 
     vim
@@ -92,6 +109,9 @@
     ripgrep
     fzf
     tree
+    pwvucontrol
+    unzip
+    mpd
     ncmpcpp
 
     libnotify
@@ -100,6 +120,9 @@
     playerctl
     btop
 
+    rnote
+    typst
+
     #ai
     opencode
     antigravity-cli
@@ -107,7 +130,9 @@
     claude-code
     github-copilot-cli
 
+    inputs.anchal.packages.${pkgs.system}.anchal
  ];
+
 
 fonts.packages = with pkgs; [
   inter
@@ -119,9 +144,9 @@ fonts.packages = with pkgs; [
 fonts.fontconfig = {
   enable = true;
   defaultFonts = {
-    serif = [ "Noto Serif" ];
-    sansSerif = [ "Inter" ];
-    monospace = [ "JetBrainsMono Nerd Font" ];
+    serif = [ "Noto Serif" "Noto Color Emoji" ];
+    sansSerif = [ "Inter" "Noto Color Emoji" ];
+    monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
     emoji = [ "Noto Color Emoji" ];
   };
 };

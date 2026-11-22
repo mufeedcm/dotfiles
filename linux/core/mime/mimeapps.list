@@ -1,0 +1,20 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop;
+image/jpeg=feh.desktop;
+image/png=feh.desktop;
+image/webp=feh.desktop;
+image/gif=feh.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+text/html=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+inode/directory=nemo.desktop;
+text/plain=nvim.desktop;
+
+[Added Associations]
+application/pdf=org.pwmt.zathura.desktop;
+image/jpeg=feh.desktop;
+image/png=feh.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+inode/directory=nemo.desktop;

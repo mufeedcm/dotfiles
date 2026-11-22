@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    anchal.url = "github:mukhtharcm/anchal-releases";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
