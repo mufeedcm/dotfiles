@@ -10,6 +10,7 @@ text/html=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 inode/directory=nemo.desktop;
 text/plain=nvim.desktop;
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura.desktop;
